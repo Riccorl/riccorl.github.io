@@ -255,7 +255,7 @@ hr {
 
 .card {
   border-radius: 1%;
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
 }
 
 .card-title {
@@ -383,6 +383,10 @@ p.project {
     font-size: 0.6em;
   }
 
+  hr {
+    margin-top: 1rem;
+  }
+
   .glitch,
   .comment {
     font-size: 1.5rem;
@@ -400,7 +404,8 @@ p.project {
   .title {
     margin-left: 1rem;
     margin-right: 1rem;
-    font-size: 2.5rem;
+    font-size: 2rem;
+    margin-top: 2rem;
   }
 
   .sub-title {
@@ -410,7 +415,7 @@ p.project {
   #description {
     margin-left: 1rem;
     margin-right: 1rem;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   .info-text {
@@ -437,6 +442,9 @@ p.project {
   .follow {
     margin-left: 1rem;
     margin-right: 1rem;
+  }
+
+  .work-row {
     margin-top: 2rem;
   }
 
@@ -445,19 +453,19 @@ p.project {
   }
 
   .work-title {
-    margin-top: 2rem;
+    margin-top: 1.6rem;
   }
 
   .work-text {
-    line-height: 110%;
+    line-height: 120%;
   }
 
   .work-date {
-    margin-top: 1.5rem;
+    margin-top: 1.4rem;
   }
 
   #pj_start {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     margin-left: 1rem;
     margin-right: 1rem;
   }
@@ -484,11 +492,15 @@ p.project {
   }
 
   .card {
-    margin: 1rem;
+    margin: 1.2rem;
+  }
+
+  .card-columns {
+    column-count: 1;
   }
 
   .down {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 }
 
