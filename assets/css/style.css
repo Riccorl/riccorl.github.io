@@ -124,7 +124,7 @@ h4 {
   margin-top: 3rem;
   font-family: "Cereal", monospace;
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #212121;
   word-wrap: break-word;
 }
@@ -132,15 +132,15 @@ h4 {
 .sub-title {
   font-family: "Cereal", monospace;
   font-weight: bold;
-  font-size: 2.3rem;
+  font-size: 2.5rem;
   color: #212121;
   word-wrap: break-word;
 }
 
 #description {
   margin-top: 2rem;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1.8rem;
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.4rem;
   font-weight: 500;
   line-height: 130%;
 }
@@ -193,8 +193,22 @@ hr {
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+.align-items-center {
+  -ms-flex-align: center !important;
+  align-items: center !important;
+}
+
+.d-flex {
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
 .work-row {
   margin-top: 4rem;
+}
+
+.work-body {
+  padding: 1.4rem;
 }
 
 .work-pic {
@@ -204,43 +218,60 @@ hr {
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
 }
 
-.align-items-center {
-  -ms-flex-align: center!important;
-  align-items: center!important;
-}
-
-.d-flex {
-  display: -ms-flexbox!important;
-  display: flex!important;
-}
-
 .work-date {
   font-family: 'Cereal', sans-serif;
   font-size: 1.4rem;
   padding: 0.7rem;
 }
+
 .work-title {
   font-family: 'Cereal', sans-serif;
-  font-size: 2rem;
-  padding: 0.7rem;
-  margin-left: 0.7rem;
+  font-size: 1.6rem;
+  /* padding: 0.7rem; */
+  /* margin-left: 0.7rem; */
   font-weight: 700;
 }
+
 .work-text {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-size: 1.4rem;
   font-weight: 400;
   line-height: 130%;
-  margin-left: 1.2rem;
+  /* margin-left: 1.2rem; */
 }
 
 .down {
   margin-bottom: 5rem;
 }
 
+.project {
+  margin-top: 2rem;
+}
+
 .project-col {
-  font-family: "Open Sans", monospace;
+  font-family: 'Rubik', monospace;
   text-align: center;
+}
+
+.card {
+  border-radius: 3%;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-family: 'Cereal', sans-serif;
+  font-weight: 700;
+}
+
+.card-text {
+  font-family: 'Rubik', monospace;
+  font-weight: 500;
+}
+
+.card-link {
+  font-family: 'Cereal', sans-serif;
+  color: #50fa7b"
+
 }
 
 .getPro {
@@ -255,9 +286,9 @@ h4.getPro {
 }
 
 #pj_start {
-  font-family: "Work Sans";
+  font-family: 'Rubik';
   margin-top: 2rem;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 500;
   line-height: 130%;
 }
@@ -272,7 +303,7 @@ h4.project {
 }
 
 p.project {
-  font-family: "Open Sans";
+  font-family: "Rubik";
   margin-top: 2rem;
   color: #212121;
   font-size: 1.2rem;
@@ -305,107 +336,143 @@ p.project {
 }
 
 @media all and (max-width: 1200px) {
+
   /* screen size until 1200px */
   .nav-link {
     font-size: 1.1em;
   }
+
   .follow {
     margin-top: -1rem;
   }
 }
 
 @media all and (max-width: 1024px) {
+
   /* screen size until 1024px */
   .nav-link {
     font-size: 0.8em;
   }
+
   .follow {
     margin-top: 0.5rem;
   }
+
+  .card {
+    margin-bottom: 1.5rem;
+  }
+
 }
 
 @media all and (max-width: 500px) {
+
   /* screen size until 500px */
   .nav-link {
     font-size: 0.6em;
   }
+
   .glitch,
   .comment {
     font-size: 1.5rem;
     letter-spacing: -0.04rem;
   }
+
   .getInfo {
     letter-spacing: -0.03rem;
   }
+
   .getInfo h4 {
     font-size: 1.3rem;
   }
+
   .title {
     margin-left: 1rem;
     margin-right: 1rem;
     font-size: 2.5rem;
   }
+
   .sub-title {
     font-size: 1.8rem;
   }
+
   #description {
     margin-left: 1rem;
     margin-right: 1rem;
     font-size: 1.6rem;
   }
+
   .info-text {
     margin-top: 1rem;
   }
+
   .profile-pic {
     margin-top: 2rem;
     max-width: 60%;
   }
+
   .des {
     font-size: 1.6rem;
   }
+
   .fa-icon {
     font-size: 110%;
   }
+
   .rwd-break {
     display: block;
   }
+
   .follow {
     margin-left: 1rem;
     margin-right: 1rem;
     margin-top: 2rem;
   }
+
   .work-pic {
     max-width: 40%;
   }
+
   .work-title {
     margin-top: 2rem;
   }
+
   .work-text {
     line-height: 110%;
   }
+
   .work-date {
     margin-top: 1.5rem;
   }
+
   #pj_start {
     font-size: 1.6rem;
     margin-left: 1rem;
     margin-right: 1rem;
   }
+
   h4.getPro {
     font-size: 1rem;
   }
-  .project-row {
-    margin-top: 2rem;
+
+  .project {
+    margin-top: 0.5rem;
   }
+
   .project-col {
     margin-left: auto;
     margin-right: auto;
   }
+
   .null-line {
     font-size: 0.1rem;
   }
+
   .footer h5 {
     font-size: 0.7rem;
+  }
+
+  .card {
+    margin: 1rem;
   }
 }
 
@@ -421,9 +488,11 @@ p.project {
   0% {
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }
@@ -433,9 +502,11 @@ p.project {
   0% {
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }
@@ -445,9 +516,11 @@ p.project {
   0% {
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }
@@ -458,7 +531,7 @@ p.project {
 .instagram {
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
   -webkit-background-clip: text;
-          /* Also define standard property for compatibility */
-          background-clip: text;
+  /* Also define standard property for compatibility */
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
