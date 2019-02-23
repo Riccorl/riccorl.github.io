@@ -50,16 +50,6 @@ a[title]:hover:after {
   border-bottom: 3px solid #0273b8;
 }
 
-.navbar {
-  background: none;
-  font-family: "Source Code Pro", monospace;
-  font-size: 1.5rem;
-}
-
-.nav-item {
-  font-size: 1.7rem;
-}
-
 .fill {
   height: 100vh;
 }
@@ -90,6 +80,7 @@ a[title]:hover:after {
 .open-name,
 .open-des {
   font-family: "Source Code Pro", monospace;
+  font-weight: 500;
   font-size: 2.5rem;
   color: #F8F8F2;
   letter-spacing: -0.08rem;
