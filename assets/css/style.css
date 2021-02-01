@@ -100,7 +100,7 @@ h2.open-des {
 h4 {
   color: #212121;
   margin-left: auto;
-  margin-right: auto;
+  /* margin-right: auto; */
 }
 
 .des {
@@ -213,7 +213,7 @@ hr {
 .work-date {
   font-family: 'Cereal', sans-serif;
   font-size: 1.4rem;
-  padding: 0.7rem;
+  /* padding: 0.7rem; */
 }
 
 .work-title {
@@ -393,6 +393,11 @@ p.project {
     font-size: 1.3rem;
   }
 
+  .getInfo h3,
+  h4 {
+    margin-right: auto;
+  }
+
   .title {
     margin-left: 1rem;
     margin-right: 1rem;
@@ -417,6 +422,10 @@ p.project {
   .profile-pic {
     margin-top: 2rem;
     max-width: 60%;
+  }
+
+  .work-body {
+    padding-bottom: 0.4rem;
   }
 
   .des {
@@ -453,7 +462,7 @@ p.project {
   }
 
   .work-date {
-    margin-top: 1.4rem;
+    margin-top: 0.2rem;
   }
 
   #pj_start {
