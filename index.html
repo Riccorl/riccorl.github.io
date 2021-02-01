@@ -63,8 +63,9 @@
     integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   <link href="assets/font/font.css" type="text/css" rel="stylesheet">
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
   <!-- Custom CSS -->
   <link href="assets/css/style.css" type="text/css" rel="stylesheet">
   <link href="assets/css/hover.css" type="text/css" rel="stylesheet">
@@ -81,7 +82,7 @@
             <h2 class="comment">// Click to show info.</h2>
           </div>
           <div class="row">
-            <a class="method smoothScroll hvr-sink" href="#info">
+            <a class="hvr-sink" href="#info">
               <span>
                 <h1 class="glitch open-name">
                   <span style="color:#50fa7b">public</span> String<span class="pulse">|</span>
@@ -140,9 +141,9 @@
               title="Stack Overflow">
               <i class="fab fa-stack-overflow fa-2x hvr-float" aria-hidden="true" style="color:#f48024"></i>
             </a>
-            <a class="fa-icon-link" href="https://twitter.com/RiccardoRicOrl" target="_blank" title="Twitter">
+            <!-- <a class="fa-icon-link" href="https://twitter.com/RiccardoRicOrl" target="_blank" title="Twitter">
               <i class="fab fa-twitter fa-2x hvr-float" style="color:#00aced" aria-hidden="true"></i>
-            </a>
+            </a> -->
             <!-- <a class="fa-icon-link" href="https://www.instagram.com/pollo_al_curry/" target="_blank" title="Instagram">
               <i class="fab fa-instagram fa-2x hvr-float" aria-hidden="true" style="color: #d6249f"></i>
             </a> -->
@@ -172,11 +173,11 @@
             <h3 class="work-text">Sapienza University of Rome </h3>
             <h3 class="work-text"><strong>Thesis title:</strong> An automatic approach to produce multilingual training
               data for Semantic Role Labelling </h3>
-              <h3 class="work-text"><strong>Grade:</strong> 110/110 with honours </h3>
+            <h3 class="work-text"><strong>Grade:</strong> 110/110 with honours </h3>
           </div>
         </div>
         <div class="col-md-2 work-col d-flex align-items-center">
-          <h4 class="work-date text-right">2018<br>- 2020</h4>
+          <h4 class="work-date text-end">2018<br>- 2020</h4>
         </div>
       </div>
     </div>
@@ -203,7 +204,7 @@
           </div>
         </div>
         <div class="col-md-2 work-col d-flex align-items-center">
-          <h4 class="work-date text-right">Mar. 2018<br>- Sept. 2018</h4>
+          <h4 class="work-date text-end">Mar. 2018<br>- Sept. 2018</h4>
         </div>
       </div>
     </div>
@@ -229,7 +230,7 @@
           </div>
         </div>
         <div class="col-md-2 work-col d-flex align-items-center">
-          <h4 class="work-date text-right"> 2015<br>- 2018</h4>
+          <h4 class="work-date text-end"> 2015<br>- 2018</h4>
         </div>
       </div>
     </div>
@@ -241,112 +242,130 @@
       <h3 class="title getPro">Personal projects.</h3>
       <h4 class="getPro" id="pj_start">These are some projects I'm involved in:</h4>
 
-      <div class="project card-columns">
-
-        <div class="card border-white border-0 ">
-          <div class="card-body">
-            <h5 class="card-title">transformer-srl</h5>
-            <!-- <h6 class="card-subtitle mb-2 text-muted">CNN image classification</h6> -->
-            <p class="card-text">
-              Reimplementation of a BERT based model (Shi et al, 2019), currently the state-of-the-art for English SRL.
-              This model implements also predicate disambiguation. </p>
-          </div>
-          <div class="card-footer bg-transparent border-0"><a href="https://github.com/Riccorl/transformer-srl"
-              class="card-link"><i class="fab fa-github fa-1x" aria-hidden="true" style="color:#333"></i></a>
-            <a href="https://pypi.org/project/transformer-srl/" class="card-link"><i class="fab fa-python fa-1x"
-                aria-hidden="true" style="color:#333"></i></a>
-          </div>
-        </div>
-
-        <div class="card border-white border-0 ">
-          <div class="card-body">
-            <h5 class="card-title">Super Slo Mo TF2</h5>
-            <!-- <h6 class="card-subtitle mb-2 text-muted">CNN image classification</h6> -->
-            <p class="card-text">
-              Tensorflow 2 implementation of Super Slo Mo paper. </p>
-          </div>
-          <div class="card-footer bg-transparent border-0"><a href="https://github.com/Riccorl/Super-SloMo-tf2"
-              class="card-link"><i class="fab fa-github fa-1x" aria-hidden="true" style="color:#333"></i></a></div>
-        </div>
-
-        <div class="card border-white border-0 ">
-          <div class="card-body">
-            <h5 class="card-title">Chinese word segmentation</h5>
-            <!-- <h6 class="card-subtitle mb-2 text-muted">CNN image classification</h6> -->
-            <p class="card-text">Chinese Word Segmentation task based on BERT and implemented in Pytorch for
-              state-of-the-art Chinese word segmentation.</p>
-          </div>
-          <div class="card-footer bg-transparent border-0"><a
-              href="https://github.com/Riccorl/chinese-word-segmentation-pytorch" class="card-link"><i
-                class="fab fa-github fa-1x" aria-hidden="true" style="color:#333"></i></a></div>
-        </div>
-
-        <div class="card border-white border-0 ">
-          <div class="card-body">
-            <h5 class="card-title">Word Sense Disambiguation</h5>
-            <!-- <h6 class="card-subtitle mb-2 text-muted">CNN image classification</h6> -->
-            <p class="card-text">
-              A supervised Bi-LSTM architecture for the Word Sense Disambiguation task.</p>
-          </div>
-          <div class="card-footer bg-transparent border-0"><a href="https://github.com/Riccorl/elmo-wsd"
-              class="card-link"><i class="fab fa-github fa-1x" aria-hidden="true" style="color:#333"></i></a></div>
-        </div>
-
-        <div class="card border-white border-0 ">
-          <div class="card-body">
-            <h5 class="card-title">Sense Embeddings</h5>
-            <!-- <h6 class="card-subtitle mb-2 text-muted">CNN image classification</h6> -->
-            <p class="card-text">BabelNet (and WordNet) sense embedding trained with Word2Vec and FastText.</p>
-          </div>
-          <div class="card-footer bg-transparent border-0"><a href="https://github.com/Riccorl/sense-embedding"
-              class="card-link"><i class="fab fa-github fa-1x" aria-hidden="true" style="color:#333"></i></a></div>
-        </div>
-
-        <div class="card border-white border-0 ">
-          <div class="card-body">
-            <h5 class="card-title">CNN Image Classification</h5>
-            <!-- <h6 class="card-subtitle mb-2 text-muted">CNN image classification</h6> -->
-            <p class="card-text">Convolutional Neural Networks trained to classify different types of boats.</p>
-          </div>
-          <div class="card-footer bg-transparent border-0"><a href="https://github.com/Riccorl/CNN-Venice-Boat"
-              class="card-link"><i class="fab fa-github fa-1x" aria-hidden="true" style="color:#333"></i></a></div>
-        </div>
-
-        <div class="card border-white border-0">
-          <div class="card-body">
-            <h5 class="card-title">Machine Learning Malware Analysis</h5>
-            <!-- <h6 class="card-subtitle mb-2 text-muted">CNN image classification</h6> -->
-            <p class="card-text">Three different classifier trained to distinguish malware application from
-              non-malware ones and recognize the family they belong.</p>
-          </div>
-          <div class="card-footer bg-transparent border-0"><a href="https://github.com/Riccorl/ml-malware-classifier"
-              class="card-link"><i class="fab fa-github fa-1x" aria-hidden="true" style="color:#333"></i></a></div>
-        </div>
-
-        <div class="card border-white border-0">
-          <div class="card-shadow">
+      <div class="project row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card border-white border-0 h-100 ">
             <div class="card-body">
-              <h5 class="card-title">Densest Subgraph in Fork/Join</h5>
+              <h5 class="card-title">transformer-srl</h5>
               <!-- <h6 class="card-subtitle mb-2 text-muted">CNN image classification</h6> -->
-              <p class="card-text">Bachelor’s thesis. Densest Subgraph in Fork/Join. A Fork/Join parallel algorithm
-                for
-                the densest subgraph problem.</p>
+              <p class="card-text">
+                Reimplementation of a BERT based model (Shi et al, 2019), currently the state-of-the-art for English
+                SRL.
+                This model implements also predicate disambiguation. </p>
+            </div>
+            <div class="card-footer bg-transparent border-0"><a href="https://github.com/Riccorl/transformer-srl"
+                class="card-link"><i class="fab fa-github fa-1x" aria-hidden="true" style="color:#333"></i></a><a
+                href="https://pypi.org/project/transformer-srl/" class="card-link"><i class="fab fa-python fa-1x"
+                  aria-hidden="true" style="color:#333"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card border-white border-0 h-100 ">
+            <div class="card-body">
+              <h5 class="card-title">Super Slo Mo TF2</h5>
+              <!-- <h6 class="card-subtitle mb-2 text-muted">CNN image classification</h6> -->
+              <p class="card-text">
+                Tensorflow 2 implementation of Super Slo Mo paper. </p>
+            </div>
+            <div class="card-footer bg-transparent border-0"><a href="https://github.com/Riccorl/Super-SloMo-tf2"
+                class="card-link"><i class="fab fa-github fa-1x" aria-hidden="true" style="color:#333"></i></a></div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card border-white border-0 h-100 ">
+            <div class="card-body">
+              <h5 class="card-title">Chinese word segmentation</h5>
+              <!-- <h6 class="card-subtitle mb-2 text-muted">CNN image classification</h6> -->
+              <p class="card-text">Chinese Word Segmentation task based on BERT and implemented in Pytorch for
+                state-of-the-art Chinese word segmentation.</p>
             </div>
             <div class="card-footer bg-transparent border-0"><a
-                href="https://github.com/Riccorl/Densest-subgraph-in-Fork-Join" class="card-link"><i
+                href="https://github.com/Riccorl/chinese-word-segmentation-pytorch" class="card-link"><i
                   class="fab fa-github fa-1x" aria-hidden="true" style="color:#333"></i></a></div>
           </div>
         </div>
 
-        <div class="card border-white border-0">
-          <div class="card-body">
-            <h5 class="card-title">Fork/Join Sudoku Solver</h5>
-            <!-- <h6 class="card-subtitle mb-2 text-muted">CNN image classification</h6> -->
-            <p class="card-text">Solver that uses Fork/Join framework to solve Sudoku in parallel, made during a
-              multi-core programming course.</p>
+        <div class="col">
+          <div class="card border-white border-0 h-100 ">
+            <div class="card-body">
+              <h5 class="card-title">Word Sense Disambiguation</h5>
+              <!-- <h6 class="card-subtitle mb-2 text-muted">CNN image classification</h6> -->
+              <p class="card-text">
+                A supervised Bi-LSTM architecture for the Word Sense Disambiguation task.</p>
+            </div>
+            <div class="card-footer bg-transparent border-0"><a href="https://github.com/Riccorl/elmo-wsd"
+                class="card-link"><i class="fab fa-github fa-1x" aria-hidden="true" style="color:#333"></i></a></div>
           </div>
-          <div class="card-footer bg-transparent border-0"><a href="https://github.com/Riccorl/ForkJoinSudokuSolver"
-              class="card-link"><i class="fab fa-github fa-1x" aria-hidden="true" style="color:#333"></i></a></div>
+        </div>
+
+        <div class="col">
+          <div class="card border-white border-0 h-100 ">
+            <div class="card-body">
+              <h5 class="card-title">Sense Embeddings</h5>
+              <!-- <h6 class="card-subtitle mb-2 text-muted">CNN image classification</h6> -->
+              <p class="card-text">BabelNet (and WordNet) sense embedding trained with Word2Vec and FastText.</p>
+            </div>
+            <div class="card-footer bg-transparent border-0"><a href="https://github.com/Riccorl/sense-embedding"
+                class="card-link"><i class="fab fa-github fa-1x" aria-hidden="true" style="color:#333"></i></a></div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card border-white border-0 h-100 ">
+            <div class="card-body">
+              <h5 class="card-title">CNN Image Classification</h5>
+              <!-- <h6 class="card-subtitle mb-2 text-muted">CNN image classification</h6> -->
+              <p class="card-text">Convolutional Neural Networks trained to classify different types of boats.</p>
+            </div>
+            <div class="card-footer bg-transparent border-0"><a href="https://github.com/Riccorl/CNN-Venice-Boat"
+                class="card-link"><i class="fab fa-github fa-1x" aria-hidden="true" style="color:#333"></i></a></div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card border-white border-0 h-100">
+            <div class="card-body">
+              <h5 class="card-title">Machine Learning Malware Analysis</h5>
+              <!-- <h6 class="card-subtitle mb-2 text-muted">CNN image classification</h6> -->
+              <p class="card-text">Three different classifier trained to distinguish malware application from
+                non-malware ones and recognize the family they belong.</p>
+            </div>
+            <div class="card-footer bg-transparent border-0"><a href="https://github.com/Riccorl/ml-malware-classifier"
+                class="card-link"><i class="fab fa-github fa-1x" aria-hidden="true" style="color:#333"></i></a></div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card border-white border-0 h-100">
+            <div class="card-shadow">
+              <div class="card-body">
+                <h5 class="card-title">Densest Subgraph in Fork/Join</h5>
+                <!-- <h6 class="card-subtitle mb-2 text-muted">CNN image classification</h6> -->
+                <p class="card-text">Bachelor’s thesis. Densest Subgraph in Fork/Join. A Fork/Join parallel algorithm
+                  for
+                  the densest subgraph problem.</p>
+              </div>
+              <div class="card-footer bg-transparent border-0"><a
+                  href="https://github.com/Riccorl/Densest-subgraph-in-Fork-Join" class="card-link"><i
+                    class="fab fa-github fa-1x" aria-hidden="true" style="color:#333"></i></a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card border-white border-0 h-100">
+            <div class="card-body">
+              <h5 class="card-title">Fork/Join Sudoku Solver</h5>
+              <!-- <h6 class="card-subtitle mb-2 text-muted">CNN image classification</h6> -->
+              <p class="card-text">Solver that uses Fork/Join framework to solve Sudoku in parallel, made during a
+                multi-core programming course.</p>
+            </div>
+            <div class="card-footer bg-transparent border-0"><a href="https://github.com/Riccorl/ForkJoinSudokuSolver"
+                class="card-link"><i class="fab fa-github fa-1x" aria-hidden="true" style="color:#333"></i></a></div>
+          </div>
         </div>
 
       </div>
@@ -365,7 +384,7 @@
         <i class="fa fa-heart" style="color:red; opacity:0.4" aria-hidden="true"></i> &#38;&#38; Bootstrap &#41;
       </h5>
       <h5>
-        <i class="fa fa-copyright" aria-hidden="true"></i> 2019, Riccardo Orlando,
+        <i class="fa fa-copyright" aria-hidden="true"></i> 2021, Riccardo Orlando,
         <br class="rwd-break"> ALL RIGHTS RESERVED.
       </h5>
     </div>
@@ -382,35 +401,6 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"
     integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK"
     crossorigin="anonymous"></script>
-
-  <script type="text/javascript">
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-  </script>
-
-  <script type="text/javascript">
-    $(function () {
-      $('.smoothScroll').click(function () {
-        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname ==
-          this.hostname) {
-          var target = $(this.hash);
-          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-          if (target.length) {
-            $('html,body').animate({
-              scrollTop: target.offset().top
-            }, 600); // The number here represents the speed of the scroll in milliseconds
-            return false;
-          }
-        }
-      });
-    });
-  </script>
 
 </body>
 
