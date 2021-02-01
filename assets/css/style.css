@@ -17,7 +17,7 @@ html,
 body {
   background-color: #ffffff;
   height: 100%;
-  font-family: "Source Code Pro", monospace;
+  font-family: "JetBrains Mono", monospace;
   scroll-behavior: smooth;
 }
 
@@ -72,19 +72,22 @@ a[title]:hover:after {
 }
 
 .comment {
-  font-family: "Source Code Pro", monospace;
+  font-family: "JetBrains Mono", monospace;
   color: #F8F8F2;
   opacity: 0.6;
-  letter-spacing: -0.08rem;
+  font-style: italic;
+  font-weight: lighter;
+  /* letter-spacing: -0.08rem; */
 }
 
 .open-name,
 .open-des {
-  font-family: "Source Code Pro", monospace;
+  font-family: "JetBrains Mono", monospace;
   font-weight: 500;
   font-size: 2.5rem;
   color: #F8F8F2;
-  letter-spacing: -0.08rem;
+  font-weight: lighter;
+  /* letter-spacing: -0.08rem; */
 }
 
 h2.open-des {
@@ -92,7 +95,7 @@ h2.open-des {
 }
 
 .getInfo h4 {
-  font-family: "Source Code Pro", monospace;
+  font-family: "JetBrains Mono", monospace;
   text-justify: distribute;
 }
 
@@ -104,12 +107,12 @@ h4 {
 }
 
 .des {
-  font-family: "Source Code Pro", monospace;
+  font-family: "JetBrains Mono", monospace;
   font-weight: bold;
   font-size: 1.6rem;
   color: #212121;
   word-wrap: break-word;
-  letter-spacing: -0.08rem;
+  /* letter-spacing: -0.08rem; */
 }
 
 .title {
@@ -137,10 +140,6 @@ h4 {
   line-height: 130%;
 }
 
-.follow {
-  letter-spacing: -0.08rem;
-}
-
 .contacts {
   margin-top: 2rem;
 }
@@ -156,7 +155,8 @@ h4 {
 }
 
 .follow {
-  margin-top: -4rem;
+  margin-top: -12rem;
+  letter-spacing: -0.08rem;
 }
 
 a.fa-icon-link {
@@ -266,10 +266,6 @@ hr {
 
 }
 
-.card-columns {
-  column-count: 4;
-}
-
 .getPro {
   color: #212121;
 }
@@ -350,12 +346,14 @@ p.project {
     font-size: 0.8em;
   }
 
-  .follow {
-    margin-top: 0.5rem;
+  .open-name,
+  .open-des {
+    font-size: 2.2rem;
   }
 
-  .card {
-    margin-bottom: 1rem;
+
+  .follow {
+    margin-top: 0.5rem;
   }
 
   .down {
@@ -379,15 +377,24 @@ p.project {
     margin-top: 1rem;
   }
 
-  .glitch,
-  .comment {
-    font-size: 1.5rem;
-    letter-spacing: -0.04rem;
+  .code-snippet{
+    padding-right: 0.4rem;
   }
 
-  .getInfo {
-    letter-spacing: -0.03rem;
+  .open-name,
+  .open-des {
+    font-size: 1.3rem;
   }
+
+  .glitch,
+  .comment {
+    font-size: 1.3rem;
+    /* letter-spacing: -0.04rem; */
+  }
+
+  /* .getInfo {
+    letter-spacing: -0.03rem;
+  } */
 
   .getInfo h4 {
     font-size: 1.3rem;
@@ -424,6 +431,10 @@ p.project {
     max-width: 60%;
   }
 
+  .contacts {
+    padding-left: 1rem;
+  }
+
   .work-body {
     padding-bottom: 0.4rem;
   }
@@ -434,16 +445,17 @@ p.project {
 
   .fa-icon {
     font-size: 110%;
+    padding-left: 1.0rem;
   }
 
   .rwd-break {
     display: block;
   }
 
-  .follow {
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
+  /* .follow {
+    padding-left: 2rem;
+    /* margin-right: 1rem;
+  } */
 
   .work-row {
     margin-top: 2rem;
@@ -490,14 +502,6 @@ p.project {
 
   .footer h5 {
     font-size: 0.7rem;
-  }
-
-  .card {
-    margin: 1.2rem;
-  }
-
-  .card-columns {
-    column-count: 1;
   }
 
   .down {
