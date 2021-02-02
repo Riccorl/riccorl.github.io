@@ -15,7 +15,7 @@ Yellow	#f1fa8c	241 250 140	65° 92% 76%
 
 html,
 body {
-  background-color: #ffffff;
+  background-color: #161616;
   height: 100%;
   font-family: "JetBrains Mono", monospace;
   scroll-behavior: smooth;
@@ -101,7 +101,7 @@ h2.open-des {
 
 .getInfo h3,
 h4 {
-  color: #212121;
+  color: #ffffff;
   margin-left: auto;
   /* margin-right: auto; */
 }
@@ -110,7 +110,7 @@ h4 {
   font-family: "JetBrains Mono", monospace;
   font-weight: bold;
   font-size: 1.6rem;
-  color: #212121;
+  color: #ffffff;
   word-wrap: break-word;
   /* letter-spacing: -0.08rem; */
 }
@@ -120,7 +120,7 @@ h4 {
   font-family: "Cereal", monospace;
   font-weight: bold;
   font-size: 2.5rem;
-  color: #212121;
+  color: #ffffff;
   word-wrap: break-word;
 }
 
@@ -128,7 +128,7 @@ h4 {
   font-family: "Cereal", monospace;
   font-weight: bold;
   font-size: 2.5rem;
-  color: #212121;
+  color: #ffffff;
   word-wrap: break-word;
 }
 
@@ -164,12 +164,12 @@ a.fa-icon-link {
 }
 
 a.fa-icon-link:link {
-  color: #212121;
+  color: #ffffff;
   text-decoration: none;
 }
 
 a.fa-icon-link:visited {
-  color: #212121;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -204,7 +204,7 @@ hr {
 }
 
 .work-pic {
-  border: 5px solid white;
+  border: 5px solid rgb(77, 77, 77);
   border-radius: 100%;
   max-width: 80%;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
@@ -229,6 +229,7 @@ hr {
   font-size: 1.4rem;
   font-weight: 400;
   line-height: 130%;
+  color: #ffffff;
   /* margin-left: 1.2rem; */
 }
 
@@ -247,7 +248,7 @@ hr {
 
 .card {
   border-radius: 2%;
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .card-title {
@@ -267,7 +268,7 @@ hr {
 }
 
 .getPro {
-  color: #212121;
+  color: #ffffff;
 }
 
 h4.getPro {
@@ -297,7 +298,7 @@ h4.project {
 p.project {
   font-family: "Rubik";
   margin-top: 2rem;
-  color: #212121;
+  color: #ffffff;
   font-size: 1.2rem;
 }
 
