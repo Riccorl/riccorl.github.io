@@ -77,7 +77,6 @@ a[title]:hover:after {
   opacity: 0.6;
   font-style: italic;
   font-weight: lighter;
-  /* letter-spacing: -0.08rem; */
 }
 
 .open-name,
@@ -87,7 +86,6 @@ a[title]:hover:after {
   font-size: 2.5rem;
   color: #F8F8F2;
   font-weight: lighter;
-  /* letter-spacing: -0.08rem; */
 }
 
 h2.open-des {
@@ -103,7 +101,6 @@ h2.open-des {
 h4 {
   color: #ffffff;
   margin-left: auto;
-  /* margin-right: auto; */
 }
 
 .des {
@@ -112,7 +109,6 @@ h4 {
   font-size: 1.6rem;
   color: #ffffff;
   word-wrap: break-word;
-  /* letter-spacing: -0.08rem; */
 }
 
 .title {
@@ -135,7 +131,7 @@ h4 {
 #description {
   margin-top: 2rem;
   font-family: 'Rubik', sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 500;
   line-height: 130%;
 }
@@ -387,15 +383,13 @@ p.project {
     font-size: 1.3rem;
   }
 
-  .glitch,
-  .comment {
+  .glitch {
     font-size: 1.3rem;
-    /* letter-spacing: -0.04rem; */
   }
 
-  /* .getInfo {
-    letter-spacing: -0.03rem;
-  } */
+  .comment {
+    font-size: 1.2rem;
+  }
 
   .getInfo h4 {
     font-size: 1.3rem;
@@ -452,11 +446,6 @@ p.project {
   .rwd-break {
     display: block;
   }
-
-  /* .follow {
-    padding-left: 2rem;
-    /* margin-right: 1rem;
-  } */
 
   .work-row {
     margin-top: 2rem;
