@@ -86,10 +86,11 @@ a[title]:hover:after {
   font-size: 2.5rem;
   color: #F8F8F2;
   font-weight: lighter;
+  padding-top: 0.5rem;
 }
 
 h2.open-des {
-  margin-left: 2rem;
+  margin-left: 4rem;
 }
 
 .getInfo h4 {
@@ -380,7 +381,12 @@ p.project {
 
   .open-name,
   .open-des {
+    padding-top: 0.1rem;
     font-size: 1.3rem;
+  }
+
+  h2.open-des {
+    margin-left: 1.5rem;
   }
 
   .glitch {
