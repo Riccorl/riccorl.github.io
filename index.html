@@ -58,7 +58,11 @@
   <title>Riccardo Orlando</title>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Rubik|Source+Code+Pro|Fira+Sans" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
     integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   <link href="assets/font/font.css" type="text/css" rel="stylesheet">
@@ -108,14 +112,14 @@
       <div class="row">
         <div class="col-md-8 getInfo info-row">
           <h4 id="description" style="margin-top:1.5rem">Hi, I'm Riccardo Orlando,
-            <span style="color:#bd93f9; font-family: 'Source Code Pro'">
-              <strong>Computer</strong></span> <span style="color:#bd93f9; font-family: 'Source Code Pro'">
+            <span style="color:#bd93f9; font-family: 'JetBrains Mono'">
+              <strong>Computer</strong></span> <span style="color:#bd93f9; font-family: 'JetBrains Mono'">
               <strong>Scientist</strong></span> and <span
-              style="color:#50fa7b; font-family: 'Source Code Pro'"><strong>NLP</strong></span> <span
-              style="color:#50fa7b; font-family: 'Source Code Pro'"><strong>enthusiast</strong></span>. Currently, I'm
-            working as <span style="color:#009dff; font-family: 'Source Code Pro'"><strong>NLP</strong></span>
-            <span style="color:#009dff; font-family: 'Source Code Pro'"><strong>Engineer</strong></span> at
-            <strong>Babelscape</strong>. <span class="pulse">_</span>
+              style="color:#50fa7b; font-family: 'JetBrains Mono'"><strong>NLP</strong></span> <span
+              style="color:#50fa7b; font-family: 'JetBrains Mono'"><strong>enthusiast</strong></span>. Currently, I'm
+            working as <span style="color:#009dff; font-family: 'JetBrains Mono'"><strong>NLP</strong></span>
+            <span style="color:#009dff; font-family: 'JetBrains Mono'"><strong>Engineer</strong></span> at
+            <span style="font-weight: 500;">Babelscape</span>. <span class="pulse">_</span>
             </strong>
           </h4>
         </div>
@@ -170,7 +174,11 @@
           <div class="work-body">
             <h4 class="work-title">NLP Engineer - Babelscape</h4>
             <h3 class="work-text">Rome, Italy</h3>
-            <h3 class="work-text">Currently working on Word Sense Disambiguation.</h3>
+            <h3 class="work-text">Here my goal was to produce high-efficient NLP pipelines. In
+              that time, I built two end-to-end multilingual pipelines for Word Sense Disambiguation and Semantic Role
+              Labeling. These works brought us two publications that are now under review at EMNLP 2021, <a
+                href="#amuse"><span style="color:#bd93f9; font-family: 'JetBrains Mono'">AMuSE-WSD</span></a> and <a
+                href="#invero"><span style="color:#50fa7b; font-family: 'JetBrains Mono'">InVeRo-XL</span></a>.</h3>
           </div>
         </div>
         <div class="col-md-2 work-col d-flex align-items-center">
@@ -181,6 +189,82 @@
     <div class="container">
       <hr>
     </div>
+
+    <!-- Papers -->
+
+    <div class="container">
+      <div class="container info pub-down">
+        <h3 class="title getPro">Publications.</h3>
+      </div>
+
+      <div class="row work-row no-gutters" id="amuse">
+        <div class="col-md-2 nopadding d-flex align-items-center" id="pub-pic">
+          <img class="mx-auto d-block pub-pic" src="assets/img/arxiv.png">
+        </div>
+        <div class="col-md-8">
+          <div class="pub-body">
+            <h4 class="pub-title">AMuSE-WSD: An All-in-one Multilingual System for Easy Word Sense Disambiguation.
+            </h4>
+            <h3 class="pub-text"><span style="font-weight: 600;">Orlando Riccardo</span>, Conia Simone, Brignone
+              Fabrizio, Cecconi
+              Francesco, and
+              Navigli Roberto</h3>
+            <!-- <h3 class="pub-text">In Proceedings of EMNLP, 2021.</h3> -->
+            <h3 class="pub-conf">Under Review</h3>
+          </div>
+        </div>
+        <div class="col-md-2 work-col d-flex align-items-center">
+          <h4 class="pub-date text-end">July 2021</h4>
+        </div>
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-4">
+          <div class="paper-buttons">
+            <a class="btn btn-outline-primary btn-outline-paper rounded-pill" href="#" target="_blank"
+              role="button">Paper</a>
+            <a class="btn btn-outline-primary btn-outline-website rounded-pill" target="_blank"
+              href="http://nlp.uniroma1.it/amuse-wsd" role="button">Website</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row work-row no-gutters" id="invero">
+        <div class="col-md-2 nopadding d-flex align-items-center" id="pub-pic">
+          <img class="mx-auto d-block pub-pic" src="assets/img/arxiv.png">
+        </div>
+        <div class="col-md-8">
+          <div class="pub-body">
+            <h4 class="pub-title">InVeRo-XL: Making Cross-Lingual Semantic Role Labeling Accessible with Intelligible
+              Verbs and Roles.
+            </h4>
+            <h3 class="pub-text">Conia Simone, <span style="font-weight: 600;">Orlando Riccardo</span>, Brignone
+              Fabrizio, Cecconi
+              Francesco, and
+              Navigli Roberto</h3>
+            <!-- <h3 class="pub-text">In Proceedings of EMNLP, 2021.</h3> -->
+            <h3 class="pub-conf">Under Review</h3>
+          </div>
+        </div>
+        <div class="col-md-2 work-col d-flex align-items-center">
+          <h4 class="pub-date text-end">July 2021</h4>
+        </div>
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-4">
+          <div class="paper-buttons">
+            <a class="btn btn-outline-primary btn-outline-paper rounded-pill" target="_blank" href="#"
+              role="button">Paper</a>
+            <a class="btn btn-outline-primary btn-outline-website rounded-pill" target="_blank"
+              href="http://nlp.uniroma1.it/invero" role="button">Website</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <hr>
+    </div>
+
     <!-- Work experience -->
     <div class="container work">
       <div>
@@ -199,16 +283,16 @@
             <div class="work-body">
               <h4 class="work-title">Master of Science in Engineering in Computer Science</h4>
               <h3 class="work-text">Sapienza University of Rome </h3>
-              <h3 class="work-text"><strong>Thesis title:</strong> An automatic approach to produce multilingual
+              <h3 class="work-text"><span style="font-weight: 500;">Thesis title:</span> An automatic approach to
+                produce multilingual
                 training data for Semantic Role Labelling.</h3>
-              <h3 class="work-text"><strong>Grade:</strong> 110/110 with honours </h3>
+              <h3 class="work-text"><span style="font-weight: 500;">Grade:</span> 110/110 with honours </h3>
             </div>
           </div>
           <div class="col-md-2 work-col d-flex align-items-center">
             <h4 class="work-date text-end">2018<br>- 2020</h4>
           </div>
         </div>
-        <!-- </div> -->
 
         <div class="row work-row no-gutters">
           <div class="col-md-2 nopadding d-flex align-items-center">
@@ -216,7 +300,7 @@
           </div>
           <div class="col-md-8">
             <div class="work-body">
-              <h4 class="work-title">Software Engineer - Capgemini, Analyst Consultant</h4>
+              <h4 class="work-title">Software Engineer - Capgemini</h4>
               <h3 class="work-text">Rome, Italy</h3>
               <h3 class="work-text">Included in a team that worked to re-platform a series of internal applications of
                 an
@@ -228,17 +312,6 @@
             <h4 class="work-date text-end">Mar. 2018<br>- Sept. 2018</h4>
           </div>
         </div>
-        <!-- </div> -->
-        <!-- <div class="container">
-      <hr>
-    </div> -->
-        <!-- Education -->
-        <!-- <div class="container work"> -->
-        <!-- <div>
-        <h3 class="work title">
-          Education.
-        </h3>
-      </div> -->
         <div class="row work-row no-gutters">
           <div class="col-md-2 nopadding d-flex align-items-center">
             <img class="mx-auto d-block work-pic" src="assets/img/sapy.png">
@@ -247,7 +320,8 @@
             <div class="work-body">
               <h4 class="work-title">Bachelor of Computer Science</h4>
               <h3 class="work-text">Sapienza University of Rome </h3>
-              <h3 class="work-text"><strong>Thesis title:</strong> Densest subgraph in Fork/Join.</h3>
+              <h3 class="work-text"><span style="font-weight: 500;">Thesis title:</span> Densest subgraph in Fork/Join.
+              </h3>
             </div>
           </div>
           <div class="col-md-2 work-col d-flex align-items-center">
@@ -255,9 +329,11 @@
           </div>
         </div>
       </div>
+
       <div class="container">
         <hr>
       </div>
+
       <!-- Personal projects -->
       <div class="container info down">
         <h3 class="title getPro">Personal projects.</h3>
@@ -265,7 +341,7 @@
 
         <div class="project row row-cols-1 row-cols-md-3 g-4">
           <div class="col">
-            <div class="card text-white bg-dark border-white border-0 h-100 ">
+            <div class="card text-dark bg-light border-white border-0 h-100 ">
               <div class="card-body">
                 <h5 class="card-title">transformer-embedder</h5>
                 <!-- <h6 class="card-subtitle mb-2 text-muted">CNN image classification</h6> -->
@@ -273,9 +349,24 @@
                   A Word Level Transformer layer based on Pytorch and 🤗Transformers.</p>
               </div>
               <div class="card-footer bg-transparent border-0"><a href="https://github.com/Riccorl/transformer-embedder"
-                  class="card-link"><i class="fab fa-github fa-1x" aria-hidden="true" style="color:#ffffff"></i></a><a
-                  href="https://pypi.org/project/transformer-embedder/" class="card-link"><i class="fab fa-python fa-1x"
-                    aria-hidden="true" style="color:rgb(255, 255, 255)"></i></a>
+                  class="card-link"><i class="fab fa-github fa-1x" aria-hidden="true"
+                    style="color:rgb(33, 33, 33)"></i></a><a href="https://pypi.org/project/transformer-embedder/"
+                  class="card-link"><i class="fab fa-python fa-1x" aria-hidden="true"
+                    style="color:rgb(33, 33, 33)"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card text-white bg-dark border-white border-0 h-100 ">
+              <div class="card-body">
+                <h5 class="card-title">transformers-ner</h5>
+                <!-- <h6 class="card-subtitle mb-2 text-muted">CNN image classification</h6> -->
+                <p class="card-text">
+                  Simple NER model, showcasing <a href="https://github.com/Riccorl/transformer-embedder"
+                    target="_blank">Transformer Embedder</a> library.</p>
+              </div>
+              <div class="card-footer bg-transparent border-0"><a href="https://github.com/Riccorl/transformers-ner"
+                  class="card-link"><i class="fab fa-github fa-1x" aria-hidden="true" style="color:#ffffff"></i></a>
               </div>
             </div>
           </div>

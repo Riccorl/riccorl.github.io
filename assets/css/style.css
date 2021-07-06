@@ -133,7 +133,7 @@ h4 {
   margin-top: 2rem;
   font-family: 'Rubik', sans-serif;
   font-size: 1.6rem;
-  font-weight: 500;
+  font-weight: 300;
   line-height: 130%;
 }
 
@@ -203,31 +203,43 @@ hr {
 .work-pic {
   border: 5px solid rgb(77, 77, 77);
   border-radius: 100%;
-  max-width: 80%;
+  max-width: 70%;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
 }
 
 .work-date {
   font-family: 'Cereal', sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   /* padding: 0.7rem; */
 }
 
 .work-title {
   font-family: 'Cereal', sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   /* padding: 0.7rem; */
   /* margin-left: 0.7rem; */
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .work-text {
   font-family: 'Rubik', sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 400;
   line-height: 130%;
   color: #ffffff;
   /* margin-left: 1.2rem; */
+}
+
+a.work-text:link {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: auto;
+}
+
+a.work-text:visited {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: auto;
 }
 
 .down {
@@ -250,18 +262,29 @@ hr {
 
 .card-title {
   font-family: 'Cereal', sans-serif;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .card-text {
   font-family: 'Rubik', monospace;
-  font-weight: 500;
+  font-weight: 400;
+}
+
+a.card-text:link {
+  text-decoration: inherit;
+  color: #50fa7b;
+  cursor: auto;
+}
+
+a.card-text:visited {
+  text-decoration: inherit;
+  color: #50fa7b;
+  cursor: auto;
 }
 
 .card-link {
   font-family: 'Cereal', sans-serif;
-  color: #50fa7b"
-
+  color: #50fa7b;
 }
 
 .getPro {
@@ -279,7 +302,7 @@ h4.getPro {
   font-family: 'Rubik';
   margin-top: 2rem;
   font-size: 1.6rem;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 130%;
 }
 
@@ -324,6 +347,101 @@ p.project {
   font-size: 1rem;
   color: rgb(53, 53, 53);
 }
+
+/* buttons */
+
+.btn-primary {
+  background-color: #bd93f9;
+  border: #bd93f9;
+}
+
+.btn-outline-paper {
+  border: 2px solid transparent;
+  border-color: #bd93f9;
+}
+
+.btn-outline-paper:hover {
+  border-color: #bd93f9;
+  background-color: #bd93f9;
+}
+
+.btn-outline-website {
+  border: 2px solid transparent;
+  border-color: #00e676;
+}
+
+.btn-outline-website:hover {
+  border-color: #00e676;
+  background-color: #00e676;
+}
+
+a.btn-primary {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+a.btn-outline-primary {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* publications */
+
+.pub-body {
+  padding: 1.4rem;
+}
+
+.pub-pic {
+  border: 5px solid rgb(77, 77, 77);
+  border-radius: 100%;
+  max-width: 50%;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+}
+
+.pub-title {
+  font-family: 'Cereal', sans-serif;
+  font-size: 1.3rem;
+  /* padding: 0.7rem; */
+  /* margin-left: 0.7rem; */
+  font-weight: 700;
+}
+
+.pub-text {
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  line-height: 130%;
+  color: #ffffff;
+  /* margin-left: 1.2rem; */
+}
+
+.pub-conf {
+  font-family: 'Rubik', sans-serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  font-weight: 300;
+  line-height: 130%;
+  color: #ffffff;
+  /* margin-left: 1.2rem; */
+}
+
+.pub-date {
+  font-family: 'Cereal', sans-serif;
+  font-size: 1.1rem;
+  /* padding: 0.7rem; */
+}
+
+.pub-down {
+  margin-bottom: 3rem;
+}
+
+.paper-buttons {
+  padding-left: 1.4rem;
+}
+
+
+
+/* responsive */
 
 @media all and (max-width: 1200px) {
 
@@ -503,6 +621,22 @@ p.project {
   .down {
     margin-bottom: 1rem;
   }
+
+  .pub-body {
+    padding-top: 0.2rem;
+    padding-bottom: 0rem;
+  }
+  
+  #pub-pic {
+    visibility: hidden;
+    display: none!important;
+  }
+  
+  .paper-buttons {
+    padding-top: 0.8rem;
+    padding-bottom: 1rem;
+  }
+
 }
 
 /* pusle char */
