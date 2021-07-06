@@ -73,7 +73,7 @@ a[title]:hover:after {
 
 .comment {
   font-family: "JetBrains Mono", monospace;
-  color: #F8F8F2;
+  color: #f8f8f2;
   opacity: 0.6;
   font-style: italic;
   font-weight: lighter;
@@ -84,7 +84,7 @@ a[title]:hover:after {
   font-family: "JetBrains Mono", monospace;
   font-weight: 500;
   font-size: 2.5rem;
-  color: #F8F8F2;
+  color: #f8f8f2;
   font-weight: lighter;
   padding-top: 0.5rem;
 }
@@ -131,7 +131,7 @@ h4 {
 
 #description {
   margin-top: 2rem;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 1.6rem;
   font-weight: 300;
   line-height: 130%;
@@ -208,13 +208,13 @@ hr {
 }
 
 .work-date {
-  font-family: 'Cereal', sans-serif;
+  font-family: "Cereal", sans-serif;
   font-size: 1.1rem;
   /* padding: 0.7rem; */
 }
 
 .work-title {
-  font-family: 'Cereal', sans-serif;
+  font-family: "Cereal", sans-serif;
   font-size: 1.4rem;
   /* padding: 0.7rem; */
   /* margin-left: 0.7rem; */
@@ -222,7 +222,7 @@ hr {
 }
 
 .work-text {
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 1.2rem;
   font-weight: 400;
   line-height: 130%;
@@ -251,7 +251,7 @@ a.work-text:visited {
 }
 
 .project-col {
-  font-family: 'Rubik', monospace;
+  font-family: "Rubik", monospace;
   text-align: center;
 }
 
@@ -261,12 +261,12 @@ a.work-text:visited {
 }
 
 .card-title {
-  font-family: 'Cereal', sans-serif;
+  font-family: "Cereal", sans-serif;
   font-weight: 500;
 }
 
 .card-text {
-  font-family: 'Rubik', monospace;
+  font-family: "Rubik", monospace;
   font-weight: 400;
 }
 
@@ -283,7 +283,7 @@ a.card-text:visited {
 }
 
 .card-link {
-  font-family: 'Cereal', sans-serif;
+  font-family: "Cereal", sans-serif;
   color: #50fa7b;
 }
 
@@ -299,7 +299,7 @@ h4.getPro {
 }
 
 #pj_start {
-  font-family: 'Rubik';
+  font-family: "Rubik";
   margin-top: 2rem;
   font-size: 1.6rem;
   font-weight: 400;
@@ -399,7 +399,7 @@ a.btn-outline-primary {
 }
 
 .pub-title {
-  font-family: 'Cereal', sans-serif;
+  font-family: "Cereal", sans-serif;
   font-size: 1.3rem;
   /* padding: 0.7rem; */
   /* margin-left: 0.7rem; */
@@ -407,7 +407,7 @@ a.btn-outline-primary {
 }
 
 .pub-text {
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 1.1rem;
   font-weight: 300;
   line-height: 130%;
@@ -416,7 +416,7 @@ a.btn-outline-primary {
 }
 
 .pub-conf {
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   font-style: italic;
   font-size: 1.1rem;
   font-weight: 300;
@@ -426,7 +426,7 @@ a.btn-outline-primary {
 }
 
 .pub-date {
-  font-family: 'Cereal', sans-serif;
+  font-family: "Cereal", sans-serif;
   font-size: 1.1rem;
   /* padding: 0.7rem; */
 }
@@ -439,12 +439,9 @@ a.btn-outline-primary {
   padding-left: 1.4rem;
 }
 
-
-
 /* responsive */
 
 @media all and (max-width: 1200px) {
-
   /* screen size until 1200px */
   .nav-link {
     font-size: 1.1em;
@@ -456,7 +453,6 @@ a.btn-outline-primary {
 }
 
 @media all and (max-width: 1024px) {
-
   /* screen size until 1024px */
   .nav-link {
     font-size: 0.8em;
@@ -466,7 +462,6 @@ a.btn-outline-primary {
   .open-des {
     font-size: 2.2rem;
   }
-
 
   .follow {
     margin-top: 0.5rem;
@@ -479,11 +474,9 @@ a.btn-outline-primary {
   .card-columns {
     column-count: 3;
   }
-
 }
 
 @media all and (max-width: 500px) {
-
   /* screen size until 500px */
   .nav-link {
     font-size: 0.6em;
@@ -493,7 +486,7 @@ a.btn-outline-primary {
     margin-top: 1rem;
   }
 
-  .code-snippet{
+  .code-snippet {
     padding-right: 0.4rem;
   }
 
@@ -564,7 +557,7 @@ a.btn-outline-primary {
 
   .fa-icon {
     font-size: 110%;
-    padding-left: 1.0rem;
+    padding-left: 1rem;
   }
 
   .rwd-break {
@@ -580,15 +573,19 @@ a.btn-outline-primary {
   }
 
   .work-title {
+    font-size: 1.2rem;
     margin-top: 1.6rem;
   }
 
   .work-text {
-    line-height: 120%;
+    font-size: 1.1rem;
+    line-height: 140%;
   }
 
   .work-date {
     margin-top: 0.2rem;
+    margin-left: 1.4rem;
+    margin-right: auto;
   }
 
   #pj_start {
@@ -622,21 +619,38 @@ a.btn-outline-primary {
     margin-bottom: 1rem;
   }
 
+  br {
+    display: none;
+  }
+
+  .pub-title {
+    font-size: 1.2rem;
+  }
+
+  .pub-text {
+    line-height: 140%;
+  }
+
+  .pub-date {
+    padding-top: 0.5rem;
+    margin-left: 1.4rem;
+    margin-right: auto;
+  }
+
   .pub-body {
     padding-top: 0.2rem;
     padding-bottom: 0rem;
   }
-  
+
   #pub-pic {
     visibility: hidden;
-    display: none!important;
+    display: none !important;
   }
-  
+
   .paper-buttons {
     padding-top: 0.8rem;
     padding-bottom: 1rem;
   }
-
 }
 
 /* pusle char */
@@ -692,7 +706,14 @@ a.btn-outline-primary {
 /* Instagram color gradient */
 
 .instagram {
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
   -webkit-background-clip: text;
   /* Also define standard property for compatibility */
   background-clip: text;
