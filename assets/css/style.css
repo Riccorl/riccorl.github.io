@@ -76,16 +76,15 @@ a[title]:hover:after {
   color: #f8f8f2;
   opacity: 0.6;
   font-style: italic;
-  font-weight: lighter;
+  font-weight: 300;
 }
 
 .open-name,
 .open-des {
   font-family: "JetBrains Mono", monospace;
-  font-weight: 500;
+  font-weight: 300;
   font-size: 2.5rem;
   color: #f8f8f2;
-  font-weight: lighter;
   padding-top: 0.5rem;
 }
 
@@ -193,7 +192,7 @@ hr {
 }
 
 .work-row {
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 .work-body {
@@ -216,9 +215,9 @@ hr {
 .work-title {
   font-family: "Cereal", sans-serif;
   font-size: 1.4rem;
-  /* padding: 0.7rem; */
-  /* margin-left: 0.7rem; */
   font-weight: 500;
+  padding-bottom: 1rem;
+  margin-bottom: 0rem;
 }
 
 .work-text {
@@ -227,7 +226,8 @@ hr {
   font-weight: 400;
   line-height: 130%;
   color: #ffffff;
-  /* margin-left: 1.2rem; */
+  padding-bottom: 1rem;
+  margin-bottom: 0rem;
 }
 
 a.work-text:link {
@@ -389,6 +389,8 @@ a.btn-outline-primary {
 
 .pub-body {
   padding: 1.4rem;
+  padding-bottom: 0.2rem;
+  margin-bottom: 0rem;
 }
 
 .pub-pic {
@@ -401,9 +403,9 @@ a.btn-outline-primary {
 .pub-title {
   font-family: "Cereal", sans-serif;
   font-size: 1.3rem;
-  /* padding: 0.7rem; */
-  /* margin-left: 0.7rem; */
   font-weight: 700;
+  padding-bottom: 1rem;
+  margin-bottom: 0rem;
 }
 
 .pub-text {
@@ -412,7 +414,8 @@ a.btn-outline-primary {
   font-weight: 300;
   line-height: 130%;
   color: #ffffff;
-  /* margin-left: 1.2rem; */
+  padding-bottom: 1rem;
+  margin-bottom: 0rem;
 }
 
 .pub-conf {
@@ -422,13 +425,13 @@ a.btn-outline-primary {
   font-weight: 300;
   line-height: 130%;
   color: #ffffff;
-  /* margin-left: 1.2rem; */
+  padding-bottom: 1rem;
+  margin-bottom: 0rem;
 }
 
 .pub-date {
   font-family: "Cereal", sans-serif;
   font-size: 1.1rem;
-  /* padding: 0.7rem; */
 }
 
 .pub-down {
@@ -437,6 +440,8 @@ a.btn-outline-primary {
 
 .paper-buttons {
   padding-left: 1.4rem;
+  padding-bottom: 1rem;
+  margin-bottom: 0rem;
 }
 
 /* responsive */
@@ -574,18 +579,24 @@ a.btn-outline-primary {
 
   .work-title {
     font-size: 1.2rem;
-    margin-top: 1.6rem;
+    margin-top: 0rem;
+    padding-bottom: 1rem;
+    margin-bottom: 0rem;
   }
 
   .work-text {
     font-size: 1.1rem;
     line-height: 140%;
+    padding-bottom: 1rem;
+    margin-bottom: 0rem;
   }
 
   .work-date {
     margin-top: 0.2rem;
     margin-left: 1.4rem;
     margin-right: auto;
+    padding-bottom: 1rem;
+    margin-bottom: 0rem;
   }
 
   #pj_start {
@@ -625,16 +636,27 @@ a.btn-outline-primary {
 
   .pub-title {
     font-size: 1.2rem;
+    padding-bottom: 1rem;
+    margin-bottom: 0rem;
   }
 
   .pub-text {
     line-height: 140%;
+    padding-bottom: 1rem;
+    margin-bottom: 0rem;
+  }
+
+  .pub-conf {
+    padding-bottom: 1rem;
+    margin-bottom: 0rem;
   }
 
   .pub-date {
     padding-top: 0.5rem;
     margin-left: 1.4rem;
     margin-right: auto;
+    padding-bottom: 1rem;
+    margin-bottom: 0rem;
   }
 
   .pub-body {
@@ -650,6 +672,7 @@ a.btn-outline-primary {
   .paper-buttons {
     padding-top: 0.8rem;
     padding-bottom: 1rem;
+    margin-bottom: 0rem;
   }
 }
 
