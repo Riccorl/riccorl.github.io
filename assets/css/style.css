@@ -36,6 +36,11 @@ a:link {
   text-decoration: none;
 }
 
+a:link:visited {
+  color: #ff79c6;
+  text-decoration: none;
+}
+
 a.method:visited {
   color: #00e676;
   text-decoration: none;
@@ -57,6 +62,13 @@ a[title]:hover:after {
 
 .open {
   background-color: #282a36;
+  background: -moz-radial-gradient(center, ellipse cover, rgb(47, 49, 61) 0%, rgba(40,42,52,1) 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgb(47, 49, 61)), color-stop(100%, rgba(40,42,52,1)));
+  background: -webkit-radial-gradient(center, ellipse cover, rgb(47, 49, 61) 0%, rgba(40,42,52,1) 100%);
+  background: -o-radial-gradient(center, ellipse cover, rgb(47, 49, 61) 0%, rgba(40,42,52,1) 100%);
+  background: -ms-radial-gradient(center, ellipse cover, rgb(47, 49, 61) 0%, rgba(40,42,52,1) 100%);
+  background: radial-gradient(ellipse at center, rgb(47, 49, 61) 0%, rgba(40,42,52,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2F313D', endColorstr='#282a36', GradientType=1 );
 }
 
 .code-snippet {
@@ -133,7 +145,7 @@ h4 {
   font-family: "Rubik", sans-serif;
   font-size: 1.6rem;
   font-weight: 300;
-  line-height: 130%;
+  line-height: 140%;
 }
 
 .contacts {
@@ -202,7 +214,7 @@ hr {
 .work-pic {
   border: 5px solid rgb(77, 77, 77);
   border-radius: 100%;
-  max-width: 70%;
+  max-width: 65%;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -226,6 +238,17 @@ hr {
   font-weight: 400;
   line-height: 140%;
   color: #ffffff;
+  padding-bottom: 1rem;
+  margin-bottom: 0rem;
+}
+
+.work-place {
+  font-family: "Rubik", sans-serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 140%;
+  color: #e0e0e0;
   padding-bottom: 1rem;
   margin-bottom: 0rem;
 }
@@ -563,6 +586,7 @@ a.btn-outline-primary {
   .fa-icon {
     font-size: 110%;
     padding-left: 1rem;
+    /* padding: -1rem; */
   }
 
   .rwd-break {
