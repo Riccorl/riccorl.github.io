@@ -17,7 +17,7 @@ html,
 body {
   background-color: #161616;
   height: 100%;
-  font-family: "JetBrains Mono", monospace;
+  font-family: "Source Serif Pro", monospace;
   scroll-behavior: smooth;
 }
 
@@ -84,8 +84,8 @@ a[title]:hover:after {
 }
 
 .comment {
-  font-family: "JetBrains Mono", monospace;
-  color: #f8f8f2;
+  font-family: "Source Serif Pro", monospace;
+  color: #e0e0e0;
   opacity: 0.6;
   font-style: italic;
   font-weight: 300;
@@ -93,10 +93,10 @@ a[title]:hover:after {
 
 .open-name,
 .open-des {
-  font-family: "JetBrains Mono", monospace;
+  font-family: "Source Serif Pro", monospace;
   font-weight: 300;
   font-size: 2.5rem;
-  color: #f8f8f2;
+  color: #e0e0e0;
   padding-top: 0.5rem;
 }
 
@@ -105,44 +105,48 @@ h2.open-des {
 }
 
 .getInfo h4 {
-  font-family: "JetBrains Mono", monospace;
+  font-family: "Source Serif Pro", monospace;
   text-justify: distribute;
 }
 
 .getInfo h3,
 h4 {
-  color: #ffffff;
+  color: #e0e0e0;
   margin-left: auto;
 }
 
 .des {
-  font-family: "JetBrains Mono", monospace;
+  font-family: "Source Serif Pro", monospace;
   font-weight: bold;
   font-size: 1.6rem;
-  color: #ffffff;
+  color: #e0e0e0;
   word-wrap: break-word;
 }
 
 .title {
   margin-top: 3rem;
-  font-family: "Cereal", monospace;
+  font-family: "Radwave", monospace;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #e0e0e0;
   font-weight: bold;
   font-size: 2.5rem;
-  color: #ffffff;
+  color: transparent;
   word-wrap: break-word;
 }
 
 .sub-title {
-  font-family: "Cereal", monospace;
+  font-family: "Radwave", monospace;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #e0e0e0;
   font-weight: bold;
   font-size: 2.5rem;
-  color: #ffffff;
+  color: transparent;
   word-wrap: break-word;
 }
 
 #description {
   margin-top: 2rem;
-  font-family: "Rubik", sans-serif;
+  font-family: "Source Serif Pro", sans-serif;
   font-size: 1.6rem;
   font-weight: 300;
   line-height: 140%;
@@ -157,7 +161,8 @@ h4 {
 }
 
 .profile-pic {
-  border-radius: 100%;
+  border: 2px solid rgb(200, 200, 200);
+  border-radius: 0%;
   max-width: 80%;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
 }
@@ -172,12 +177,12 @@ a.fa-icon-link {
 }
 
 a.fa-icon-link:link {
-  color: #ffffff;
+  color: #e0e0e0;
   text-decoration: none;
 }
 
 a.fa-icon-link:visited {
-  color: #ffffff;
+  color: #e0e0e0;
   text-decoration: none;
 }
 
@@ -212,8 +217,8 @@ hr {
 }
 
 .work-pic {
-  border: 5px solid rgb(77, 77, 77);
-  border-radius: 100%;
+  border: 2px solid rgb(200, 200, 200);
+  border-radius: 0%;
   max-width: 65%;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
 }
@@ -233,17 +238,17 @@ hr {
 }
 
 .work-text {
-  font-family: "Rubik", sans-serif;
+  font-family: "Source Serif Pro", sans-serif;
   font-size: 1.2rem;
   font-weight: 400;
   line-height: 140%;
-  color: #ffffff;
+  color: #e0e0e0;
   padding-bottom: 1rem;
   margin-bottom: 0rem;
 }
 
 .work-place {
-  font-family: "Rubik", sans-serif;
+  font-family: "Source Serif Pro", sans-serif;
   font-size: 1.2rem;
   font-style: italic;
   font-weight: 400;
@@ -274,7 +279,7 @@ a.work-text:visited {
 }
 
 .project-col {
-  font-family: "Rubik", monospace;
+  font-family: "Source Serif Pro", monospace;
   text-align: center;
 }
 
@@ -289,7 +294,7 @@ a.work-text:visited {
 }
 
 .card-text {
-  font-family: "Rubik", monospace;
+  font-family: "Source Serif Pro", monospace;
   font-weight: 400;
 }
 
@@ -311,7 +316,7 @@ a.card-text:visited {
 }
 
 .getPro {
-  color: #ffffff;
+  color: #e0e0e0;
 }
 
 h4.getPro {
@@ -322,7 +327,7 @@ h4.getPro {
 }
 
 #pj_start {
-  font-family: "Rubik";
+  font-family: "Source Serif Pro";
   margin-top: 2rem;
   font-size: 1.6rem;
   font-weight: 400;
@@ -339,9 +344,9 @@ h4.project {
 }
 
 p.project {
-  font-family: "Rubik";
+  font-family: "Source Serif Pro";
   margin-top: 2rem;
-  color: #ffffff;
+  color: #e0e0e0;
   font-size: 1.2rem;
 }
 
@@ -399,12 +404,12 @@ p.project {
 }
 
 a.btn-primary {
-  color: #ffffff;
+  color: #e0e0e0;
   text-decoration: none;
 }
 
 a.btn-outline-primary {
-  color: #ffffff;
+  color: #e0e0e0;
   text-decoration: none;
 }
 
@@ -417,8 +422,8 @@ a.btn-outline-primary {
 }
 
 .pub-pic {
-  border: 5px solid rgb(77, 77, 77);
-  border-radius: 100%;
+  border: 2px solid rgb(200, 200, 200);
+  border-radius: 0%;
   max-width: 50%;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
 }
@@ -432,22 +437,22 @@ a.btn-outline-primary {
 }
 
 .pub-text {
-  font-family: "Rubik", sans-serif;
+  font-family: "Source Serif Pro", sans-serif;
   font-size: 1.1rem;
   font-weight: 300;
   line-height: 130%;
-  color: #ffffff;
+  color: #e0e0e0;
   padding-bottom: 1rem;
   margin-bottom: 0rem;
 }
 
 .pub-conf {
-  font-family: "Rubik", sans-serif;
+  font-family: "Source Serif Pro", sans-serif;
   font-style: italic;
   font-size: 1.1rem;
   font-weight: 300;
   line-height: 130%;
-  color: #ffffff;
+  color: #e0e0e0;
   padding-bottom: 1rem;
   margin-bottom: 0rem;
 }

@@ -60,3 +60,11 @@
     font-weight: medium;
     font-style: normal;
 }
+
+
+@font-face {
+    font-family: 'Radwave';
+    src: url('./radwave/radwave-regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
