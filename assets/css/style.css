@@ -398,6 +398,17 @@ p.project {
   background-color: #00e676;
 }
 
+.btn-outline-repo {
+  border: 2px solid transparent;
+  border-color: #eeeeee;
+}
+
+.btn-outline-repo:hover {
+  border-color: #eeeeee;
+  background-color: #eeeeee;
+  color: #121212;
+}
+
 a.btn-primary {
   color: #ffffff;
   text-decoration: none;
