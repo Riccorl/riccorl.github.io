@@ -8,16 +8,29 @@ Cyan	#8be9fd	139 233 253	191° 97% 77%	Cyan Color
 Green	#50fa7b	80 250 123	135° 94% 65%	Green Color
 Orange	#ffb86c	255 184 108	31° 100% 71%	Orange Color
 Pink	#ff79c6	255 121 198	326° 100% 74%	Pink Color
-Purple	#bd93f9	189 147 249	265° 89% 78%	Purple Color
+Purple	#b56fff	189 147 249	265° 89% 78%	Purple Color
 Red	#ff5555	255 85 85	0° 100% 67%	Red Color
 Yellow	#f1fa8c	241 250 140	65° 92% 76%
 */
+
+:root {
+  --caribbean-current: #006466ff;
+  --midnight-green: #065a60ff;
+  --midnight-green-2: #0b525bff;
+  --midnight-green-3: #144552ff;
+  --charcoal: #1b3a4bff;
+  --prussian-blue: #212f45ff;
+  --space-cadet: #272640ff;
+  --dark-purple: #312244ff;
+  --dark-purple-2: #3e1f47ff;
+  --palatinate: #4d194dff;
+}
 
 html,
 body {
   background-color: #161616;
   height: 100%;
-  font-family: "JetBrains Mono", monospace;
+  font-family: "IBM Plex Mono", monospace;
   scroll-behavior: smooth;
 }
 
@@ -27,7 +40,7 @@ body {
 }
 
 a:hover {
-  color: #00e676;
+  color: #80ffdb;
   text-decoration: none;
 }
 
@@ -42,7 +55,7 @@ a:link:visited {
 }
 
 a.method:visited {
-  color: #00e676;
+  color: #80ffdb;
   text-decoration: none;
 }
 
@@ -60,15 +73,20 @@ a[title]:hover:after {
   height: 100vh;
 }
 
+/* START CODE LANDING */
+/* blur canvas */
 .open {
-  background-color: #282a36;
+  background-color: #121212;
+  padding-right: 0;
+  padding-left: 0;
+  /* background-color: #282a36;
   background: -moz-radial-gradient(center, ellipse cover, rgb(47, 49, 61) 0%, rgba(40,42,52,1) 100%);
   background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgb(47, 49, 61)), color-stop(100%, rgba(40,42,52,1)));
   background: -webkit-radial-gradient(center, ellipse cover, rgb(47, 49, 61) 0%, rgba(40,42,52,1) 100%);
   background: -o-radial-gradient(center, ellipse cover, rgb(47, 49, 61) 0%, rgba(40,42,52,1) 100%);
   background: -ms-radial-gradient(center, ellipse cover, rgb(47, 49, 61) 0%, rgba(40,42,52,1) 100%);
   background: radial-gradient(ellipse at center, rgb(47, 49, 61) 0%, rgba(40,42,52,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2F313D', endColorstr='#282a36', GradientType=1 );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2F313D', endColorstr='#282a36', GradientType=1 ); */
 }
 
 .code-snippet {
@@ -76,7 +94,27 @@ a[title]:hover:after {
   top: 50%;
   transform: translateY(-50%);
   margin-right: 0.4rem;
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+  /* backdrop-filter: blur(100px); */
 }
+
+.gradient-blur {
+  backdrop-filter: blur(100px);
+}
+
+#gradient-canvas {
+  filter: blur(30px);
+  /* width: 100vw;  */
+  width:100%;
+  height:100%;
+  margin: 0;
+  --gradient-color-1: #121212; 
+  --gradient-color-2: #1b3a4b; 
+  --gradient-color-3: #3c096c;  
+  --gradient-color-4: #282a36;
+  z-index:0;
+}
+/* END CODE LANDING */
 
 .open-col {
   margin-left: 1rem;
@@ -84,7 +122,7 @@ a[title]:hover:after {
 }
 
 .comment {
-  font-family: "JetBrains Mono", monospace;
+  font-family: "IBM Plex Mono", monospace;
   color: #f8f8f2;
   opacity: 0.6;
   font-style: italic;
@@ -93,7 +131,7 @@ a[title]:hover:after {
 
 .open-name,
 .open-des {
-  font-family: "JetBrains Mono", monospace;
+  font-family: "IBM Plex Mono", sans-serif;
   font-weight: 300;
   font-size: 2.5rem;
   color: #f8f8f2;
@@ -105,7 +143,7 @@ h2.open-des {
 }
 
 .getInfo h4 {
-  font-family: "JetBrains Mono", monospace;
+  font-family: "IBM Plex Mono", monospace;
   text-justify: distribute;
 }
 
@@ -116,7 +154,7 @@ h4 {
 }
 
 .des {
-  font-family: "JetBrains Mono", monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-weight: bold;
   font-size: 1.6rem;
   color: #ffffff;
@@ -374,28 +412,28 @@ p.project {
 /* buttons */
 
 .btn-primary {
-  background-color: #bd93f9;
-  border: #bd93f9;
+  background-color: #b56fff;
+  border: #b56fff;
 }
 
 .btn-outline-paper {
   border: 2px solid transparent;
-  border-color: #bd93f9;
+  border-color: #b56fff;
 }
 
 .btn-outline-paper:hover {
-  border-color: #bd93f9;
-  background-color: #bd93f9;
+  border-color: #b56fff;
+  background-color: #b56fff;
 }
 
 .btn-outline-website {
   border: 2px solid transparent;
-  border-color: #00e676;
+  border-color: #80ffdb;
 }
 
 .btn-outline-website:hover {
-  border-color: #00e676;
-  background-color: #00e676;
+  border-color: #80ffdb;
+  background-color: #80ffdb;
 }
 
 .btn-outline-repo {
@@ -481,6 +519,7 @@ a.btn-outline-primary {
 /* responsive */
 
 @media all and (max-width: 1400px) {
+
   /* screen size until 1200px */
   .nav-link {
     font-size: 1.1em;
@@ -492,6 +531,7 @@ a.btn-outline-primary {
 }
 
 @media all and (max-width: 1200px) {
+
   /* screen size until 1200px */
   .nav-link {
     font-size: 1.1em;
@@ -503,6 +543,7 @@ a.btn-outline-primary {
 }
 
 @media all and (max-width: 1024px) {
+
   /* screen size until 1024px */
   .nav-link {
     font-size: 0.8em;
@@ -527,6 +568,7 @@ a.btn-outline-primary {
 }
 
 @media all and (max-width: 500px) {
+
   /* screen size until 500px */
   .nav-link {
     font-size: 0.6em;
@@ -775,14 +817,12 @@ a.btn-outline-primary {
 /* Instagram color gradient */
 
 .instagram {
-  background: radial-gradient(
-    circle at 30% 107%,
-    #fdf497 0%,
-    #fdf497 5%,
-    #fd5949 45%,
-    #d6249f 60%,
-    #285aeb 90%
-  );
+  background: radial-gradient(circle at 30% 107%,
+      #fdf497 0%,
+      #fdf497 5%,
+      #fd5949 45%,
+      #d6249f 60%,
+      #285aeb 90%);
   -webkit-background-clip: text;
   /* Also define standard property for compatibility */
   background-clip: text;

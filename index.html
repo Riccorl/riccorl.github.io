@@ -62,6 +62,12 @@
     rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
     rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
   <script src="https://kit.fontawesome.com/fab20efb2b.js" crossorigin="anonymous"></script>
   <link href="assets/font/font.css" type="text/css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
@@ -88,6 +94,8 @@
 <body>
   <div class="page-wrap">
     <div class="container-fluid fill open">
+      <canvas id="gradient-canvas">
+      </canvas>
       <div class="code-snippet">
         <div class="col-md-12 open-col">
           <div class="row">
@@ -97,20 +105,25 @@
             <a class="hvr-sink" href="#info">
               <span class="code" style="display: none">
                 <h1 class="glitch open-name">
-                  <span style="color:#50fa7b">def</span><span class="pulse">|</span><span
-                    style="color:#bd93f9">get_info</span>(ro: RiccardoOrlando) -> str:
+                  <span style="color:#80ffdb; font-style: normal; font-weight: 500;">def</span><span
+                    class="pulse">|</span><span
+                    style="color:#cfcfcf; font-style: normal; font-weight: 500;">get_info</span>(ro: RiccardoOrlando) ->
+                  str:
                 </h1>
                 <h2 class="glitch open-des">
-                  <span style="color:#50fa7b">return</span> ro.basic_info()<span style="color:#50fa7b"></span>
+                  <span style="color:#80ffdb; font-style: normal; font-weight: 500;">return</span> ro.basic_info()
                 </h2>
               </span>
               <span class="code" style="display: none">
                 <h1 class="glitch open-name">
-                  <span style="color:#50fa7b">public</span> String<span class="pulse">|</span>
-                  <span style="color:#bd93f9">getInfo</span>(RiccardoOrlando ro) &#123;
+                  <span style="color:#80ffdb; font-style: normal; font-weight: 500;">public</span> String<span
+                    class="pulse">|</span>
+                  <span style="color:#cfcfcf; font-style: normal; font-weight: 500;">getInfo</span>(RiccardoOrlando ro)
+                  &#123;
                 </h1>
                 <h2 class="glitch open-des">
-                  <span style="color:#50fa7b">return</span> ro.basicInfo()<span style="color:#50fa7b">;</span>
+                  <span style="color:#80ffdb; font-style: normal; font-weight: 500;">return</span> ro.basicInfo()<span
+                    style="color:#80ffdb; font-style: normal; font-weight: 500;">;</span>
                 </h2>
                 <h1 class="glitch open-name"> &#125;</h1>
               </span>
@@ -127,15 +140,16 @@
           About me.
         </h3>
       </div>
+
       <div class="row">
         <div class="col-md-8 getInfo info-row">
           <h4 id="description" style="margin-top:1.5rem">Hi, I'm Riccardo Orlando,
-            <span style="color:#bd93f9; font-family: 'JetBrains Mono'">
-              <strong>Computer</strong></span> <span style="color:#bd93f9; font-family: 'JetBrains Mono'">
+            <span style="color:#b56fff; font-family: 'JetBrains Mono'">
+              <strong>Computer</strong></span> <span style="color:#b56fff; font-family: 'JetBrains Mono'">
               <strong>Scientist</strong></span> and <span
-              style="color:#50fa7b; font-family: 'JetBrains Mono'"><strong>NLP</strong></span> <span
-              style="color:#50fa7b; font-family: 'JetBrains Mono'"><strong>enthusiast</strong></span>. Currently, I'm
-            a second-year <span style="color:#c2495d; font-family: 'JetBrains Mono'; font-weight: 500;">PhD</span>
+              style="color:#80ffdb; font-family: 'JetBrains Mono'"><strong>NLP</strong></span> <span
+              style="color:#80ffdb; font-family: 'JetBrains Mono'"><strong>enthusiast</strong></span>. Currently, I'm
+            a third-year <span style="color:#c2495d; font-family: 'JetBrains Mono'; font-weight: 500;">PhD</span>
             <span style="color:#c2495d; font-family: 'JetBrains Mono'; font-weight: 500;">student</span>
             at the <span style="color:#c2495d; font-family: 'JetBrains Mono'; font-weight: 500;">Sapienza</span>
             <span style="color:#c2495d; font-family: 'JetBrains Mono'; font-weight: 500;">NLP</span>
@@ -251,8 +265,10 @@
         </div>
         <div class="col-md-8">
           <div class="pub-body">
-            <h4 class="pub-title">ReLiK: Retrieve, Read and LinK: Fast and Accurate Entity Linking and Relation Extraction on an Academic Budget</h4>
-            <h3 class="pub-text">Edoardo Barba, <span style="font-weight: 600;">Riccardo Orlando</span>, Pere-Lluís Huguet Cabot, and Roberto Navigli
+            <h4 class="pub-title">ReLiK: Retrieve, Read and LinK: Fast and Accurate Entity Linking and Relation
+              Extraction on an Academic Budget</h4>
+            <h3 class="pub-text">Edoardo Barba, <span style="font-weight: 600;">Riccardo Orlando</span>, Pere-Lluís
+              Huguet Cabot, and Roberto Navigli
             </h3>
             <h3 class="pub-conf"><span style="font-style: normal;">In</span> ArXiv, 2023</h3>
           </div>
@@ -300,7 +316,7 @@
           </div>
         </div>
       </div> -->
-      
+
       <!-- exploring-srl -->
       <div class="row work-row no-gutters" id="exploring-srl">
         <div class="col-md-2 nopadding d-flex align-items-center" id="pub-pic">
@@ -819,6 +835,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"
     integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK"
     crossorigin="anonymous"></script>
+  <script src="assets/js/gradient.js"></script>
   <script src="assets/js/scripts.js"></script>
 </body>
 

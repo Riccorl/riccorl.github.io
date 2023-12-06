@@ -17,13 +17,13 @@ $(document).ready(function (e) {
     $('.code').eq(randItem).show();
 });
 
-// gradient mouse
-(function ($) {
-    $(document).mousemove(
-        function (e) {
-            var X = e.pageX;
-            var Y = e.pageY;
-            $('.open').css('background', 'radial-gradient(circle at ' + X + 'px ' + Y + 'px, rgb(47, 49, 61), rgba(40,42,52,1))');
-        }
-    );
-})(jQuery);
+// // gradient mouse
+// (function ($) {
+//     $(document).mousemove(
+//         function (e) {
+//             var X = e.pageX;
+//             var Y = e.pageY;
+//             $('.open').css('background', 'radial-gradient(circle at ' + X + 'px ' + Y + 'px, rgb(47, 49, 61), rgba(40,42,52,1))');
+//         }
+//     );
+// })(jQuery);
