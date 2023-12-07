@@ -15,6 +15,9 @@ $(document).ready(function (e) {
 
     $('.code').hide();
     $('.code').eq(randItem).show();
+    // select right comment
+    $('.comment').hide();
+    $('.comment').eq(randItem).show();
 });
 
 // // gradient mouse

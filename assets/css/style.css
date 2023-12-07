@@ -28,7 +28,8 @@ Yellow	#f1fa8c	241 250 140	65° 92% 76%
 
 html,
 body {
-  background-color: #161616;
+  /* background-color: #161616; */
+  background-color: #0f0f0f;
   height: 100%;
   font-family: "IBM Plex Mono", monospace;
   scroll-behavior: smooth;
@@ -98,12 +99,9 @@ a[title]:hover:after {
   /* backdrop-filter: blur(100px); */
 }
 
-.gradient-blur {
-  backdrop-filter: blur(100px);
-}
-
 #gradient-canvas {
   filter: blur(30px);
+
   /* width: 100vw;  */
   width:100%;
   height:100%;
@@ -193,6 +191,7 @@ h4 {
 .rwd-break {
   display: none;
 }
+
 
 .profile-pic {
   border-radius: 100%;
@@ -424,7 +423,16 @@ p.project {
 .btn-outline-paper:hover {
   border-color: #b56fff;
   background-color: #b56fff;
+  box-shadow: 0 0 10px #b56fff;
 }
+
+/* .btn-outline-paper:hover:before {
+  content: "";
+  opacity:1;
+  transition: 0.3s opacity ease-in-out;
+  filter:blur(5px);
+  background: #b56fff;  
+} */
 
 .btn-outline-website {
   border: 2px solid transparent;
@@ -434,6 +442,8 @@ p.project {
 .btn-outline-website:hover {
   border-color: #80ffdb;
   background-color: #80ffdb;
+  color: #121212;
+  box-shadow: 0 0 10px #80ffdb;
 }
 
 .btn-outline-repo {
@@ -445,6 +455,7 @@ p.project {
   border-color: #eeeeee;
   background-color: #eeeeee;
   color: #121212;
+  box-shadow: 0 0 10px #eeeeee;
 }
 
 a.btn-primary {
