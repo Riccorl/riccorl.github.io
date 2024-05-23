@@ -451,12 +451,26 @@ p.project {
   border-color: #eeeeee;
 }
 
+
 .btn-outline-repo:hover {
   border-color: #eeeeee;
   background-color: #eeeeee;
   color: #121212;
   box-shadow: 0 0 10px #eeeeee;
 }
+
+.btn-outline-hf {
+  border: 2px solid transparent;
+  border-color: #FCD21D;
+}
+
+.btn-outline-hf:hover {
+  border-color: #FCD21D;
+  background-color: #FCD21D;
+  color: #121212;
+  box-shadow: 0 0 10px #FCD21D;
+}
+
 
 a.btn-primary {
   color: #ffffff;
@@ -515,6 +529,11 @@ a.btn-outline-primary {
 .pub-date {
   font-family: "Cereal", sans-serif;
   font-size: 1.1rem;
+}
+
+.pub-date-left {
+  font-family: "Cereal", sans-serif;
+  font-size: 1.5rem;
 }
 
 .pub-down {

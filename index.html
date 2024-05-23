@@ -68,6 +68,9 @@
   <link
     href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
     rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+    rel="stylesheet">
   <script src="https://kit.fontawesome.com/fab20efb2b.js" crossorigin="anonymous"></script>
   <link href="assets/font/font.css" type="text/css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
@@ -252,6 +255,69 @@
       <hr>
     </div>
 
+    <!-- News -->
+
+    <div class="container">
+      <div class="container info pub-down">
+        <h3 class="title getPro">News.</h3>
+      </div>
+
+      <div class="row work-row no-gutters" id="minerva-first">
+        <div class="col-md-2 work-col d-flex align-items-center">
+          <h4 class="pub-date-left text-end">May 2024</h4>
+        </div>
+        <div class="col-md-8">
+          <div class="work-body">
+            <h4 class="work-title">ReLiK paper accepter at ACL 2024!</h4>
+            <h3 class="work-place">Sapienza University of Rome, Italy</h3>
+            <!-- <h3><img style="height: 8rem; " src="assets/img/logo-7-shadow.png"></h3> -->
+            <h3 class="work-text">
+              Our paper <a href="#relik"><span
+                style="color:#40ba9b; font-weight: 500;">ReLiK: Retrieve and LinK, Fast and Accurate Entity Linking and Relation Extraction on an
+                Academic Budget</span></a> has been accepted at ACL 2024.
+            </h3>
+          </div>
+        </div>
+        </div>
+
+      <!-- Add a row that shows we released a new LLM -->
+      <div class="row work-row no-gutters" id="minerva-first">
+        <div class="col-md-2 work-col d-flex align-items-center">
+          <h4 class="pub-date-left text-end">May 2024</h4>
+        </div>
+        <div class="col-md-8">
+          <div class="work-body">
+            <h4 class="work-title">Minerva LLM Familiy Released!</h4>
+            <h3 class="work-place">Sapienza University of Rome, Italy</h3>
+            <!-- <h3><img style="height: 8rem; " src="assets/img/logo-7-shadow.png"></h3> -->
+            <h3 class="work-text">
+              Public release of the <span
+                style="color:#c2495d; font-family: 'Merriweather'; font-weight: 600; font-size: larger;">Minerva</span> models (350M, 1B,
+              7B), the first family of Large Language Models (LLMs)
+              trained from scratch on Italian (and English) data.
+            </h3>
+          </div>
+        </div>
+        <!-- This two are for aligment -->
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-4">
+          <div class="paper-buttons">
+            <a class="btn btn-outline-primary btn-outline-paper rounded-pill"
+              href="https://nlp.uniroma1.it/minerva/blog/welcome" target="_blank" role="button">Technical Report</a>
+            <a class="btn btn-outline-primary btn-outline-repo rounded-pill" target="_blank"
+              href="https://github.com/Riccorl/llm-foundry" role="button">GitHub</a>
+            <a class="btn btn-outline-primary btn-outline-hf rounded-pill" target="_blank"
+              href="https://huggingface.co/collections/sapienzanlp/minerva-llms-661e6011828fe67de4fe7961"
+              role="button">🤗 Hub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
     <!-- Papers -->
 
     <div class="container">
@@ -262,15 +328,16 @@
       <!-- relik -->
       <div class="row work-row no-gutters" id="relik">
         <div class="col-md-2 nopadding d-flex align-items-center" id="pub-pic">
-          <img class="mx-auto d-block pub-pic" src="assets/img/arxiv.png">
+          <img class="mx-auto d-block pub-pic" src="assets/img/acl.png">
         </div>
         <div class="col-md-8">
           <div class="pub-body">
-            <h4 class="pub-title">ReLiK: Retrieve and LinK, Fast and Accurate Entity Linking and Relation Extraction on an Academic Budget</h4>
+            <h4 class="pub-title">ReLiK: Retrieve and LinK, Fast and Accurate Entity Linking and Relation Extraction
+              on an Academic Budget</h4>
             <h3 class="pub-text"><span style="font-weight: 600;">Riccardo Orlando</span>, Pere-Lluís
               Huguet Cabot, Edoardo Barba, and Roberto Navigli
             </h3>
-            <h3 class="pub-conf"><span style="font-style: normal;">In</span> ArXiv, 2024</h3>
+            <h3 class="pub-conf"><span style="font-style: normal;">In</span> Findings of ACL, 2024</h3>
           </div>
         </div>
         <div class="col-md-2 work-col d-flex align-items-center">
@@ -284,6 +351,8 @@
               role="button">Paper</a>
             <a class="btn btn-outline-primary btn-outline-repo rounded-pill" target="_blank"
               href="https://github.com/SapienzaNLP/relik" role="button">GitHub</a>
+            <a class="btn btn-outline-primary btn-outline-hf rounded-pill" target="_blank"
+              href="https://huggingface.co/collections/sapienzanlp/relik" role="button">🤗 Hub</a>
           </div>
         </div>
       </div>
@@ -293,10 +362,11 @@
         <div class="col-md-2 nopadding d-flex align-items-center" id="pub-pic">
           <img class="mx-auto d-block pub-pic" src="assets/img/acl.png">
         </div>
-         <div class="col-md-8">
+        <div class="col-md-8">
           <div class="pub-body">
             <h4 class="pub-title">MOSAICo: a Multilingual Open-text Semantically Annotated Interlinked Corpus</h4>
-            <h3 class="pub-text">Simone Conia, Edoardo Barba, Abelardo Carlos Martinez Lorenzo, Pere-Lluís Huguet Cabot,
+            <h3 class="pub-text">Simone Conia, Edoardo Barba, Abelardo Carlos Martinez Lorenzo, Pere-Lluís Huguet
+              Cabot,
               <span style="font-weight: 600;">Riccardo Orlando</span>, Luigi Procopio, and Roberto Navigli
             </h3>
             <h3 class="pub-conf"><span style="font-style: normal;">In</span> Proceedings of NAACL, 2024</h3>
@@ -311,7 +381,7 @@
           <div class="paper-buttons">
             <a class="btn btn-outline-primary btn-outline-paper rounded-pill" href="#" target="_blank"
               role="button">Paper</a>
-             <a class="btn btn-outline-primary btn-outline-repo rounded-pill" target="_blank"
+            <a class="btn btn-outline-primary btn-outline-repo rounded-pill" target="_blank"
               href="https://github.com/SapienzaNLP/mosaico" role="button">GitHub</a>
           </div>
         </div>
@@ -387,9 +457,11 @@
         </div>
         <div class="col-md-8">
           <div class="pub-body">
-            <h4 class="pub-title">Universal Semantic Annotator: the First Unified API for WSD, SRL and Semantic Parsing.
+            <h4 class="pub-title">Universal Semantic Annotator: the First Unified API for WSD, SRL and Semantic
+              Parsing.
             </h4>
-            <h3 class="pub-text"><span style="font-weight: 600;">Riccardo Orlando</span>, Simone Conia, Stefano Faralli,
+            <h3 class="pub-text"><span style="font-weight: 600;">Riccardo Orlando</span>, Simone Conia, Stefano
+              Faralli,
               and Roberto Navigli </h3>
             <h3 class="pub-conf"><span style="font-style: normal;">In</span> Proceedings of LREC, 2022</h3>
           </div>
@@ -447,7 +519,8 @@
         </div>
         <div class="col-md-8">
           <div class="pub-body">
-            <h4 class="pub-title">InVeRo-XL: Making Cross-Lingual Semantic Role Labeling Accessible with Intelligible
+            <h4 class="pub-title">InVeRo-XL: Making Cross-Lingual Semantic Role Labeling Accessible with
+              Intelligible
               Verbs and Roles.
             </h4>
             <h3 class="pub-text">Simone Conia, <span style="font-weight: 600;">Riccardo Orlando</span>, Fabrizio
@@ -532,7 +605,8 @@
             <div class="work-body">
               <h4 class="work-title">Software Engineer - Capgemini</h4>
               <h3 class="work-place">Rome, Italy</h3>
-              <h3 class="work-text">Included in a team that worked to re-platform a series of internal applications of
+              <h3 class="work-text">Included in a team that worked to re-platform a series of internal applications
+                of
                 an
                 insurance company. Worked as a software engineer mainly on the backend but also contributed to the
                 frontend.</h3>
@@ -550,7 +624,8 @@
             <div class="work-body">
               <h4 class="work-title">Bachelor of Computer Science</h4>
               <h3 class="work-place">Sapienza University of Rome, Italy </h3>
-              <h3 class="work-text"><span style="font-weight: 500;">Thesis title:</span> Densest subgraph in Fork/Join.
+              <h3 class="work-text"><span style="font-weight: 500;">Thesis title:</span> Densest subgraph in
+                Fork/Join.
               </h3>
             </div>
           </div>
@@ -571,7 +646,7 @@
         <h4 class="getPro" id="pj_start">These are some projects I'm involved in:</h4>
 
         <div class="project row row-cols-1 row-cols-md-3 g-4">
-          
+
           <div class="col">
             <div class="card text-white bg-dark border-white border-0 h-100 ">
               <div class="card-body">
@@ -582,8 +657,9 @@
               </div>
               <div class="card-footer bg-transparent border-0"><a href="https://github.com/Riccorl/golden-retriever"
                   class="card-link" target="_blank"><i class="fab fa-github fa-1x" aria-hidden="true"
-                    style="color:#ffffff"></i></a><a href="https://pypi.org/project/goldenretriever-core" class="card-link"
-                  target="_blank"><i class="fab fa-python fa-1x" aria-hidden="true" style="color:#ffffff"></i></a>
+                    style="color:#ffffff"></i></a><a href="https://pypi.org/project/goldenretriever-core"
+                  class="card-link" target="_blank"><i class="fab fa-python fa-1x" aria-hidden="true"
+                    style="color:#ffffff"></i></a>
               </div>
             </div>
           </div>
@@ -692,7 +768,8 @@
                 <h5 class="card-title">transformer-srl</h5>
                 <!-- <h6 class="card-subtitle mb-2 text-muted">CNN image classification</h6> -->
                 <p class="card-text">
-                  Reimplementation of a BERT based model (Shi et al, 2019), currently the state-of-the-art for English
+                  Reimplementation of a BERT based model (Shi et al, 2019), currently the state-of-the-art for
+                  English
                   SRL.
                   This model implements also predicate disambiguation. </p>
               </div>
