@@ -103,15 +103,16 @@ a[title]:hover:after {
   filter: blur(30px);
 
   /* width: 100vw;  */
-  width:100%;
-  height:100%;
+  width: 100%;
+  height: 100%;
   margin: 0;
-  --gradient-color-1: #121212; 
-  --gradient-color-2: #1b3a4b; 
-  --gradient-color-3: #3c096c;  
+  --gradient-color-1: #121212;
+  --gradient-color-2: #1b3a4b;
+  --gradient-color-3: #3c096c;
   --gradient-color-4: #282a36;
-  z-index:0;
+  z-index: 0;
 }
+
 /* END CODE LANDING */
 
 .open-col {
@@ -471,6 +472,21 @@ p.project {
   box-shadow: 0 0 10px #FCD21D;
 }
 
+.btn-outline-pypi {
+  border: 2px solid transparent;
+  border-color: #0273B7;
+}
+
+.btn-outline-pypi:hover {
+  border-color: #0273B7;
+  background-color: #0273B7;
+  color: #121212;
+  box-shadow: 0 0 10px #0273B7;
+}
+
+.btn-outline-primary {
+  margin-top: 0.5rem;
+}
 
 a.btn-primary {
   color: #ffffff;
@@ -596,6 +612,14 @@ a.btn-outline-primary {
     column-count: 3;
   }
 }
+
+/* @media all and (max-width: 768px) {
+
+  a.btn-outline-primary-buttons {
+    margin-top: 0.5rem;
+  }
+
+} */
 
 @media all and (max-width: 500px) {
 
