@@ -77,9 +77,11 @@ a[title]:hover:after {
 /* START CODE LANDING */
 /* blur canvas */
 .open {
+    position: relative;
     background-color: #121212;
     padding-right: 0;
     padding-left: 0;
+    overflow: hidden;
     /* background-color: #282a36;
   background: -moz-radial-gradient(center, ellipse cover, rgb(47, 49, 61) 0%, rgba(40,42,52,1) 100%);
   background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgb(47, 49, 61)), color-stop(100%, rgba(40,42,52,1)));
@@ -90,12 +92,75 @@ a[title]:hover:after {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2F313D', endColorstr='#282a36', GradientType=1 ); */
 }
 
+.open::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    pointer-events: none;
+    z-index: 10;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 270px;
+    animation: grain 0.5s steps(1) infinite;
+}
+
+@keyframes grain {
+
+    0%,
+    100% {
+        transform: translate(0, 0)
+    }
+
+    10% {
+        transform: translate(-5%, -10%)
+    }
+
+    20% {
+        transform: translate(-15%, 5%)
+    }
+
+    30% {
+        transform: translate(7%, -25%)
+    }
+
+    40% {
+        transform: translate(-5%, 25%)
+    }
+
+    50% {
+        transform: translate(-15%, 10%)
+    }
+
+    60% {
+        transform: translate(15%, 0%)
+    }
+
+    70% {
+        transform: translate(0%, 15%)
+    }
+
+    80% {
+        transform: translate(3%, 20%)
+    }
+
+    90% {
+        transform: translate(-10%, 10%)
+    }
+}
+
+
+
 .code-snippet {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     margin-right: 0.4rem;
     text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    z-index: 2;
     /* backdrop-filter: blur(100px); */
 }
 
@@ -563,6 +628,7 @@ a.btn-outline-primary {
 /* responsive */
 
 @media all and (max-width: 1400px) {
+
     /* screen size until 1200px */
     .nav-link {
         font-size: 1.1em;
@@ -574,6 +640,7 @@ a.btn-outline-primary {
 }
 
 @media all and (max-width: 1200px) {
+
     /* screen size until 1200px */
     .nav-link {
         font-size: 1.1em;
@@ -589,6 +656,7 @@ a.btn-outline-primary {
 }
 
 @media all and (max-width: 1024px) {
+
     /* screen size until 1024px */
     .nav-link {
         font-size: 0.8em;
@@ -625,6 +693,7 @@ a.btn-outline-primary {
 } */
 
 @media all and (max-width: 500px) {
+
     /* screen size until 500px */
     .nav-link {
         font-size: 0.6em;
@@ -874,14 +943,12 @@ a.btn-outline-primary {
 /* Instagram color gradient */
 
 .instagram {
-    background: radial-gradient(
-        circle at 30% 107%,
-        #fdf497 0%,
-        #fdf497 5%,
-        #fd5949 45%,
-        #d6249f 60%,
-        #285aeb 90%
-    );
+    background: radial-gradient(circle at 30% 107%,
+            #fdf497 0%,
+            #fdf497 5%,
+            #fd5949 45%,
+            #d6249f 60%,
+            #285aeb 90%);
     -webkit-background-clip: text;
     /* Also define standard property for compatibility */
     background-clip: text;
