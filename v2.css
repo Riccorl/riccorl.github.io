@@ -9,6 +9,7 @@
   --sans: "Inter", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
   --mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
   --gutter: clamp(16px, 4vw, 56px);
+  --nav-h: 49px;
   --max: 1280px;
 }
 
@@ -123,27 +124,61 @@ img { max-width: 100%; display: block; }
 a.box:hover { background: var(--ink); color: var(--panel); }
 
 /* ---------- hero ---------- */
-.hero { text-align: center; padding-top: clamp(24px, 4vw, 56px); }
-.hero h1 {
-  font-size: clamp(2.9rem, 10.5vw, 10rem);
+.hero {
+  position: relative;
+  margin-inline: calc(50% - 50vw);
+  margin-top: calc(-1 * var(--nav-h));
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: clamp(40px, 8vw, 96px) var(--gutter);
+  padding-top: calc(var(--nav-h) + clamp(40px, 8vw, 96px));
+  overflow: hidden;
+}
+#gradient-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(50px);
+  --gradient-color-1: #c9b3ff;
+  --gradient-color-2: #a97bff;
+  --gradient-color-3: #5b2fd6;
+  --gradient-color-4: #e9defd;
+}
+.hero .win.term {
+  position: relative;
+  z-index: 1;
+  width: min(660px, 100%);
+  box-shadow: 6px 6px 0 var(--ink);
+}
+.hero .win.term .win-body { padding: 16px 18px; }
+.hero .code { font-size: clamp(13px, 1.55vw, 16px); }
+.scroll-cue {
+  position: absolute;
+  z-index: 1;
+  bottom: clamp(16px, 4vw, 32px);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 13px;
+  animation: bob 2.4s ease-in-out infinite;
+}
+@keyframes bob { 50% { transform: translate(-50%, 6px); } }
+
+/* ---------- big title ---------- */
+.big-title {
+  font-size: clamp(2.4rem, 8vw, 7rem);
   font-weight: 900;
   line-height: 0.9;
   letter-spacing: -0.055em;
-  margin: 0;
+  margin: 0 0 clamp(24px, 3vw, 48px);
 }
-.hero h1 .thin { font-weight: 400; letter-spacing: -0.04em; }
+.big-title .thin { font-weight: 400; letter-spacing: -0.04em; }
 
-.hero-tools {
-  display: grid;
-  grid-template-columns: 1fr minmax(0, 560px) 1fr;
-  align-items: end;
-  gap: 24px;
-  margin-top: clamp(-24px, -2.5vw, -56px);
-  text-align: left;
+@media (prefers-reduced-motion: reduce) {
+  #gradient-canvas { display: none; }
+  .scroll-cue { animation: none; }
 }
-.hero-tools .side { justify-self: start; }
-.hero-tools .side:last-child { justify-self: end; }
-.hero-tools .win.term { position: relative; z-index: 1; }
 
 .code {
   margin: 0;
@@ -301,8 +336,7 @@ a.box:hover { background: var(--ink); color: var(--panel); }
 @media (max-width: 760px) {
   body { font-size: 17px; }
   .nav ul { display: none; }
-  .hero-tools { grid-template-columns: 1fr; margin-top: 24px; }
-  .hero-tools .side, .hero-tools .side:last-child { justify-self: stretch; }
+  .hero { min-height: 88svh; }
   .cols { gap: 24px; }
   .span-5, .span-4, .span-3 { grid-column: span 12; }
   .entry { grid-template-columns: 1fr; gap: 6px; }

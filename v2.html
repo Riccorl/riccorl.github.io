@@ -12,15 +12,15 @@
   <meta property="og:url" content="https://riccorl.github.io/" />
   <meta property="og:image" content="https://riccorl.github.io/assets/preview/preview.png" />
   <meta property="og:description" content="Riccardo Orlando, Computer Scientist and NLP Researcher." />
-  <link rel="icon" type="image/png" href="../assets/favicon/favicon-32x32.png" sizes="32x32" />
-  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../assets/favicon/apple-touch-icon-152x152.png" />
+  <link rel="icon" type="image/png" href="assets/favicon/favicon-32x32.png" sizes="32x32" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="assets/favicon/apple-touch-icon-152x152.png" />
 
   <title>Riccardo Orlando</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link href="style.css" rel="stylesheet">
+  <link href="v2.css" rel="stylesheet">
 </head>
 
 <body>
@@ -36,46 +36,29 @@
         <li><a class="box" href="#publications">Publications</a></li>
         <li><a class="box" href="#projects">Projects</a></li>
       </ul>
-      <a class="box" href="../assets/files/Orlando_CV.pdf" target="_blank">CV ↓</a>
+      <a class="box" href="assets/files/Orlando_CV.pdf" target="_blank">CV ↓</a>
     </nav>
 
     <!-- Hero -->
-    <header class="section hero" id="top">
-      <h1>Computer Scientist<br><span class="thin">&amp;</span> NLP Researcher.</h1>
+    <header class="hero" id="top">
+      <canvas id="gradient-canvas"></canvas>
 
-      <div class="hero-tools">
-        <div class="side">
-          <div class="win">
-            <div class="win-bar">Riccardo Orlando</div>
-            <div class="win-body">
-              <p>Version 2.0</p>
-              <p>©2026. All rights reserved.</p>
-              <p>Made in Rome. With Love.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="win term">
-          <div class="win-bar">get_info.py 1.1</div>
-          <div class="win-body">
+      <div class="win term">
+        <div class="win-bar">get_info.py 1.1</div>
+        <div class="win-body">
 <pre class="code"><span class="cm"># Scroll to show info.</span>
 <span class="kw">def</span> get_info(ro: RiccardoOrlando) -> str:
     <span class="kw">return</span> ro.basic_info()<span class="cursor"></span></pre>
-            <div class="progress"><span></span><em>Loading ... 75%</em></div>
-          </div>
-        </div>
-
-        <div class="side">
-          <div class="win">
-            <div class="win-bar">Clock Tool 1.1</div>
-            <div class="win-body"><p id="clock">Thu Sep 17 00:00:00 2026</p></div>
-          </div>
+          <div class="progress"><span></span><em>Loading ... 75%</em></div>
         </div>
       </div>
+
+      <a class="scroll-cue mono" href="#about">↓ scroll</a>
     </header>
 
     <!-- About -->
     <section class="section" id="about">
+      <h1 class="big-title">Computer Scientist<br><span class="thin">&amp;</span> NLP Researcher.</h1>
       <div class="cols">
         <div class="col span-5">
           <p class="eyebrow">About</p>
@@ -95,11 +78,11 @@
             <li><a href="https://scholar.google.com/citations?user=pYfNxg4AAAAJ" target="_blank">Google Scholar</a></li>
             <li><a href="https://www.researchgate.net/profile/Riccardo-Orlando" target="_blank">ResearchGate</a></li>
             <li><a href="https://it.linkedin.com/in/riccardo-orlando" target="_blank">LinkedIn</a></li>
-            <li><a href="../assets/files/Orlando_CV.pdf" target="_blank">CV (PDF)</a></li>
+            <li><a href="assets/files/Orlando_CV.pdf" target="_blank">CV (PDF)</a></li>
           </ul>
           <div class="win photo" style="margin-top: 28px;">
             <div class="win-bar">me.jpg</div>
-            <img src="../assets/img/me.jpg" alt="Riccardo Orlando">
+            <img src="assets/img/me.jpg" alt="Riccardo Orlando">
           </div>
         </div>
       </div>
@@ -528,11 +511,16 @@
           <p>Made in Rome. With Love.</p>
         </div>
       </div>
+      <div class="win">
+        <div class="win-bar">Clock Tool 1.1</div>
+        <div class="win-body"><p id="clock">Thu Sep 17 00:00:00 2026</p></div>
+      </div>
       <a class="box mono" href="#top">↑ Back to top</a>
     </footer>
 
   </div>
 
+  <script src="assets/js/gradient.js"></script>
   <script>
     (function () {
       var el = document.getElementById('clock');
