@@ -580,20 +580,23 @@
   <script src="assets/js/gradient.js"></script>
   <script>
     // film grain: clumped monochrome value noise, drawn by the GPU at device resolution.
-    // Static by default; set FPS > 0 for moving grain.
+    // Time is the noise's third axis, so grains fade into each other instead of popping per frame.
     (function () {
-      var FPS = 24;
+      var SPEED = 6;     // grain changes per second, 0 = static
       var AMOUNT = 0.14; // strength around neutral grey (overlay blend)
       var SIZE = 2.2;    // grain clump size in device pixels
       var c = document.getElementById('grain');
       var gl = c && c.getContext('webgl', { alpha: false, antialias: false });
       if (!gl) { if (c) c.remove(); return; }
       var vs = 'attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
-      var fs = 'precision highp float;uniform float seed,amount,size;' +
-        'float h(vec2 p){vec3 q=fract(vec3(p.xyx)*.1031);q+=dot(q,q.yzx+33.33+seed);return fract((q.x+q.y)*q.z);}' +
-        'float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);' +
-        'return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}' +
-        'void main(){vec2 p=gl_FragCoord.xy/size;float g=n(p)*.65+n(p*2.3+17.)*.35;' +
+      var fs = 'precision highp float;uniform float time,amount,size;' +
+        'float h(vec3 p){p=fract(p*.1031);p+=dot(p,p.zyx+31.32);return fract((p.x+p.y)*p.z);}' +
+        'float n(vec3 p){vec3 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);' +
+        'return mix(mix(mix(h(i),h(i+vec3(1,0,0)),f.x),mix(h(i+vec3(0,1,0)),h(i+vec3(1,1,0)),f.x),f.y),' +
+        'mix(mix(h(i+vec3(0,0,1)),h(i+vec3(1,0,1)),f.x),mix(h(i+vec3(0,1,1)),h(i+vec3(1,1,1)),f.x),f.y),f.z);}' +
+        // two octaves with offset time phases so their mid-step contrast dips never line up
+        'void main(){vec2 p=gl_FragCoord.xy/size;' +
+        'float g=n(vec3(p,time))*.65+n(vec3(p*2.3+17.,time*1.3+.5))*.35;' +
         'gl_FragColor=vec4(vec3(.5+(g-.5)*amount*2.),1.);}';
       function shader(type, src) { var s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); return s; }
       var prog = gl.createProgram();
@@ -606,11 +609,12 @@
       var loc = gl.getAttribLocation(prog, 'p');
       gl.enableVertexAttribArray(loc);
       gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
-      var uSeed = gl.getUniformLocation(prog, 'seed');
+      var uTime = gl.getUniformLocation(prog, 'time');
       gl.uniform1f(gl.getUniformLocation(prog, 'amount'), AMOUNT);
       gl.uniform1f(gl.getUniformLocation(prog, 'size'), SIZE);
+      var now = 0;
       function draw() {
-        gl.uniform1f(uSeed, Math.random() * 100);
+        gl.uniform1f(uTime, now * SPEED / 1000);
         gl.drawArrays(gl.TRIANGLES, 0, 3);
       }
       function resize() {
@@ -622,10 +626,10 @@
       }
       resize();
       addEventListener('resize', resize);
-      if (!FPS || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      var last = 0;
+      if (!SPEED || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       (function loop(t) {
-        if (t - last > 1000 / FPS) { draw(); last = t; }
+        now = t;
+        draw();
         requestAnimationFrame(loop);
       })(0);
     })();
