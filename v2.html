@@ -582,8 +582,8 @@
     // film grain: clumped monochrome value noise, drawn by the GPU at device resolution.
     // Static by default; set FPS > 0 for moving grain.
     (function () {
-      var FPS = 0;
-      var AMOUNT = 0.22; // strength around neutral grey (overlay blend)
+      var FPS = 24;
+      var AMOUNT = 0.14; // strength around neutral grey (overlay blend)
       var SIZE = 2.2;    // grain clump size in device pixels
       var c = document.getElementById('grain');
       var gl = c && c.getContext('webgl', { alpha: false, antialias: false });
