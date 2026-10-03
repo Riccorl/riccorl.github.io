@@ -10,7 +10,6 @@
   --violet: #b9a3f0;
   --sky: #96cde2;
   --rule: rgba(34, 28, 32, 0.35);
-  --grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   --sans: "Inter", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
   --mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
   --display: "Inter Tight", "Helvetica Neue", Arial, sans-serif;
@@ -32,18 +31,6 @@ body {
   line-height: 1.35;
   letter-spacing: -0.01em;
   -webkit-font-smoothing: antialiased;
-}
-/* page-wide film grain */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 50;
-  pointer-events: none;
-  background-image: var(--grain);
-  background-size: 200px;
-  opacity: 0.16;
-  mix-blend-mode: multiply;
 }
 
 a { color: inherit; text-decoration: none; }
@@ -72,20 +59,6 @@ img { max-width: 100%; display: block; }
   background: var(--panel);
   border: 1.5px solid var(--ink);
   box-shadow: 4px 4px 0 var(--ink);
-}
-/* film grain on paper surfaces; ink bands get theirs below */
-.win, .entry .logo { position: relative; }
-.win::after,
-.entry .logo::after,
-.section.ink::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image: var(--grain);
-  background-size: 180px;
-  opacity: 0.12;
-  mix-blend-mode: multiply;
 }
 .win-bar {
   display: flex;
@@ -178,15 +151,15 @@ a.box:hover { background: var(--ink); color: var(--panel); }
   --gradient-color-3: #9a8fb3;
   --gradient-color-4: #f3efe8;
 }
-/* live film grain over the gradient, redrawn by script */
+/* film grain: one WebGL layer over the whole viewport, rendered at device resolution */
 #grain {
-  position: absolute;
+  position: fixed;
   inset: 0;
   width: 100%;
   height: 100%;
+  z-index: 50;
   pointer-events: none;
-  mix-blend-mode: soft-light;
-  opacity: 0.5;
+  mix-blend-mode: overlay;
 }
 
 .hero .win.term {
@@ -382,7 +355,6 @@ a.box:hover { background: var(--ink); color: var(--panel); }
   margin-inline: calc(50% - 50vw);
   padding-inline: calc(50vw - 50% + 12px);
 }
-.section.ink::after { opacity: 0.16; mix-blend-mode: screen; }
 .section.ink .h2 small { color: var(--mint); }
 .section.ink .entry,
 .section.ink .entry:last-child { border-color: rgba(254, 254, 254, 0.4); }

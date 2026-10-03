@@ -36,6 +36,8 @@
     </filter>
   </svg>
 
+  <canvas id="grain" aria-hidden="true"></canvas>
+
   <div class="wrap">
 
     <!-- Nav -->
@@ -54,7 +56,6 @@
     <!-- Hero -->
     <header class="hero" id="top">
       <canvas id="gradient-canvas"></canvas>
-      <canvas id="grain" aria-hidden="true"></canvas>
 
       <div class="win term">
         <div class="win-bar"><span id="term-title">get_info.py 1.1</span></div>
@@ -578,36 +579,55 @@
 
   <script src="assets/js/gradient.js"></script>
   <script>
-    // film grain: fresh monochrome noise ~12 times a second, only while the hero is visible
+    // film grain: clumped monochrome value noise, drawn by the GPU at device resolution.
+    // Static by default; set FPS > 0 for moving grain.
     (function () {
+      var FPS = 0;
+      var AMOUNT = 0.22; // strength around neutral grey (overlay blend)
+      var SIZE = 2.2;    // grain clump size in device pixels
       var c = document.getElementById('grain');
-      if (!c) return;
-      var ctx = c.getContext('2d'), img, px, raf, last = 0;
-      function size() {
-        c.width = c.offsetWidth;
-        c.height = c.offsetHeight;
-        img = ctx.createImageData(c.width, c.height);
-        px = new Uint32Array(img.data.buffer);
-      }
+      var gl = c && c.getContext('webgl', { alpha: false, antialias: false });
+      if (!gl) { if (c) c.remove(); return; }
+      var vs = 'attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
+      var fs = 'precision highp float;uniform float seed,amount,size;' +
+        'float h(vec2 p){vec3 q=fract(vec3(p.xyx)*.1031);q+=dot(q,q.yzx+33.33+seed);return fract((q.x+q.y)*q.z);}' +
+        'float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);' +
+        'return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}' +
+        'void main(){vec2 p=gl_FragCoord.xy/size;float g=n(p)*.65+n(p*2.3+17.)*.35;' +
+        'gl_FragColor=vec4(vec3(.5+(g-.5)*amount*2.),1.);}';
+      function shader(type, src) { var s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); return s; }
+      var prog = gl.createProgram();
+      gl.attachShader(prog, shader(gl.VERTEX_SHADER, vs));
+      gl.attachShader(prog, shader(gl.FRAGMENT_SHADER, fs));
+      gl.linkProgram(prog);
+      gl.useProgram(prog);
+      gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
+      var loc = gl.getAttribLocation(prog, 'p');
+      gl.enableVertexAttribArray(loc);
+      gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+      var uSeed = gl.getUniformLocation(prog, 'seed');
+      gl.uniform1f(gl.getUniformLocation(prog, 'amount'), AMOUNT);
+      gl.uniform1f(gl.getUniformLocation(prog, 'size'), SIZE);
       function draw() {
-        for (var i = 0; i < px.length; i++) {
-          var v = (Math.random() + Math.random()) * 127 | 0; // triangular spread around mid-grey
-          px[i] = 0xff000000 | v << 16 | v << 8 | v;
-        }
-        ctx.putImageData(img, 0, 0);
+        gl.uniform1f(uSeed, Math.random() * 100);
+        gl.drawArrays(gl.TRIANGLES, 0, 3);
       }
-      function loop(t) {
-        if (t - last > 83) { draw(); last = t; }
-        raf = requestAnimationFrame(loop);
+      function resize() {
+        var dpr = window.devicePixelRatio || 1;
+        c.width = Math.round(innerWidth * dpr);
+        c.height = Math.round(innerHeight * dpr);
+        gl.viewport(0, 0, c.width, c.height);
+        draw();
       }
-      size();
-      draw();
-      addEventListener('resize', function () { size(); draw(); });
-      if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
-      new IntersectionObserver(function (entries) {
-        cancelAnimationFrame(raf);
-        if (entries[0].isIntersecting) raf = requestAnimationFrame(loop);
-      }).observe(c);
+      resize();
+      addEventListener('resize', resize);
+      if (!FPS || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var last = 0;
+      (function loop(t) {
+        if (t - last > 1000 / FPS) { draw(); last = t; }
+        requestAnimationFrame(loop);
+      })(0);
     })();
   </script>
   <script>
