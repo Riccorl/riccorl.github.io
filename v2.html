@@ -54,6 +54,7 @@
     <!-- Hero -->
     <header class="hero" id="top">
       <canvas id="gradient-canvas"></canvas>
+      <canvas id="grain" aria-hidden="true"></canvas>
 
       <div class="win term">
         <div class="win-bar"><span id="term-title">get_info.py 1.1</span></div>
@@ -576,6 +577,39 @@
   </div>
 
   <script src="assets/js/gradient.js"></script>
+  <script>
+    // film grain: fresh monochrome noise ~12 times a second, only while the hero is visible
+    (function () {
+      var c = document.getElementById('grain');
+      if (!c) return;
+      var ctx = c.getContext('2d'), img, px, raf, last = 0;
+      function size() {
+        c.width = c.offsetWidth;
+        c.height = c.offsetHeight;
+        img = ctx.createImageData(c.width, c.height);
+        px = new Uint32Array(img.data.buffer);
+      }
+      function draw() {
+        for (var i = 0; i < px.length; i++) {
+          var v = (Math.random() + Math.random()) * 127 | 0; // triangular spread around mid-grey
+          px[i] = 0xff000000 | v << 16 | v << 8 | v;
+        }
+        ctx.putImageData(img, 0, 0);
+      }
+      function loop(t) {
+        if (t - last > 83) { draw(); last = t; }
+        raf = requestAnimationFrame(loop);
+      }
+      size();
+      draw();
+      addEventListener('resize', function () { size(); draw(); });
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+      new IntersectionObserver(function (entries) {
+        cancelAnimationFrame(raf);
+        if (entries[0].isIntersecting) raf = requestAnimationFrame(loop);
+      }).observe(c);
+    })();
+  </script>
   <script>
     // pick a random snippet flavour, like the old landing page
     (function () {
