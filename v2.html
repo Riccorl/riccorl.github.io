@@ -580,24 +580,23 @@
   <script src="assets/js/gradient.js"></script>
   <script>
     // film grain: clumped monochrome value noise, drawn by the GPU at device resolution.
-    // Time is the noise's third axis, so grains fade into each other instead of popping per frame.
+    // Most of the grain is fixed; a faint share is re-rolled each frame, evenly paced at 30fps,
+    // and only while the hero is on screen.
     (function () {
-      var SPEED = 6;     // grain changes per second, 0 = static
+      var LIVE = 0.3;    // share of the grain that changes each frame, 0 = static
       var AMOUNT = 0.14; // strength around neutral grey (overlay blend)
       var SIZE = 2.2;    // grain clump size in device pixels
       var c = document.getElementById('grain');
       var gl = c && c.getContext('webgl', { alpha: false, antialias: false });
       if (!gl) { if (c) c.remove(); return; }
       var vs = 'attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
-      var fs = 'precision highp float;uniform float time,amount,size;' +
+      var fs = 'precision highp float;uniform float seed,live,amount,size;' +
         'float h(vec3 p){p=fract(p*.1031);p+=dot(p,p.zyx+31.32);return fract((p.x+p.y)*p.z);}' +
-        'float n(vec3 p){vec3 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);' +
-        'return mix(mix(mix(h(i),h(i+vec3(1,0,0)),f.x),mix(h(i+vec3(0,1,0)),h(i+vec3(1,1,0)),f.x),f.y),' +
-        'mix(mix(h(i+vec3(0,0,1)),h(i+vec3(1,0,1)),f.x),mix(h(i+vec3(0,1,1)),h(i+vec3(1,1,1)),f.x),f.y),f.z);}' +
-        // two octaves with offset time phases so their mid-step contrast dips never line up
-        'void main(){vec2 p=gl_FragCoord.xy/size;' +
-        'float g=n(vec3(p,time))*.65+n(vec3(p*2.3+17.,time*1.3+.5))*.35;' +
-        'gl_FragColor=vec4(vec3(.5+(g-.5)*amount*2.),1.);}';
+        'float n(vec2 p,float s){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);' +
+        'return mix(mix(h(vec3(i,s)),h(vec3(i+vec2(1,0),s)),f.x),mix(h(vec3(i+vec2(0,1),s)),h(vec3(i+vec2(1,1),s)),f.x),f.y);}' +
+        'float g(vec2 p,float s){return n(p,s)*.65+n(p*2.3+17.,s)*.35;}' +
+        'void main(){vec2 p=gl_FragCoord.xy/size;float v=mix(g(p,0.),g(p,seed),live);' +
+        'gl_FragColor=vec4(vec3(.5+(v-.5)*amount*2.),1.);}';
       function shader(type, src) { var s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); return s; }
       var prog = gl.createProgram();
       gl.attachShader(prog, shader(gl.VERTEX_SHADER, vs));
@@ -609,12 +608,12 @@
       var loc = gl.getAttribLocation(prog, 'p');
       gl.enableVertexAttribArray(loc);
       gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
-      var uTime = gl.getUniformLocation(prog, 'time');
+      var uSeed = gl.getUniformLocation(prog, 'seed');
+      gl.uniform1f(gl.getUniformLocation(prog, 'live'), LIVE);
       gl.uniform1f(gl.getUniformLocation(prog, 'amount'), AMOUNT);
       gl.uniform1f(gl.getUniformLocation(prog, 'size'), SIZE);
-      var now = 0;
       function draw() {
-        gl.uniform1f(uTime, now * SPEED / 1000);
+        gl.uniform1f(uSeed, 1 + Math.random() * 999);
         gl.drawArrays(gl.TRIANGLES, 0, 3);
       }
       function resize() {
@@ -626,12 +625,18 @@
       }
       resize();
       addEventListener('resize', resize);
-      if (!SPEED || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      (function loop(t) {
-        now = t;
-        draw();
-        requestAnimationFrame(loop);
-      })(0);
+      var hero = document.getElementById('top');
+      if (!LIVE || !hero || matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+      var raf, last = 0;
+      function loop(t) {
+        // ~30fps snapped to the display's refresh, so frames stay evenly spaced
+        if (t - last > 29) { draw(); last = t; }
+        raf = requestAnimationFrame(loop);
+      }
+      new IntersectionObserver(function (entries) {
+        cancelAnimationFrame(raf);
+        if (entries[0].isIntersecting) raf = requestAnimationFrame(loop);
+      }).observe(hero);
     })();
   </script>
   <script>
