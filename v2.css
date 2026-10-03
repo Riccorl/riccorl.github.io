@@ -1,15 +1,15 @@
 /* ---------- tokens ---------- */
 :root {
-  /* film grade: cool grey paper, plum-black ink, cream panels */
-  --bg: #e6e4e8;
-  --ink: #221c20;
-  --panel: #fbf8f1;
-  --panel-2: #ddd5c6;
-  --hover: #5a36c2;
-  --mint: #a3e4cb;
-  --violet: #b9a3f0;
-  --sky: #96cde2;
-  --rule: rgba(34, 28, 32, 0.35);
+  /* palette sampled from Noam Cohen's prism wallpaper (Unsplash): silver, near-black, prism teal, peach, sand */
+  --bg: #e2e4e3;
+  --ink: #131513;
+  --panel: #f4f3ef;
+  --panel-2: #d2d5d4;
+  --hover: #16799c;
+  --mint: #a9d9e3;
+  --violet: #e0c1a0;
+  --sky: #c9bdae;
+  --rule: rgba(19, 21, 19, 0.35);
   --sans: "Inter", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
   --mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
   --display: "Inter Tight", "Helvetica Neue", Arial, sans-serif;
@@ -146,10 +146,10 @@ a.box:hover { background: var(--ink); color: var(--panel); }
   width: 100%;
   height: 100%;
   filter: blur(50px);
-  --gradient-color-1: #e6e4e8;
-  --gradient-color-2: #cfc8dc;
-  --gradient-color-3: #9a8fb3;
-  --gradient-color-4: #f3efe8;
+  --gradient-color-1: #e2e4e3;
+  --gradient-color-2: #d9b48c;
+  --gradient-color-3: #16799c;
+  --gradient-color-4: #f4f3ef;
 }
 /* film grain: one WebGL layer over the whole viewport, rendered at device resolution */
 #grain {
@@ -191,7 +191,7 @@ a.box:hover { background: var(--ink); color: var(--panel); }
   letter-spacing: -0.06em;
   margin: 0 0 clamp(24px, 3vw, 48px);
 }
-.big-title .thin { font-weight: 300; color: #8a8290; }
+.big-title .thin { font-weight: 300; color: #907e6d; }
 
 @media (prefers-reduced-motion: reduce) {
   #gradient-canvas { display: none; }
