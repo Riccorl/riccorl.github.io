@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#c9b3ff">
   <meta name="author" content="Riccardo Orlando">
-  <meta name="description" content="Riccardo Orlando, Computer Scientist and NLP Researcher.">
+  <meta name="description" content="Riccardo Orlando, Computer Scientist and AI Researcher.">
   <meta property="og:title" content="Riccardo Orlando" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://riccorl.github.io/" />
   <meta property="og:image" content="https://riccorl.github.io/assets/preview/preview.png" />
-  <meta property="og:description" content="Riccardo Orlando, Computer Scientist and NLP Researcher." />
+  <meta property="og:description" content="Riccardo Orlando, Computer Scientist and AI Researcher." />
   <link rel="icon" type="image/png" href="assets/favicon/favicon-32x32.png" sizes="32x32" />
   <link rel="apple-touch-icon-precomposed" sizes="152x152" href="assets/favicon/apple-touch-icon-152x152.png" />
 
@@ -19,11 +19,23 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,400..900,0..100,0..1&family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link href="v2.css" rel="stylesheet">
 </head>
 
 <body>
+  <!-- posterise filter for entry logos -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <filter id="crunch" color-interpolation-filters="sRGB">
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncR type="discrete" tableValues="0.06 0.3 0.62 0.93"/>
+        <feFuncG type="discrete" tableValues="0.06 0.3 0.62 0.93"/>
+        <feFuncB type="discrete" tableValues="0.06 0.3 0.62 0.93"/>
+      </feComponentTransfer>
+    </filter>
+  </svg>
+
   <div class="wrap">
 
     <!-- Nav -->
@@ -44,12 +56,15 @@
       <canvas id="gradient-canvas"></canvas>
 
       <div class="win term">
-        <div class="win-bar">get_info.py 1.1</div>
+        <div class="win-bar"><span id="term-title">get_info.py 1.1</span></div>
         <div class="win-body">
-<pre class="code"><span class="cm"># Scroll to show info.</span>
+<pre class="code" data-title="get_info.py 1.1"><span class="cm"># Scroll to show info.</span>
 <span class="kw">def</span> get_info(ro: RiccardoOrlando) -> str:
     <span class="kw">return</span> ro.basic_info()<span class="cursor"></span></pre>
-          <div class="progress"><span></span><em>Loading ... 75%</em></div>
+<pre class="code" data-title="GetInfo.java 1.1" hidden><span class="cm">// Scroll to show info.</span>
+<span class="kw">public</span> String getInfo(RiccardoOrlando ro) {
+    <span class="kw">return</span> ro.basicInfo();
+}<span class="cursor"></span></pre>
         </div>
       </div>
 
@@ -58,18 +73,17 @@
 
     <!-- About -->
     <section class="section" id="about">
-      <h1 class="big-title">Computer Scientist<br><span class="thin">&amp;</span> NLP Researcher.</h1>
+      <h1 class="big-title">Computer Scientist<br><span class="thin">/</span> AI Researcher.</h1>
       <div class="cols">
         <div class="col span-5">
           <p class="eyebrow">About</p>
-          <p>Hi, I'm Riccardo Orlando, <strong>Computer Scientist</strong> and <strong>NLP Researcher</strong>.
+          <p>Hi, I'm Riccardo Orlando, <strong>Computer Scientist</strong> and <strong>AI Researcher</strong>.
             I build language technology that works at scale: from multilingual semantic pipelines to large language
             models trained from scratch.</p>
         </div>
         <div class="col span-4">
           <p class="eyebrow">Currently</p>
-          <p>Researcher at the <strong>World Bank Group</strong>, developing the core pipelines of
-            <a href="https://impactai.worldbank.org/" target="_blank">ImpactAI</a> to automate complex meta-analyses.</p>
+          <p>Senior AI Engineer at <strong>Principled Intelligence</strong>, in Rome.</p>
         </div>
         <div class="col span-3">
           <p class="eyebrow">[Contacts]</p>
@@ -92,20 +106,17 @@
     <section class="section" id="now">
       <h2 class="h2"><small>01 / Work</small>Now.</h2>
       <div class="entry has-logo">
-        <div class="date">Mar. 2025 – Now</div>
-        <div class="logo"><img src="assets/img/wb.png" alt="World Bank Group"></div>
+        <div class="date">Sept. 2026 – Now</div>
+        <div class="logo invert"><img src="assets/img/pi.svg" alt="Principled Intelligence"></div>
         <div>
-          <h3>Researcher · World Bank Group</h3>
+          <h3>Senior AI Engineer · Principled Intelligence</h3>
           <div class="place">Rome, Italy</div>
-          <p class="text">Developing <a href="https://impactai.worldbank.org/" target="_blank">ImpactAI</a>'s core
-            pipelines to automate complex meta-analyses. Leading benchmarking efforts for retrieval systems and
-            building fine-tuned information extraction models across scientific literature and other domains.</p>
         </div>
       </div>
     </section>
 
     <!-- News -->
-    <section class="section" id="news">
+    <section class="section ink" id="news">
       <h2 class="h2"><small>02 / Updates</small>News.</h2>
 
       <div class="entry">
@@ -115,9 +126,9 @@
           <div class="place">Sapienza University of Rome, Italy</div>
           <p class="text">Public release of the <strong>Minerva</strong> 7B (base and instruct) model.</p>
           <div class="tags">
-            <a class="tag" href="https://nlp.uniroma1.it/minerva/blog/2024/11/26/tech-report" target="_blank">Technical Report</a>
-            <a class="tag" href="https://github.com/Riccorl/llm-foundry" target="_blank">GitHub</a>
-            <a class="tag" href="https://huggingface.co/collections/sapienzanlp/minerva-llms-661e6011828fe67de4fe7961" target="_blank">🤗 Hub</a>
+            <a class="tag" data-kind="paper" href="https://nlp.uniroma1.it/minerva/blog/2024/11/26/tech-report" target="_blank">Technical Report</a>
+            <a class="tag" data-kind="code" href="https://github.com/Riccorl/llm-foundry" target="_blank">GitHub</a>
+            <a class="tag" data-kind="models" href="https://huggingface.co/collections/sapienzanlp/minerva-llms-661e6011828fe67de4fe7961" target="_blank">🤗 Hub</a>
           </div>
         </div>
       </div>
@@ -130,9 +141,9 @@
           <p class="text">Public release of the code and models for ReLiK, our system for Entity Linking and Relation
             Extraction.</p>
           <div class="tags">
-            <a class="tag" href="https://github.com/Riccorl/llm-foundry" target="_blank">GitHub</a>
-            <a class="tag" href="https://huggingface.co/collections/sapienzanlp/relik-retrieve-read-and-link-665d9e4a5c3ecba98c1bef19" target="_blank">🤗 Hub</a>
-            <a class="tag" href="https://pypi.org/project/relik/" target="_blank">🐍 PyPI</a>
+            <a class="tag" data-kind="code" href="https://github.com/Riccorl/llm-foundry" target="_blank">GitHub</a>
+            <a class="tag" data-kind="models" href="https://huggingface.co/collections/sapienzanlp/relik-retrieve-read-and-link-665d9e4a5c3ecba98c1bef19" target="_blank">🤗 Hub</a>
+            <a class="tag" data-kind="package" href="https://pypi.org/project/relik/" target="_blank">🐍 PyPI</a>
           </div>
         </div>
       </div>
@@ -155,9 +166,9 @@
           <p class="text">Public release of the <strong>Minerva</strong> models (350M, 1B, 3B), the first family of
             Large Language Models (LLMs) trained from scratch on Italian (and English) data.</p>
           <div class="tags">
-            <a class="tag" href="https://nlp.uniroma1.it/minerva/blog/2024/11/26/tech-report" target="_blank">Technical Report</a>
-            <a class="tag" href="https://github.com/Riccorl/llm-foundry" target="_blank">GitHub</a>
-            <a class="tag" href="https://huggingface.co/collections/sapienzanlp/minerva-llms-661e6011828fe67de4fe7961" target="_blank">🤗 Hub</a>
+            <a class="tag" data-kind="paper" href="https://nlp.uniroma1.it/minerva/blog/2024/11/26/tech-report" target="_blank">Technical Report</a>
+            <a class="tag" data-kind="code" href="https://github.com/Riccorl/llm-foundry" target="_blank">GitHub</a>
+            <a class="tag" data-kind="models" href="https://huggingface.co/collections/sapienzanlp/minerva-llms-661e6011828fe67de4fe7961" target="_blank">🤗 Hub</a>
           </div>
         </div>
       </div>
@@ -167,6 +178,21 @@
     <section class="section" id="publications">
       <h2 class="h2"><small>03 / Research</small>Publications.</h2>
 
+      <div class="entry has-logo" id="causal-queries">
+        <div class="date">May 2026</div>
+        <div class="logo"><img src="assets/img/arxiv.png" alt="arXiv"></div>
+        <div>
+          <h3>Predicting Causal Effects from Natural Language Queries using Structured Representations</h3>
+          <p class="authors">Giuliano Martinelli, Piriyakorn Piriyatamwong, Abelardo Carlos Martinez Lorenzo,
+            Jasmin Baier, <strong>Riccardo Orlando</strong>, Satvik Garg, Sharif Kazemi, Linxi Wang, Arianna Legovini,
+            and Samuel Fraiberger</p>
+          <div class="venue">arXiv preprint, 2026</div>
+          <div class="tags">
+            <a class="tag" data-kind="paper" href="https://arxiv.org/abs/2605.29631" target="_blank">Paper</a>
+          </div>
+        </div>
+      </div>
+
       <div class="entry has-logo" id="raed">
         <div class="date">November 2025</div>
         <div class="logo"><img src="assets/img/acl.png" alt="ACL"></div>
@@ -175,8 +201,8 @@
           <p class="authors">Karim Ghonim, Pere-Lluís Huguet Cabot, <strong>Riccardo Orlando</strong>, and Roberto Navigli</p>
           <div class="venue"><em>In</em> Proceedings of EMNLP, 2025</div>
           <div class="tags">
-            <a class="tag" href="https://aclanthology.org/2025.emnlp-main.1746.pdf" target="_blank">Paper</a>
-            <a class="tag" href="https://github.com/SapienzaNLP/RAED" target="_blank">GitHub</a>
+            <a class="tag" data-kind="paper" href="https://aclanthology.org/2025.emnlp-main.1746.pdf" target="_blank">Paper</a>
+            <a class="tag" data-kind="code" href="https://github.com/SapienzaNLP/RAED" target="_blank">GitHub</a>
           </div>
         </div>
       </div>
@@ -189,8 +215,8 @@
           <p class="authors">Francesco Maria Molfese, Simone Conia, <strong>Riccardo Orlando</strong>, and Roberto Navigli</p>
           <div class="venue"><em>In</em> Proceedings of EMNLP, 2024</div>
           <div class="tags">
-            <a class="tag" href="https://arxiv.org/abs/2410.05077" target="_blank">Paper</a>
-            <a class="tag" href="https://github.com/SapienzaNLP/zebra" target="_blank">GitHub</a>
+            <a class="tag" data-kind="paper" href="https://arxiv.org/abs/2410.05077" target="_blank">Paper</a>
+            <a class="tag" data-kind="code" href="https://github.com/SapienzaNLP/zebra" target="_blank">GitHub</a>
           </div>
         </div>
       </div>
@@ -204,9 +230,9 @@
             Sergio Orlandini, Giuseppe Fiameni, and Roberto Navigli</p>
           <div class="venue"><em>In</em> CLiC-it, 2024</div>
           <div class="tags">
-            <a class="tag" href="https://ceur-ws.org/Vol-3878/76_main_long.pdf" target="_blank">Paper</a>
-            <a class="tag" href="https://huggingface.co/collections/sapienzanlp/minerva-llms-661e6011828fe67de4fe7961" target="_blank">🤗 Hub</a>
-            <a class="tag" href="https://nlp.uniroma1.it/minerva/" target="_blank">Website</a>
+            <a class="tag" data-kind="paper" href="https://ceur-ws.org/Vol-3878/76_main_long.pdf" target="_blank">Paper</a>
+            <a class="tag" data-kind="models" href="https://huggingface.co/collections/sapienzanlp/minerva-llms-661e6011828fe67de4fe7961" target="_blank">🤗 Hub</a>
+            <a class="tag" data-kind="live" href="https://nlp.uniroma1.it/minerva/" target="_blank">Website</a>
           </div>
         </div>
       </div>
@@ -219,10 +245,10 @@
           <p class="authors"><strong>Riccardo Orlando</strong>, Pere-Lluís Huguet Cabot, Edoardo Barba, and Roberto Navigli</p>
           <div class="venue"><em>In</em> Findings of ACL, 2024</div>
           <div class="tags">
-            <a class="tag" href="https://arxiv.org/abs/2408.00103" target="_blank">Paper</a>
-            <a class="tag" href="https://github.com/SapienzaNLP/relik" target="_blank">GitHub</a>
-            <a class="tag" href="https://huggingface.co/collections/sapienzanlp/relik-retrieve-read-and-link-665d9e4a5c3ecba98c1bef19" target="_blank">🤗 Hub</a>
-            <a class="tag" href="https://huggingface.co/spaces/relik-ie/Information-Extraction" target="_blank">Website</a>
+            <a class="tag" data-kind="paper" href="https://arxiv.org/abs/2408.00103" target="_blank">Paper</a>
+            <a class="tag" data-kind="code" href="https://github.com/SapienzaNLP/relik" target="_blank">GitHub</a>
+            <a class="tag" data-kind="models" href="https://huggingface.co/collections/sapienzanlp/relik-retrieve-read-and-link-665d9e4a5c3ecba98c1bef19" target="_blank">🤗 Hub</a>
+            <a class="tag" data-kind="live" href="https://huggingface.co/spaces/relik-ie/Information-Extraction" target="_blank">Website</a>
           </div>
         </div>
       </div>
@@ -236,8 +262,8 @@
             <strong>Riccardo Orlando</strong>, Luigi Procopio, and Roberto Navigli</p>
           <div class="venue"><em>In</em> Proceedings of NAACL, 2024</div>
           <div class="tags">
-            <a class="tag" href="https://aclanthology.org/2024.naacl-long.442/" target="_blank">Paper</a>
-            <a class="tag" href="https://github.com/SapienzaNLP/mosaico" target="_blank">GitHub</a>
+            <a class="tag" data-kind="paper" href="https://aclanthology.org/2024.naacl-long.442/" target="_blank">Paper</a>
+            <a class="tag" data-kind="code" href="https://github.com/SapienzaNLP/mosaico" target="_blank">GitHub</a>
           </div>
         </div>
       </div>
@@ -250,8 +276,8 @@
           <p class="authors"><strong>Riccardo Orlando</strong>, Simone Conia, and Roberto Navigli</p>
           <div class="venue"><em>In</em> Findings of ACL, 2023</div>
           <div class="tags">
-            <a class="tag" href="https://aclanthology.org/2023.findings-acl.783/" target="_blank">Paper</a>
-            <a class="tag" href="https://github.com/SapienzaNLP/exploring-srl" target="_blank">GitHub</a>
+            <a class="tag" data-kind="paper" href="https://aclanthology.org/2023.findings-acl.783/" target="_blank">Paper</a>
+            <a class="tag" data-kind="code" href="https://github.com/SapienzaNLP/exploring-srl" target="_blank">GitHub</a>
           </div>
         </div>
       </div>
@@ -264,7 +290,7 @@
           <p class="authors">Roberto Navigli, <strong>Riccardo Orlando</strong>, Cesare Campagnano, and Simone Conia</p>
           <div class="venue"><em>In</em> European Language Grid. Springer, Cham, 2023</div>
           <div class="tags">
-            <a class="tag" href="https://link.springer.com/chapter/10.1007/978-3-031-17258-8_28" target="_blank">Paper</a>
+            <a class="tag" data-kind="paper" href="https://link.springer.com/chapter/10.1007/978-3-031-17258-8_28" target="_blank">Paper</a>
           </div>
         </div>
       </div>
@@ -277,9 +303,9 @@
           <p class="authors"><strong>Riccardo Orlando</strong>, Simone Conia, Stefano Faralli, and Roberto Navigli</p>
           <div class="venue"><em>In</em> Proceedings of LREC, 2022</div>
           <div class="tags">
-            <a class="tag" href="https://aclanthology.org/2022.lrec-1.282/" target="_blank">Paper</a>
-            <a class="tag" href="https://nlp.uniroma1.it/usea" target="_blank">Website</a>
-            <a class="tag" href="https://github.com/SapienzaNLP/usea" target="_blank">GitHub</a>
+            <a class="tag" data-kind="paper" href="https://aclanthology.org/2022.lrec-1.282/" target="_blank">Paper</a>
+            <a class="tag" data-kind="live" href="https://nlp.uniroma1.it/usea" target="_blank">Website</a>
+            <a class="tag" data-kind="code" href="https://github.com/SapienzaNLP/usea" target="_blank">GitHub</a>
           </div>
         </div>
       </div>
@@ -292,8 +318,8 @@
           <p class="authors"><strong>Riccardo Orlando</strong>, Simone Conia, Fabrizio Brignone, Francesco Cecconi, and Roberto Navigli</p>
           <div class="venue"><em>In</em> Proceedings of EMNLP, 2021</div>
           <div class="tags">
-            <a class="tag" href="https://aclanthology.org/2021.emnlp-demo.34/" target="_blank">Paper</a>
-            <a class="tag" href="http://nlp.uniroma1.it/amuse-wsd" target="_blank">Website</a>
+            <a class="tag" data-kind="paper" href="https://aclanthology.org/2021.emnlp-demo.34/" target="_blank">Paper</a>
+            <a class="tag" data-kind="live" href="http://nlp.uniroma1.it/amuse-wsd" target="_blank">Website</a>
           </div>
         </div>
       </div>
@@ -306,8 +332,8 @@
           <p class="authors">Simone Conia, <strong>Riccardo Orlando</strong>, Fabrizio Brignone, Francesco Cecconi, and Roberto Navigli</p>
           <div class="venue"><em>In</em> Proceedings of EMNLP, 2021</div>
           <div class="tags">
-            <a class="tag" href="https://aclanthology.org/2021.emnlp-demo.36/" target="_blank">Paper</a>
-            <a class="tag" href="http://nlp.uniroma1.it/invero" target="_blank">Website</a>
+            <a class="tag" data-kind="paper" href="https://aclanthology.org/2021.emnlp-demo.36/" target="_blank">Paper</a>
+            <a class="tag" data-kind="live" href="http://nlp.uniroma1.it/invero" target="_blank">Website</a>
           </div>
         </div>
       </div>
@@ -316,6 +342,19 @@
     <!-- Past -->
     <section class="section" id="past">
       <h2 class="h2"><small>04 / Experience &amp; Education</small>Past.</h2>
+
+      <div class="entry has-logo">
+        <div class="date">Mar. 2025 – Aug. 2026</div>
+        <div class="logo"><img src="assets/img/wb.png" alt="World Bank Group"></div>
+        <div>
+          <h3>Researcher · World Bank Group</h3>
+          <div class="place">Rome, Italy</div>
+          <p class="text">Built ZeroHungerAI's LLM extraction system from the ground up: training data, models,
+            evaluation benchmark, and the inference setup that runs it across 150 million news articles. Also built the
+            retrieval and agentic parts of <a href="https://impactai.worldbank.org/" target="_blank">ImpactAI</a>'s
+            meta-analysis pipeline, plus the RCT benchmark used to evaluate retrieval, and got it into production.</p>
+        </div>
+      </div>
 
       <div class="entry has-logo">
         <div class="date">Nov. 2021 – Jan. 2025</div>
@@ -375,7 +414,7 @@
     </section>
 
     <!-- Projects -->
-    <section class="section" id="projects">
+    <section class="section ink" id="projects">
       <h2 class="h2"><small>05 / Open Source</small>Personal projects.</h2>
       <div class="grid">
 
@@ -383,8 +422,8 @@
           <div class="win-bar">golden-retriever</div>
           <div class="win-body"><p>🦮 A Lightning framework for retriever architecture prototype.</p></div>
           <div class="win-foot">
-            <a href="https://github.com/Riccorl/golden-retriever" target="_blank">GitHub</a>
-            <a href="https://pypi.org/project/goldenretriever-core" target="_blank">PyPI</a>
+            <a data-kind="code" href="https://github.com/Riccorl/golden-retriever" target="_blank">GitHub</a>
+            <a data-kind="package" href="https://pypi.org/project/goldenretriever-core" target="_blank">PyPI</a>
           </div>
         </div>
 
@@ -392,8 +431,8 @@
           <div class="win-bar">llama-trainer</div>
           <div class="win-body"><p>🦙 A "just few lines of code" utility for fine-tuning (not only) Llama models.</p></div>
           <div class="win-foot">
-            <a href="https://github.com/Riccorl/llama-trainer" target="_blank">GitHub</a>
-            <a href="https://pypi.org/project/llama-trainer" target="_blank">PyPI</a>
+            <a data-kind="code" href="https://github.com/Riccorl/llama-trainer" target="_blank">GitHub</a>
+            <a data-kind="package" href="https://pypi.org/project/llama-trainer" target="_blank">PyPI</a>
           </div>
         </div>
 
@@ -401,8 +440,8 @@
           <div class="win-bar">transformers-embedder</div>
           <div class="win-body"><p>A Word Level Transformer layer based on PyTorch and 🤗 Transformers.</p></div>
           <div class="win-foot">
-            <a href="https://github.com/Riccorl/transformers-embedder" target="_blank">GitHub</a>
-            <a href="https://pypi.org/project/transformers-embedder/" target="_blank">PyPI</a>
+            <a data-kind="code" href="https://github.com/Riccorl/transformers-embedder" target="_blank">GitHub</a>
+            <a data-kind="package" href="https://pypi.org/project/transformers-embedder/" target="_blank">PyPI</a>
           </div>
         </div>
 
@@ -410,7 +449,7 @@
           <div class="win-bar">nlp-template</div>
           <div class="win-body"><p>A template to initialize PyTorch projects that use PyTorch Lightning as a backbone framework.</p></div>
           <div class="win-foot">
-            <a href="https://github.com/Riccorl/nlp-template" target="_blank">GitHub</a>
+            <a data-kind="code" href="https://github.com/Riccorl/nlp-template" target="_blank">GitHub</a>
           </div>
         </div>
 
@@ -418,8 +457,8 @@
           <div class="win-bar">ipa</div>
           <div class="win-body"><p>🍺 IPA: import, preprocess, accelerate. NLP Preprocessing Pipeline Wrappers.</p></div>
           <div class="win-foot">
-            <a href="https://github.com/Riccorl/ipa" target="_blank">GitHub</a>
-            <a href="https://pypi.org/project/ipa-core/" target="_blank">PyPI</a>
+            <a data-kind="code" href="https://github.com/Riccorl/ipa" target="_blank">GitHub</a>
+            <a data-kind="package" href="https://pypi.org/project/ipa-core/" target="_blank">PyPI</a>
           </div>
         </div>
 
@@ -427,9 +466,9 @@
           <div class="win-bar">ner-serve</div>
           <div class="win-body"><p>Simple multilingual NER model serving using Docker, FastAPI, ONNX and Multilingual Mini-LM.</p></div>
           <div class="win-foot">
-            <a href="https://github.com/Riccorl/ner-serve" target="_blank">GitHub</a>
-            <a href="https://hub.docker.com/r/riccorl/multilingual-minilm-ner" target="_blank">Docker</a>
-            <a href="https://ner-serve-streamlit.herokuapp.com/" target="_blank">Demo</a>
+            <a data-kind="code" href="https://github.com/Riccorl/ner-serve" target="_blank">GitHub</a>
+            <a data-kind="package" href="https://hub.docker.com/r/riccorl/multilingual-minilm-ner" target="_blank">Docker</a>
+            <a data-kind="live" href="https://ner-serve-streamlit.herokuapp.com/" target="_blank">Demo</a>
           </div>
         </div>
 
@@ -437,7 +476,7 @@
           <div class="win-bar">transformers-ner</div>
           <div class="win-body"><p>Simple NER model, showcasing the Transformer Embedder library.</p></div>
           <div class="win-foot">
-            <a href="https://github.com/Riccorl/transformers-ner" target="_blank">GitHub</a>
+            <a data-kind="code" href="https://github.com/Riccorl/transformers-ner" target="_blank">GitHub</a>
           </div>
         </div>
 
@@ -445,8 +484,8 @@
           <div class="win-bar">transformer-srl</div>
           <div class="win-body"><p>Reimplementation of a BERT based model (Shi et al, 2019), currently the state-of-the-art for English SRL. Also implements predicate disambiguation.</p></div>
           <div class="win-foot">
-            <a href="https://github.com/Riccorl/transformer-srl" target="_blank">GitHub</a>
-            <a href="https://pypi.org/project/transformer-srl/" target="_blank">PyPI</a>
+            <a data-kind="code" href="https://github.com/Riccorl/transformer-srl" target="_blank">GitHub</a>
+            <a data-kind="package" href="https://pypi.org/project/transformer-srl/" target="_blank">PyPI</a>
           </div>
         </div>
 
@@ -454,7 +493,7 @@
           <div class="win-bar">super-slomo-tf2</div>
           <div class="win-body"><p>Tensorflow 2 implementation of the Super Slo Mo paper.</p></div>
           <div class="win-foot">
-            <a href="https://github.com/Riccorl/Super-SloMo-tf2" target="_blank">GitHub</a>
+            <a data-kind="code" href="https://github.com/Riccorl/Super-SloMo-tf2" target="_blank">GitHub</a>
           </div>
         </div>
 
@@ -462,7 +501,7 @@
           <div class="win-bar">chinese-word-segmentation</div>
           <div class="win-body"><p>Chinese Word Segmentation based on BERT, implemented in PyTorch for state-of-the-art Chinese word segmentation.</p></div>
           <div class="win-foot">
-            <a href="https://github.com/Riccorl/chinese-word-segmentation-pytorch" target="_blank">GitHub</a>
+            <a data-kind="code" href="https://github.com/Riccorl/chinese-word-segmentation-pytorch" target="_blank">GitHub</a>
           </div>
         </div>
 
@@ -470,7 +509,7 @@
           <div class="win-bar">elmo-wsd</div>
           <div class="win-body"><p>A supervised Bi-LSTM architecture for the Word Sense Disambiguation task.</p></div>
           <div class="win-foot">
-            <a href="https://github.com/Riccorl/elmo-wsd" target="_blank">GitHub</a>
+            <a data-kind="code" href="https://github.com/Riccorl/elmo-wsd" target="_blank">GitHub</a>
           </div>
         </div>
 
@@ -478,7 +517,7 @@
           <div class="win-bar">sense-embedding</div>
           <div class="win-body"><p>BabelNet (and WordNet) sense embeddings trained with Word2Vec and FastText.</p></div>
           <div class="win-foot">
-            <a href="https://github.com/Riccorl/sense-embedding" target="_blank">GitHub</a>
+            <a data-kind="code" href="https://github.com/Riccorl/sense-embedding" target="_blank">GitHub</a>
           </div>
         </div>
 
@@ -486,7 +525,7 @@
           <div class="win-bar">cnn-venice-boat</div>
           <div class="win-body"><p>Convolutional Neural Networks trained to classify different types of boats.</p></div>
           <div class="win-foot">
-            <a href="https://github.com/Riccorl/CNN-Venice-Boat" target="_blank">GitHub</a>
+            <a data-kind="code" href="https://github.com/Riccorl/CNN-Venice-Boat" target="_blank">GitHub</a>
           </div>
         </div>
 
@@ -494,7 +533,7 @@
           <div class="win-bar">ml-malware-classifier</div>
           <div class="win-body"><p>Three classifiers trained to distinguish malware applications from non-malware ones and recognize the family they belong to.</p></div>
           <div class="win-foot">
-            <a href="https://github.com/Riccorl/ml-malware-classifier" target="_blank">GitHub</a>
+            <a data-kind="code" href="https://github.com/Riccorl/ml-malware-classifier" target="_blank">GitHub</a>
           </div>
         </div>
 
@@ -502,7 +541,7 @@
           <div class="win-bar">densest-subgraph-fork-join</div>
           <div class="win-body"><p>Bachelor's thesis. A Fork/Join parallel algorithm for the densest subgraph problem.</p></div>
           <div class="win-foot">
-            <a href="https://github.com/Riccorl/Densest-subgraph-in-Fork-Join" target="_blank">GitHub</a>
+            <a data-kind="code" href="https://github.com/Riccorl/Densest-subgraph-in-Fork-Join" target="_blank">GitHub</a>
           </div>
         </div>
 
@@ -510,7 +549,7 @@
           <div class="win-bar">fork-join-sudoku-solver</div>
           <div class="win-body"><p>Solver that uses the Fork/Join framework to solve Sudoku in parallel, made during a multi-core programming course.</p></div>
           <div class="win-foot">
-            <a href="https://github.com/Riccorl/ForkJoinSudokuSolver" target="_blank">GitHub</a>
+            <a data-kind="code" href="https://github.com/Riccorl/ForkJoinSudokuSolver" target="_blank">GitHub</a>
           </div>
         </div>
 
@@ -538,6 +577,16 @@
 
   <script src="assets/js/gradient.js"></script>
   <script>
+    // pick a random snippet flavour, like the old landing page
+    (function () {
+      var snippets = document.querySelectorAll('.term .code');
+      var pick = Math.floor(Math.random() * snippets.length);
+      snippets.forEach(function (el, i) { el.hidden = i !== pick; });
+      document.getElementById('term-title').textContent = snippets[pick].dataset.title;
+    })();
+  </script>
+
+  <script>
     (function () {
       var el = document.getElementById('clock');
       function tick() {
@@ -546,6 +595,50 @@
       }
       tick();
       setInterval(tick, 1000);
+    })();
+  </script>
+  <script>
+    // portrait gets the 8-bit treatment: 128px wide, quantised to a 6-tone lavender ramp
+    (function () {
+      var RAMP = ['#16141c', '#2e2440', '#55486e', '#8f86a3', '#c3bfcf', '#f2f0f6'].map(function (h) {
+        return [1, 3, 5].map(function (i) { return parseInt(h.slice(i, i + 2), 16); });
+      });
+      var COLS = 128;
+      var img = document.querySelector('.photo img');
+      if (!img) return;
+      function build() {
+        var c = document.createElement('canvas');
+        c.width = COLS;
+        c.height = Math.round(COLS * img.naturalHeight / img.naturalWidth);
+        var ctx = c.getContext('2d');
+        ctx.drawImage(img, 0, 0, c.width, c.height);
+        var d = ctx.getImageData(0, 0, c.width, c.height);
+        for (var i = 0; i < d.data.length; i += 4) {
+          var lum = (d.data[i] * 0.299 + d.data[i + 1] * 0.587 + d.data[i + 2] * 0.114) / 255;
+          lum = Math.min(1, Math.max(0, (lum - 0.42) * 1.6 + 0.5));
+          var t = RAMP[Math.min(RAMP.length - 1, Math.floor(lum * RAMP.length))];
+          d.data[i] = t[0]; d.data[i + 1] = t[1]; d.data[i + 2] = t[2];
+        }
+        ctx.putImageData(d, 0, 0);
+        var full = img.src;
+        var retro = c.toDataURL();
+        img.src = retro;
+        var box = img.closest('.photo');
+        box.addEventListener('mouseenter', function () { img.src = full; });
+        box.addEventListener('mouseleave', function () { img.src = retro; });
+      }
+      img.complete && img.naturalWidth ? build() : img.addEventListener('load', build, { once: true });
+    })();
+  </script>
+  <script>
+    // solid nav once the hero has scrolled past
+    (function () {
+      var nav = document.querySelector('.nav');
+      var hero = document.getElementById('top');
+      if (!nav || !hero || !('IntersectionObserver' in window)) return;
+      new IntersectionObserver(function (entries) {
+        nav.classList.toggle('solid', !entries[0].isIntersecting);
+      }, { rootMargin: '-60px 0px 0px 0px' }).observe(hero);
     })();
   </script>
 </body>
