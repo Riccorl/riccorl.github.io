@@ -1,14 +1,16 @@
 /* ---------- tokens ---------- */
 :root {
-  --bg: #c9b3ff;
-  --ink: #1e1e1e;
-  --panel: #fefefe;
-  --panel-2: #dedede;
-  --hover: #5b2fd6;
-  --mint: #80ffdb;
-  --violet: #b56fff;
-  --sky: #7fd8ff;
-  --rule: rgba(30, 30, 30, 0.35);
+  /* warm film grade: softened lavender, plum-black ink, cream paper */
+  --bg: #c6b1ea;
+  --ink: #221c20;
+  --panel: #fbf6ec;
+  --panel-2: #e3dccf;
+  --hover: #5a36c2;
+  --mint: #a3e4cb;
+  --violet: #ae7de6;
+  --sky: #96cde2;
+  --rule: rgba(34, 28, 32, 0.35);
+  --grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   --sans: "Inter", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
   --mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
   --serif: "Fraunces", Georgia, "Times New Roman", serif;
@@ -58,6 +60,20 @@ img { max-width: 100%; display: block; }
   background: var(--panel);
   border: 1.5px solid var(--ink);
   box-shadow: 4px 4px 0 var(--ink);
+}
+/* film grain on paper surfaces; ink bands get theirs below */
+.win, .entry .logo { position: relative; }
+.win::after,
+.entry .logo::after,
+.section.ink::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: var(--grain);
+  background-size: 180px;
+  opacity: 0.12;
+  mix-blend-mode: multiply;
 }
 .win-bar {
   display: flex;
@@ -141,10 +157,10 @@ a.box:hover { background: var(--ink); color: var(--panel); }
   width: 100%;
   height: 100%;
   filter: blur(50px);
-  --gradient-color-1: #c9b3ff;
-  --gradient-color-2: #a97bff;
-  --gradient-color-3: #5b2fd6;
-  --gradient-color-4: #a8f2dd;
+  --gradient-color-1: #c6b1ea;
+  --gradient-color-2: #a582e6;
+  --gradient-color-3: #5a36c2;
+  --gradient-color-4: #b4e6d2;
 }
 /* film grain over the gradient, ported from v1 */
 .hero::after {
@@ -156,7 +172,7 @@ a.box:hover { background: var(--ink); color: var(--panel); }
   height: 300%;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.1;
+  opacity: 0.14;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 270px;
@@ -371,6 +387,7 @@ a.box:hover { background: var(--ink); color: var(--panel); }
   margin-inline: calc(50% - 50vw);
   padding-inline: calc(50vw - 50% + 12px);
 }
+.section.ink::after { opacity: 0.16; mix-blend-mode: screen; }
 .section.ink .h2 small { color: var(--mint); }
 .section.ink .entry,
 .section.ink .entry:last-child { border-color: rgba(254, 254, 254, 0.4); }
@@ -378,7 +395,7 @@ a.box:hover { background: var(--ink); color: var(--panel); }
 .section.ink .win { color: var(--ink); box-shadow: 4px 4px 0 var(--mint); }
 .section.ink .win-bar { color: var(--panel); }
 .section.ink .entry .logo { box-shadow: 3px 3px 0 var(--mint); }
-.section.ink .tag { color: var(--ink); box-shadow: 2px 2px 0 var(--mint); }
+.section.ink .tag { box-shadow: 2px 2px 0 var(--mint); }
 
 /* ---------- projects ---------- */
 .grid {
