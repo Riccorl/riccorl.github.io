@@ -586,7 +586,7 @@
       var raf, last = 0;
       function loop(t) {
         if (t - last > 40) {
-          g.style.transform = 'translate(' + (Math.random() * 512 | 0) + 'px,' + (Math.random() * 512 | 0) + 'px)';
+          g.style.transform = 'translate(' + (Math.random() * 1024 | 0) + 'px,' + (Math.random() * 1024 | 0) + 'px)';
           last = t;
         }
         raf = requestAnimationFrame(loop);
