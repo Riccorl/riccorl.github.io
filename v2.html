@@ -36,8 +36,6 @@
     </filter>
   </svg>
 
-  <div class="grain" aria-hidden="true"></div>
-
   <div class="wrap">
 
     <!-- Nav -->
@@ -70,6 +68,7 @@
         </div>
       </div>
 
+      <div class="hero-grain" aria-hidden="true"></div>
       <a class="scroll-cue mono" href="#about">↓ scroll</a>
     </header>
 
@@ -579,19 +578,23 @@
 
   <script src="assets/js/gradient.js"></script>
   <script>
-    // film grain: jump the real-grain layer to a new random offset ~20-24 times a second
-    // (every 3rd frame at 60Hz, every 5th at 120Hz), so every frame shows fresh grain
+    // hero grain: jump the real-grain layer to a new random offset ~20-24 times a second
+    // (every 3rd frame at 60Hz, every 5th at 120Hz), only while the hero is on screen
     (function () {
-      var g = document.querySelector('.grain');
-      if (!g || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      var last = 0;
-      (function loop(t) {
+      var g = document.querySelector('.hero-grain');
+      if (!g || matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+      var raf, last = 0;
+      function loop(t) {
         if (t - last > 40) {
           g.style.transform = 'translate(' + (Math.random() * 512 | 0) + 'px,' + (Math.random() * 512 | 0) + 'px)';
           last = t;
         }
-        requestAnimationFrame(loop);
-      })(0);
+        raf = requestAnimationFrame(loop);
+      }
+      new IntersectionObserver(function (entries) {
+        cancelAnimationFrame(raf);
+        if (entries[0].isIntersecting) raf = requestAnimationFrame(loop);
+      }).observe(g.parentNode);
     })();
   </script>
   <script>
