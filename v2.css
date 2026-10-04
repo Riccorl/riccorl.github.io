@@ -31,19 +31,21 @@ body {
   line-height: 1.35;
   letter-spacing: -0.01em;
   -webkit-font-smoothing: antialiased;
-  position: relative;
 }
-/* real film grain (CC0 Kodak Tri-X 400 scan by Wiley.andrew.r, Wikimedia Commons),
-   printed onto the page so it scrolls with the content; the hero has its own moving copy */
-body::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
+/* real film grain (CC0 Kodak Tri-X 400 scan by Wiley.andrew.r, Wikimedia Commons) over the
+   whole viewport; script jumps it to a new frame ~20-24 times a second, like grain on film */
+.grain {
+  position: fixed;
+  top: -512px;
+  left: -512px;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
   pointer-events: none;
   background: url("assets/img/grain-trix400.jpg") 0 0 / 512px;
   mix-blend-mode: overlay;
-  opacity: 0.3;
+  opacity: 0.32;
+  will-change: transform;
 }
 
 a { color: inherit; text-decoration: none; }
@@ -152,7 +154,6 @@ a.box:hover { background: var(--ink); color: var(--panel); }
   padding: clamp(40px, 8vw, 96px) var(--gutter);
   padding-top: calc(var(--nav-h) + clamp(40px, 8vw, 96px));
   overflow: hidden;
-  z-index: 2; /* above the page grain: the hero carries its own moving grain */
 }
 #gradient-canvas {
   position: absolute;
@@ -164,20 +165,6 @@ a.box:hover { background: var(--ink); color: var(--panel); }
   --gradient-color-2: #d9b48c;
   --gradient-color-3: #16799c;
   --gradient-color-4: #f4f3ef;
-}
-/* the same grain over the hero scene, oversized so script can jump it to a new frame */
-.hero-grain {
-  position: absolute;
-  top: -512px;
-  left: -512px;
-  right: 0;
-  bottom: 0;
-  z-index: 3;
-  pointer-events: none;
-  background: url("assets/img/grain-trix400.jpg") 0 0 / 512px;
-  mix-blend-mode: overlay;
-  opacity: 0.35;
-  will-change: transform;
 }
 
 .hero .win.term {
