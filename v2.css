@@ -165,18 +165,19 @@ a.box:hover { background: var(--ink); color: var(--panel); }
   --gradient-color-3: #16799c;
   --gradient-color-4: #f4f3ef;
 }
-/* the same grain over the hero scene, oversized so script can jump it to a new frame */
+/* the same grain over the hero scene at 2x scale (clumpier, more like projected film),
+   oversized so script can jump it to a new frame */
 .hero-grain {
   position: absolute;
-  top: -512px;
-  left: -512px;
+  top: -1024px;
+  left: -1024px;
   right: 0;
   bottom: 0;
   z-index: 3;
   pointer-events: none;
-  background: url("assets/img/grain-trix400.jpg") 0 0 / 512px;
+  background: url("assets/img/grain-trix400.jpg") 0 0 / 1024px;
   mix-blend-mode: overlay;
-  opacity: 0.35;
+  opacity: 0.13;
   will-change: transform;
 }
 
