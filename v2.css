@@ -177,7 +177,7 @@ a.box:hover { background: var(--ink); color: var(--panel); }
   pointer-events: none;
   background: url("assets/img/grain-trix400.jpg") 0 0 / 1024px;
   mix-blend-mode: overlay;
-  opacity: 0.08;
+  opacity: 0.05;
   will-change: transform;
 }
 
