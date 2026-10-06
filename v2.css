@@ -189,16 +189,36 @@ a.box:hover { background: var(--ink); color: var(--panel); }
   will-change: transform;
 }
 
+/* hero window: dark glass editor, unlike the retro windows below */
 .hero .win.term {
   position: relative;
   z-index: 1;
   width: min(660px, 100%);
-  box-shadow: 6px 6px 0 var(--ink);
+  background: rgba(19, 21, 19, 0.9);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  color: #e9e8e3;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 30px 80px -20px rgba(19, 21, 19, 0.55);
 }
-.hero .win.term .win-body { padding: 16px 18px; }
+.hero .win.term .win-bar {
+  position: relative;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(233, 232, 227, 0.55);
+  padding: 11px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.hero .win.term .win-bar::before { display: none; }
+.hero .win.term .hint { position: absolute; right: 14px; }
+.hero .win.term .win-body { padding: 16px 20px 20px; overflow: hidden; }
+.hero .term .cursor { background: #e9e8e3; }
 .hero .code { font-size: clamp(13px, 1.55vw, 16px); }
-.hero .win-bar .hint { margin-left: auto; opacity: 0.6; }
-.hero .win.term .win-body { overflow: hidden; }
+.hero .code .kw { color: #6cb8ff; font-weight: 400; }
+.hero .code.out { border-top-color: rgba(255, 255, 255, 0.08); }
+.hero .code.out a { color: #ffb54c; }
 .code .ghost { opacity: 0.5; font-style: italic; transition: opacity 0.3s; animation: fade-in 0.35s ease-out; }
 .code .ghost.accepted { opacity: 1; font-style: normal; }
 .code.out > span { animation: fade-in 0.3s ease-out; }
