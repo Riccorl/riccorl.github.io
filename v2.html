@@ -56,15 +56,23 @@
       <canvas id="gradient-canvas"></canvas>
 
       <div class="win term">
-        <div class="win-bar"><span id="term-title">get_info.py 1.1</span></div>
+        <div class="win-bar"><span id="term-title">get_info.py 1.1</span><span class="hint" hidden>Tab ↹ accept</span></div>
         <div class="win-body">
-<pre class="code" data-title="get_info.py 1.1"><span class="cm"># Scroll to show info.</span>
+<pre class="code" data-title="get_info.py 1.1" data-run="python get_info.py"><span class="cm"># Scroll to show info.</span>
 <span class="kw">def</span> get_info(ro: RiccardoOrlando) -> str:
-    <span class="kw">return</span> ro.basic_info()<span class="cursor"></span></pre>
-<pre class="code" data-title="GetInfo.java 1.1" hidden><span class="cm">// Scroll to show info.</span>
+    <span class="kw">return</span> ro.basic_info()<span class="cursor"></span><span class="ghost" hidden>
+
+print(get_info(riccardo))</span></pre>
+<pre class="code" data-title="GetInfo.java 1.1" data-run="java GetInfo.java" hidden><span class="cm">// Scroll to show info.</span>
 <span class="kw">public</span> String getInfo(RiccardoOrlando ro) {
     <span class="kw">return</span> ro.basicInfo();
-}<span class="cursor"></span></pre>
+}<span class="cursor"></span><span class="ghost" hidden>
+
+System.out.println(getInfo(riccardo));</span></pre>
+<pre class="code out" id="term-out" hidden><span class="cm">$ <span id="term-cmd"></span></span>
+<strong>Riccardo Orlando</strong>
+Senior AI Engineer @ Principled Intelligence, Rome
+→ <a href="https://github.com/Riccorl" target="_blank">github</a>  <a href="https://scholar.google.com/citations?user=pYfNxg4AAAAJ" target="_blank">scholar</a>  <a href="assets/files/Orlando_CV.pdf" target="_blank">cv</a></pre>
         </div>
       </div>
 
@@ -604,6 +612,39 @@
       var pick = Math.floor(Math.random() * snippets.length);
       snippets.forEach(function (el, i) { el.hidden = i !== pick; });
       document.getElementById('term-title').textContent = snippets[pick].dataset.title;
+    })();
+  </script>
+  <script>
+    // copilot-style ghost line after load; Tab, a click on the window or the first scroll accepts it and "runs" the file
+    (function () {
+      var pre = document.querySelector('.term .code:not([hidden])');
+      var ghost = pre.querySelector('.ghost'), cursor = pre.querySelector('.cursor');
+      var hint = document.querySelector('.term .hint'), out = document.getElementById('term-out');
+      var done = false, show = setTimeout(function () { ghost.hidden = hint.hidden = false; }, 1200);
+      if (matchMedia('(pointer: coarse)').matches) hint.textContent = 'tap to accept';
+      function run() {
+        if (done) return;
+        done = true;
+        clearTimeout(show);
+        ghost.hidden = false;
+        ghost.classList.remove('ghost');
+        hint.hidden = true;
+        cursor.remove();
+        document.getElementById('term-cmd').textContent = pre.dataset.run;
+        out.hidden = false;
+        // print the output one line at a time, cursor parked at the end
+        var lines = out.innerHTML.split('\n'), i = 0, step = matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 160;
+        out.innerHTML = '';
+        (function next() {
+          out.innerHTML = lines.slice(0, ++i).join('\n') + '<span class="cursor"></span>';
+          if (i < lines.length) setTimeout(next, step);
+        })();
+      }
+      addEventListener('keydown', function (e) {
+        if (e.key === 'Tab' && !done && scrollY < innerHeight / 2) { e.preventDefault(); run(); }
+      });
+      addEventListener('scroll', run, { once: true, passive: true });
+      document.querySelector('.term').addEventListener('click', run);
     })();
   </script>
 
