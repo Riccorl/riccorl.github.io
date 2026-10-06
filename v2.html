@@ -623,29 +623,38 @@ Senior AI Engineer @ Principled Intelligence, Rome</span><span hidden>
       var hint = document.querySelector('.term .hint'), out = document.getElementById('term-out');
       var cmd = document.getElementById('term-cmd'), lines = out.querySelectorAll(':scope > [hidden]');
       var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var body = out.parentNode;
       function later(fn, ms) { return setTimeout(fn, reduce ? 0 : ms); }
-      var done = false, show = later(function () { ghost.hidden = hint.hidden = false; }, 1000), auto = later(run, 3500);
+      // apply a change that adds lines, easing the window to its new height instead of jumping
+      function grow(fn) {
+        var h0 = body.offsetHeight;
+        fn();
+        if (!reduce) body.animate([{ height: h0 + 'px' }, { height: body.offsetHeight + 'px' }], { duration: 260, easing: 'cubic-bezier(.2, .7, .3, 1)' });
+      }
+      var done = false, show = later(function () { grow(function () { ghost.hidden = hint.hidden = false; }); }, 800), auto = later(run, 2200);
       if (matchMedia('(pointer: coarse)').matches) hint.textContent = 'tap to accept';
       function run() {
         if (done) return;
         done = true;
         clearTimeout(show);
         clearTimeout(auto);
-        ghost.hidden = false;
-        ghost.classList.remove('ghost');
         hint.hidden = true;
         cmd.parentNode.after(cursor);
-        out.hidden = false;
+        grow(function () {
+          ghost.hidden = false;
+          ghost.classList.add('accepted');
+          out.hidden = false;
+        });
         var c = 0, i = 0;
         later(function type() {
           cmd.textContent = pre.dataset.run.slice(0, ++c);
-          if (c < pre.dataset.run.length) return later(type, 55);
+          if (c < pre.dataset.run.length) return later(type, 32);
           later(function next() {
-            lines[i].hidden = false;
+            grow(function () { lines[i].hidden = false; });
             lines[i].after(cursor);
-            if (++i < lines.length) later(next, 300);
-          }, 500);
-        }, 600);
+            if (++i < lines.length) later(next, 170);
+          }, 280);
+        }, 300);
       }
       addEventListener('keydown', function (e) {
         if (e.key === 'Tab' && !done && scrollY < innerHeight / 2) { e.preventDefault(); run(); }

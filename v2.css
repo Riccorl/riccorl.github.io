@@ -198,7 +198,10 @@ a.box:hover { background: var(--ink); color: var(--panel); }
 .hero .win.term .win-body { padding: 16px 18px; }
 .hero .code { font-size: clamp(13px, 1.55vw, 16px); }
 .hero .win-bar .hint { margin-left: auto; opacity: 0.6; }
-.code .ghost { opacity: 0.5; font-style: italic; animation: fade-in 0.4s ease-out; }
+.hero .win.term .win-body { overflow: hidden; }
+.code .ghost { opacity: 0.5; font-style: italic; transition: opacity 0.3s; animation: fade-in 0.35s ease-out; }
+.code .ghost.accepted { opacity: 1; font-style: normal; }
+.code.out > span { animation: fade-in 0.3s ease-out; }
 .code.out { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--panel-2); }
 .code.out a { text-decoration: underline; text-underline-offset: 3px; }
 @keyframes fade-in { from { opacity: 0; } }
