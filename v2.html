@@ -69,9 +69,9 @@ print(get_info(riccardo))</span></pre>
 }<span class="cursor"></span><span class="ghost" hidden>
 
 System.out.println(getInfo(riccardo));</span></pre>
-<pre class="code out" id="term-out" hidden><span class="cm">$ <span id="term-cmd"></span></span><span hidden>
-<strong>Riccardo Orlando</strong></span><span hidden>
-Senior AI Engineer @ Principled Intelligence, Rome</span><span hidden>
+<pre class="code out" id="term-out" hidden><span class="cm">$ <span id="term-cmd"></span></span><span class="ln">
+<strong>Riccardo Orlando</strong></span><span class="ln">
+Senior AI Engineer @ Principled Intelligence, Rome</span><span class="ln">
 → <a href="https://github.com/Riccorl" target="_blank">github</a>  <a href="https://scholar.google.com/citations?user=pYfNxg4AAAAJ" target="_blank">scholar</a>  <a href="assets/files/Orlando_CV.pdf" target="_blank">cv</a></span></pre>
         </div>
       </div>
@@ -621,7 +621,7 @@ Senior AI Engineer @ Principled Intelligence, Rome</span><span hidden>
       var pre = document.querySelector('.term .code:not([hidden])');
       var ghost = pre.querySelector('.ghost'), cursor = pre.querySelector('.cursor');
       var out = document.getElementById('term-out');
-      var cmd = document.getElementById('term-cmd'), lines = out.querySelectorAll(':scope > [hidden]');
+      var cmd = document.getElementById('term-cmd'), lines = out.querySelectorAll('.ln');
       var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
       var body = out.parentNode;
       function later(fn, ms) { return setTimeout(fn, reduce ? 0 : ms); }
@@ -629,7 +629,7 @@ Senior AI Engineer @ Principled Intelligence, Rome</span><span hidden>
       function grow(fn) {
         var h0 = body.offsetHeight;
         fn();
-        if (!reduce) body.animate([{ height: h0 + 'px' }, { height: body.offsetHeight + 'px' }], { duration: 260, easing: 'cubic-bezier(.2, .7, .3, 1)' });
+        if (!reduce) body.animate([{ height: h0 + 'px' }, { height: body.offsetHeight + 'px' }], { duration: 320, easing: 'cubic-bezier(.2, .7, .3, 1)' });
       }
       var done = false, show = later(function () { grow(function () { ghost.hidden = false; }); }, 800), auto = later(run, 2200);
       function run() {
@@ -637,22 +637,28 @@ Senior AI Engineer @ Principled Intelligence, Rome</span><span hidden>
         done = true;
         clearTimeout(show);
         clearTimeout(auto);
-        cmd.parentNode.after(cursor);
+        // accept the suggestion and grow once to the final height; output lines take their space but stay invisible
+        cursor.classList.add('busy');
         grow(function () {
           ghost.hidden = false;
           ghost.classList.add('accepted');
+          ghost.after(cursor);
           out.hidden = false;
         });
-        var c = 0, i = 0;
-        later(function type() {
-          cmd.textContent = pre.dataset.run.slice(0, ++c);
-          if (c < pre.dataset.run.length) return later(type, 32);
-          later(function next() {
-            grow(function () { lines[i].hidden = false; });
-            lines[i].after(cursor);
-            if (++i < lines.length) later(next, 170);
-          }, 280);
-        }, 300);
+        var c = 0, i = 0, text = pre.dataset.run;
+        later(function () {
+          cmd.parentNode.after(cursor);
+          later(function type() {
+            cmd.textContent = text.slice(0, ++c);
+            if (c < text.length) return later(type, 35 + Math.random() * 35);
+            later(function next() {
+              lines[i].classList.add('shown');
+              lines[i].after(cursor);
+              if (++i < lines.length) return later(next, 280);
+              later(function () { cursor.classList.remove('busy'); }, 600);
+            }, 380);
+          }, 250);
+        }, 500);
       }
       document.querySelector('.term').addEventListener('click', run);
     })();
