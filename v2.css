@@ -5,10 +5,11 @@
   --ink: #131513;
   --panel: #f4f3ef;
   --panel-2: #d2d5d4;
-  --hover: #16799c;
-  --mint: #a9d9e3;
-  --violet: #e0c1a0;
-  --sky: #c9bdae;
+  --hover: #6e33c7;
+  /* chip pastels of the v1 accents (mint, purple, pink) */
+  --mint: #b8f5e4;
+  --violet: #dcc6ff;
+  --sky: #ffc6e5;
   --rule: rgba(19, 21, 19, 0.35);
   --sans: "Inter", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
   --mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
@@ -19,6 +20,8 @@
 }
 
 * { box-sizing: border-box; }
+
+::selection { background: #b56fff; color: var(--ink); }
 
 html { scroll-behavior: smooth; }
 
@@ -253,7 +256,7 @@ a.box:hover { background: var(--ink); color: var(--panel); }
   letter-spacing: -0.06em;
   margin: 0 0 clamp(24px, 3vw, 48px);
 }
-.big-title .thin { font-weight: 300; color: #907e6d; }
+.big-title .thin { font-weight: 300; color: #b56fff; }
 
 @media (prefers-reduced-motion: reduce) {
   #gradient-canvas { display: none; }
@@ -415,19 +418,19 @@ a.box:hover { background: var(--ink); color: var(--panel); }
 /* ---------- ink bands ---------- */
 .section.ink {
   --rule: rgba(254, 254, 254, 0.35);
-  background-color: var(--ink);
+  background-color: #121212; /* the hero's night */
   color: var(--panel);
   margin-inline: calc(50% - 50vw);
   padding-inline: calc(50vw - 50% + 12px);
 }
-.section.ink .h2 small { color: var(--mint); }
+.section.ink .h2 small { color: #ff79c6; }
 .section.ink .entry,
 .section.ink .entry:last-child { border-color: rgba(254, 254, 254, 0.4); }
-.section.ink a:hover { color: var(--mint); }
-.section.ink .win { color: var(--ink); box-shadow: 4px 4px 0 var(--mint); }
+.section.ink a:hover { color: #80ffdb; }
+.section.ink .win { color: var(--ink); box-shadow: 4px 4px 0 #b56fff; }
 .section.ink .win-bar { color: var(--panel); }
-.section.ink .entry .logo { box-shadow: 3px 3px 0 var(--mint); }
-.section.ink .tag { box-shadow: 2px 2px 0 var(--mint); }
+.section.ink .entry .logo { box-shadow: 3px 3px 0 #b56fff; }
+.section.ink .tag { box-shadow: 2px 2px 0 #80ffdb; }
 
 /* ---------- projects ---------- */
 .grid {
