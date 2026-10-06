@@ -1,16 +1,20 @@
 /* ---------- tokens ---------- */
 :root {
-  /* palette sampled from Noam Cohen's prism wallpaper (Unsplash): silver, near-black, prism teal, peach, sand */
+  /* silver page, "v1 night" ink (also the hero and ink bands), off-white panel */
   --bg: #e2e4e3;
-  --ink: #131513;
+  --ink: #121212;
   --panel: #f4f3ef;
   --panel-2: #d2d5d4;
   --hover: #6e33c7;
+  /* v1 accents (from the old Dracula landing page), for use on dark */
+  --v1-purple: #b56fff;
+  --v1-pink: #ff79c6;
+  --v1-mint: #80ffdb;
   /* chip pastels of the v1 accents (mint, purple, pink) */
   --mint: #b8f5e4;
   --violet: #dcc6ff;
-  --sky: #ffc6e5;
-  --rule: rgba(19, 21, 19, 0.35);
+  --rose: #ffc6e5;
+  --rule: rgba(18, 18, 18, 0.35);
   --sans: "Inter", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
   --mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
   --display: "Inter Tight", "Helvetica Neue", Arial, sans-serif;
@@ -21,7 +25,7 @@
 
 * { box-sizing: border-box; }
 
-::selection { background: #b56fff; color: var(--ink); }
+::selection { background: var(--v1-purple); color: var(--ink); }
 
 html { scroll-behavior: smooth; }
 
@@ -98,7 +102,7 @@ img { max-width: 100%; display: block; }
   margin-inline: calc(50% - 50vw);
   padding-inline: calc(50vw - 50%);
   transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
-  color: #f8f8f2; /* light over the dark hero, ink once solid */
+  color: var(--panel); /* light over the dark hero, ink once solid */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -122,13 +126,13 @@ img { max-width: 100%; display: block; }
 }
 /* nav links are plain text; .box chrome stays for the footer button */
 .nav .box { background: none; border-color: transparent; padding-inline: 6px; }
-.nav a.box:hover { background: none; color: #80ffdb; text-decoration: underline; text-underline-offset: 4px; }
+.nav a.box:hover { background: none; color: var(--v1-mint); text-decoration: underline; text-underline-offset: 4px; }
 .nav.solid a.box:hover { color: var(--hover); }
 
 .box {
   display: inline-block;
   background: var(--panel);
-  border: 1.5px solid var(--ink);
+  border: 1px solid var(--ink);
   padding: 4px 9px;
   line-height: 1.2;
   white-space: nowrap;
@@ -147,8 +151,8 @@ a.box:hover { background: var(--ink); color: var(--panel); }
   padding-top: calc(var(--nav-h) + clamp(40px, 8vw, 96px));
   overflow: hidden;
   z-index: 2; /* above the page grain: the hero carries its own moving grain */
-  background: #121212; /* gradient base: the canvas blur fades its edges into this, not the silver page */
-  color: #f8f8f2;
+  background: var(--ink); /* gradient base: the canvas blur fades its edges into this, not the silver page */
+  color: var(--panel);
 }
 #gradient-canvas {
   position: absolute;
@@ -195,29 +199,29 @@ a.box:hover { background: var(--ink); color: var(--panel); }
   position: relative;
   z-index: 1;
   width: min(660px, 100%);
-  background: rgba(19, 21, 19, 0.66);
+  background: rgba(18, 18, 18, 0.66);
   -webkit-backdrop-filter: blur(24px) saturate(1.25);
   backdrop-filter: blur(24px) saturate(1.25);
-  color: #e9e8e3;
+  color: var(--panel);
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 30px 80px -20px rgba(19, 21, 19, 0.45);
+  box-shadow: 0 30px 80px -20px rgba(18, 18, 18, 0.45);
 }
 .hero .win.term .win-bar {
   position: relative;
   justify-content: center;
   background: rgba(255, 255, 255, 0.05);
-  color: rgba(233, 232, 227, 0.6);
+  color: rgba(244, 243, 239, 0.6);
   padding: 11px 14px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 .hero .win.term .win-body { padding: 16px 20px 20px; overflow: hidden; }
-.hero .term .cursor { background: #e9e8e3; }
+.hero .term .cursor { background: var(--panel); }
 .hero .code { font-size: clamp(13px, 1.55vw, 16px); }
-.hero .code .kw { color: #80ffdb; font-weight: 400; }
+.hero .code .kw { color: var(--v1-mint); font-weight: 400; }
 .hero .code.out { border-top-color: rgba(255, 255, 255, 0.08); }
-.hero .code.out a { color: #ff79c6; }
+.hero .code.out a { color: var(--v1-pink); }
 .code .ghost { opacity: 0.5; font-style: italic; transition: opacity 0.3s; animation: fade-in 0.3s ease-out 0.2s backwards; }
 .code .ghost.accepted { opacity: 1; font-style: normal; }
 /* added lines wait for the window to grow before fading in, so they never sit on its edge */
@@ -343,8 +347,7 @@ a.box:hover { background: var(--ink); color: var(--panel); }
   width: 64px;
   height: 64px;
   background: var(--panel);
-  border: 1.5px solid var(--ink);
-  box-shadow: 3px 3px 0 var(--ink);
+  border: 1px solid var(--ink);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -389,14 +392,14 @@ a.box:hover { background: var(--ink); color: var(--panel); }
   background: var(--chip);
   color: var(--chip-ink);
   border: 1.5px solid currentColor;
-  box-shadow: 2px 2px 0 var(--ink);
+  box-shadow: 2px 2px 0 var(--chip-shadow, var(--ink));
   transition: background 0.12s ease, color 0.12s ease, box-shadow 0.12s ease, transform 0.12s ease;
 }
-/* paper = white (default), code = ink, models = mint, package = violet, live = sky */
+/* paper = white (default), code = ink, models = mint, package = violet, live = rose */
 :is(.tag, .card-foot a)[data-kind="code"] { --chip: var(--ink); --chip-ink: var(--panel); }
 :is(.tag, .card-foot a)[data-kind="models"] { --chip: var(--mint); }
 :is(.tag, .card-foot a)[data-kind="package"] { --chip: var(--violet); }
-:is(.tag, .card-foot a)[data-kind="live"] { --chip: var(--sky); }
+:is(.tag, .card-foot a)[data-kind="live"] { --chip: var(--rose); }
 
 /* hover inverts the chip and pops its shadow out in its own colour */
 :is(.tag, .card-foot a):hover {
@@ -409,18 +412,18 @@ a.box:hover { background: var(--ink); color: var(--panel); }
 
 /* ---------- ink bands ---------- */
 .section.ink {
-  --rule: rgba(254, 254, 254, 0.35);
-  background-color: #121212; /* the hero's night */
+  --rule: rgba(244, 243, 239, 0.35);
+  --chip-shadow: var(--v1-mint);
+  background-color: var(--ink); /* the hero's night */
   color: var(--panel);
   margin-inline: calc(50% - 50vw);
   padding-inline: calc(50vw - 50% + 12px);
 }
-.section.ink .h2 small { color: #ff79c6; }
+.section.ink .h2 small { color: var(--v1-pink); }
 .section.ink .entry,
-.section.ink .entry:last-child { border-color: rgba(254, 254, 254, 0.4); }
-.section.ink a:hover { color: #80ffdb; }
-.section.ink .entry .logo { box-shadow: 3px 3px 0 #b56fff; }
-.section.ink .tag { box-shadow: 2px 2px 0 #80ffdb; }
+.section.ink .entry:last-child { border-color: var(--rule); }
+/* chips keep their own inverted hover */
+.section.ink a:not(.tag, .card-foot a):hover { color: var(--v1-mint); }
 
 /* ---------- projects ---------- */
 .grid {
@@ -432,17 +435,17 @@ a.box:hover { background: var(--ink); color: var(--panel); }
 .card {
   display: flex;
   flex-direction: column;
-  border: 1px solid rgba(254, 254, 254, 0.25);
+  border: 1px solid var(--rule);
   transition: border-color 0.15s ease;
 }
-.card:hover { border-color: #b56fff; }
-.card-name { font-family: var(--mono); font-size: 12px; color: #80ffdb; padding: 16px 16px 0; }
+.card:hover { border-color: var(--v1-purple); }
+.card-name { font-family: var(--mono); font-size: 12px; color: var(--v1-mint); padding: 16px 16px 0; }
 .card-body { flex: 1; font-size: 16px; line-height: 1.5; padding: 8px 16px 16px; }
 .card-body p { margin: 0; }
 .card-foot {
   display: flex; gap: 6px; flex-wrap: wrap;
   padding: 12px 16px;
-  border-top: 1px solid rgba(254, 254, 254, 0.25);
+  border-top: 1px solid var(--rule);
   font-family: var(--mono); font-size: 12px;
 }
 .card-foot a { padding: 2px 7px; }
@@ -459,6 +462,7 @@ a.box:hover { background: var(--ink); color: var(--panel); }
 .foot-note { min-width: 260px; border-top: 1px solid var(--ink); padding-top: 10px; font-family: var(--mono); font-size: 13px; line-height: 1.5; }
 .foot-note strong { display: block; font-size: 12px; margin-bottom: 4px; }
 .foot-note p { margin: 0; }
+.footer .box { font-size: 13px; } /* same size as the hero's scroll cue */
 
 /* ---------- responsive ---------- */
 @media (max-width: 960px) {
