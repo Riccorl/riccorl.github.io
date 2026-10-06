@@ -248,7 +248,7 @@ a.box:hover { background: var(--ink); color: var(--panel); }
   letter-spacing: -0.06em;
   margin: 0 0 clamp(24px, 3vw, 48px);
 }
-.big-title .thin { font-weight: 300; color: #b56fff; }
+.big-title .thin { font-weight: 300; color: #9a9da0; }
 
 @media (prefers-reduced-motion: reduce) {
   #gradient-canvas { display: none; }
