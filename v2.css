@@ -221,7 +221,7 @@ a.box:hover { background: var(--ink); color: var(--panel); }
 .code .ghost { opacity: 0.5; font-style: italic; transition: opacity 0.3s; animation: fade-in 0.3s ease-out 0.2s backwards; }
 .code .ghost.accepted { opacity: 1; font-style: normal; }
 /* added lines wait for the window to grow before fading in, so they never sit on its edge */
-.code.out, .code.out > span { animation: fade-in 0.3s ease-out 0.2s backwards; }
+.code.out, .code.out > span:not(.cursor) { animation: fade-in 0.3s ease-out 0.2s backwards; }
 .code.out { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--panel-2); }
 .code.out a { text-decoration: underline; text-underline-offset: 3px; }
 @keyframes fade-in { from { opacity: 0; } }
@@ -264,11 +264,12 @@ a.box:hover { background: var(--ink); color: var(--panel); }
 .code .cm { opacity: 0.55; }
 .cursor {
   display: inline-block;
-  width: 0.6em;
-  height: 1em;
+  width: 2px;
+  height: 1.15em;
+  margin-left: 1px;
   background: var(--ink);
-  vertical-align: -0.15em;
-  animation: blink 1s steps(1) infinite;
+  vertical-align: -0.2em;
+  animation: blink 1.1s ease-in-out infinite;
 }
 @keyframes blink { 50% { opacity: 0; } }
 
