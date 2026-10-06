@@ -169,6 +169,11 @@ a.box:hover { background: var(--ink); color: var(--panel); }
   --gradient-ceil-3: 1;
   --gradient-ceil-4: 1;
 }
+/* film finish (assets/js/film.js) redraws the gradient with halation, weave and grade; the plain
+   canvas stays as the fallback until its first frame */
+#film-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: none; }
+.hero.film #film-canvas { display: block; }
+.hero.film #gradient-canvas { visibility: hidden; }
 /* the same grain over the hero scene at 2x scale (clumpier, more like projected film),
    oversized so script can jump it to a new frame */
 .hero-grain {
