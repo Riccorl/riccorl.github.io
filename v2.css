@@ -19,7 +19,7 @@
   --mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
   --display: "Inter Tight", "Helvetica Neue", Arial, sans-serif;
   --gutter: clamp(16px, 4vw, 56px);
-  --nav-h: 49px;
+  --nav-h: 52px; /* real nav height: the hero tucks under it by exactly this much */
   --max: 1280px;
 }
 
@@ -472,7 +472,7 @@ a.box:hover { background: var(--ink); color: var(--panel); }
 }
 @media (max-width: 760px) {
   body { font-size: 17px; }
-  :root { --nav-h: 88px; }
+  :root { --nav-h: 90px; }
   .nav { flex-wrap: wrap; row-gap: 8px; }
   .nav ul {
     order: 3;
