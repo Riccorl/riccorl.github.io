@@ -30,7 +30,9 @@ class MiniGl {
                 -1 !== document.location.search.toLowerCase().indexOf("debug=webgl");
         (_miniGl.canvas = canvas),
             (_miniGl.gl = _miniGl.canvas.getContext("webgl", {
-                antialias: true
+                antialias: true,
+                // film.js reads this canvas every frame, including frames the gradient skips
+                preserveDrawingBuffer: true
             })),
             (_miniGl.meshes = []);
         const context = _miniGl.gl;
