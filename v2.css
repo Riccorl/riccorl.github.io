@@ -365,6 +365,20 @@ a.box:hover { background: var(--ink); color: var(--panel); }
   transition: filter 0.3s;
 }
 .entry:hover .logo img { filter: none; }
+/* org logo inside a headline: a text-height version of the logo tile */
+.inline-logo {
+  display: inline-block;
+  width: 0.95em;
+  height: 0.95em;
+  padding: 0.12em;
+  margin-right: 0.18em;
+  vertical-align: -0.12em;
+  background: var(--panel);
+  object-fit: contain;
+  filter: url(#crunch);
+  transition: filter 0.3s;
+}
+.entry:hover .inline-logo { filter: none; }
 /* two-tone marks invert instead of revealing colour */
 .entry .logo.invert { transition: background-color 0.2s ease; }
 .entry:hover .logo.invert { background: var(--ink); }
