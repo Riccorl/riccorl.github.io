@@ -374,6 +374,7 @@ a.box:hover { background: var(--ink); color: var(--panel); }
   margin-right: 0.18em;
   vertical-align: -0.12em;
   background: var(--panel);
+  border-radius: 0.2em;
   object-fit: contain;
   filter: url(#crunch);
   transition: filter 0.3s;
