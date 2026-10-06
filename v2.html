@@ -56,7 +56,7 @@
       <canvas id="gradient-canvas"></canvas>
 
       <div class="win term">
-        <div class="win-bar"><span id="term-title">get_info.py 1.1</span><span class="hint" hidden>Tab ↹ accept</span></div>
+        <div class="win-bar"><span id="term-title">get_info.py 1.1</span></div>
         <div class="win-body">
 <pre class="code" data-title="get_info.py 1.1" data-run="python get_info.py"><span class="cm"># Scroll to show info.</span>
 <span class="kw">def</span> get_info(ro: RiccardoOrlando) -> str:
@@ -615,12 +615,12 @@ Senior AI Engineer @ Principled Intelligence, Rome</span><span hidden>
     })();
   </script>
   <script>
-    // copilot-style ghost line after load, accepted on its own after a beat (Tab or a click skips ahead),
+    // copilot-style ghost line after load, accepted on its own after a beat (a click skips ahead),
     // then the command is typed and the output printed a line at a time
     (function () {
       var pre = document.querySelector('.term .code:not([hidden])');
       var ghost = pre.querySelector('.ghost'), cursor = pre.querySelector('.cursor');
-      var hint = document.querySelector('.term .hint'), out = document.getElementById('term-out');
+      var out = document.getElementById('term-out');
       var cmd = document.getElementById('term-cmd'), lines = out.querySelectorAll(':scope > [hidden]');
       var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
       var body = out.parentNode;
@@ -631,14 +631,12 @@ Senior AI Engineer @ Principled Intelligence, Rome</span><span hidden>
         fn();
         if (!reduce) body.animate([{ height: h0 + 'px' }, { height: body.offsetHeight + 'px' }], { duration: 260, easing: 'cubic-bezier(.2, .7, .3, 1)' });
       }
-      var done = false, show = later(function () { grow(function () { ghost.hidden = hint.hidden = false; }); }, 800), auto = later(run, 2200);
-      if (matchMedia('(pointer: coarse)').matches) hint.textContent = 'tap to accept';
+      var done = false, show = later(function () { grow(function () { ghost.hidden = false; }); }, 800), auto = later(run, 2200);
       function run() {
         if (done) return;
         done = true;
         clearTimeout(show);
         clearTimeout(auto);
-        hint.hidden = true;
         cmd.parentNode.after(cursor);
         grow(function () {
           ghost.hidden = false;
@@ -656,9 +654,6 @@ Senior AI Engineer @ Principled Intelligence, Rome</span><span hidden>
           }, 280);
         }, 300);
       }
-      addEventListener('keydown', function (e) {
-        if (e.key === 'Tab' && !done && scrollY < innerHeight / 2) { e.preventDefault(); run(); }
-      });
       document.querySelector('.term').addEventListener('click', run);
     })();
   </script>
