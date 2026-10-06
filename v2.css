@@ -160,10 +160,18 @@ a.box:hover { background: var(--ink); color: var(--panel); }
   width: 100%;
   height: 100%;
   filter: blur(50px);
-  --gradient-color-1: #e2e4e3;
-  --gradient-color-2: #d9b48c;
-  --gradient-color-3: #16799c;
-  --gradient-color-4: #f4f3ef;
+  /* sampled from the grey chromatic-aberration wallpaper (Unsplash Uv_zCYkV1fQ): the brights
+     (blue, amber, orange) sit in the bottom layers and only show at the noise peaks (ceil 1) */
+  --gradient-color-1: #f3f4f3;
+  --gradient-color-2: #1099f7;
+  --gradient-color-3: #ffb54c;
+  --gradient-color-4: #ed8735;
+  --gradient-color-5: #394452;
+  --gradient-color-6: #a4a8ab;
+  --gradient-color-7: #d6d8d8;
+  --gradient-ceil-2: 1;
+  --gradient-ceil-3: 1;
+  --gradient-ceil-4: 1;
 }
 /* the same grain over the hero scene at 2x scale (clumpier, more like projected film),
    oversized so script can jump it to a new frame */
