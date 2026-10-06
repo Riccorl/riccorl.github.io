@@ -424,6 +424,8 @@ a.box:hover { background: var(--ink); color: var(--panel); }
 .section.ink .entry:last-child { border-color: var(--rule); }
 /* chips keep their own inverted hover */
 .section.ink a:not(.tag, .card-foot a):hover { color: var(--v1-mint); }
+/* ink chips would pop an ink shadow onto the ink band: pop mint instead */
+.section.ink :is(.tag, .card-foot a)[data-kind="code"]:hover { box-shadow: 4px 4px 0 var(--chip-shadow); }
 
 /* ---------- projects ---------- */
 .grid {
