@@ -106,7 +106,8 @@ img { max-width: 100%; display: block; }
   z-index: 10;
   margin-inline: calc(50% - 50vw);
   padding-inline: calc(50vw - 50%);
-  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+  color: #f8f8f2; /* light over the dark hero, ink once solid */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -124,12 +125,14 @@ img { max-width: 100%; display: block; }
   padding: 0;
 }
 .nav.solid {
+  color: var(--ink);
   background: var(--bg);
   box-shadow: 0 1px 0 var(--ink);
 }
 /* nav links are plain text; .box chrome stays for the footer button */
 .nav .box { background: none; border-color: transparent; padding-inline: 6px; }
-.nav a.box:hover { background: none; color: var(--hover); text-decoration: underline; text-underline-offset: 4px; }
+.nav a.box:hover { background: none; color: #80ffdb; text-decoration: underline; text-underline-offset: 4px; }
+.nav.solid a.box:hover { color: var(--hover); }
 
 .box {
   display: inline-block;
@@ -153,6 +156,8 @@ a.box:hover { background: var(--ink); color: var(--panel); }
   padding-top: calc(var(--nav-h) + clamp(40px, 8vw, 96px));
   overflow: hidden;
   z-index: 2; /* above the page grain: the hero carries its own moving grain */
+  background: #121212; /* gradient base: the canvas blur fades its edges into this, not the silver page */
+  color: #f8f8f2;
 }
 #gradient-canvas {
   position: absolute;
@@ -160,15 +165,15 @@ a.box:hover { background: var(--ink); color: var(--panel); }
   width: 100%;
   height: 100%;
   filter: blur(50px);
-  /* sampled from the grey chromatic-aberration wallpaper (Unsplash Uv_zCYkV1fQ): the brights
-     (blue, amber, orange) sit in the bottom layers and only show at the noise peaks (ceil 1) */
-  --gradient-color-1: #f3f4f3;
-  --gradient-color-2: #1099f7;
-  --gradient-color-3: #ffb54c;
-  --gradient-color-4: #ed8735;
-  --gradient-color-5: #394452;
-  --gradient-color-6: #a4a8ab;
-  --gradient-color-7: #d6d8d8;
+  /* "v1 night", from the old Dracula landing page: deep teal and purple on near-black, with the
+     v1 accents (purple, pink, mint) in the bottom layers so they only glint at the noise peaks (ceil 1) */
+  --gradient-color-1: #121212;
+  --gradient-color-2: #b56fff;
+  --gradient-color-3: #ff79c6;
+  --gradient-color-4: #80ffdb;
+  --gradient-color-5: #1b3a4b;
+  --gradient-color-6: #3c096c;
+  --gradient-color-7: #282a36;
   --gradient-ceil-2: 1;
   --gradient-ceil-3: 1;
   --gradient-ceil-4: 1;
@@ -215,9 +220,9 @@ a.box:hover { background: var(--ink); color: var(--panel); }
 .hero .win.term .win-body { padding: 16px 20px 20px; overflow: hidden; }
 .hero .term .cursor { background: #e9e8e3; }
 .hero .code { font-size: clamp(13px, 1.55vw, 16px); }
-.hero .code .kw { color: #6cb8ff; font-weight: 400; }
+.hero .code .kw { color: #80ffdb; font-weight: 400; }
 .hero .code.out { border-top-color: rgba(255, 255, 255, 0.08); }
-.hero .code.out a { color: #ffb54c; }
+.hero .code.out a { color: #ff79c6; }
 .code .ghost { opacity: 0.5; font-style: italic; transition: opacity 0.3s; animation: fade-in 0.3s ease-out 0.2s backwards; }
 .code .ghost.accepted { opacity: 1; font-style: normal; }
 /* added lines wait for the window to grow before fading in, so they never sit on its edge */
