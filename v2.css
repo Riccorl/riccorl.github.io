@@ -28,6 +28,8 @@
 ::selection { background: var(--v1-purple); color: var(--ink); }
 
 html { scroll-behavior: smooth; }
+/* while the hero is on screen the canvas is night, so overscroll at the top bounces into dark */
+html.night { background: var(--ink); }
 
 body {
   margin: 0;
@@ -204,7 +206,7 @@ a.box:hover { background: var(--ink); color: var(--panel); }
   backdrop-filter: blur(24px) saturate(1.25);
   color: var(--panel);
   border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 12px;
+  border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 30px 80px -20px rgba(18, 18, 18, 0.45);
 }
@@ -307,6 +309,7 @@ a.box:hover { background: var(--ink); color: var(--panel); }
 .links a { display: flex; justify-content: space-between; }
 .links a::after { content: "↗"; }
 
+.photo { margin-top: 28px; }
 .photo img {
   width: 100%;
   position: relative;

@@ -46,6 +46,7 @@
         <li><a class="box" href="#now">Work</a></li>
         <li><a class="box" href="#news">News</a></li>
         <li><a class="box" href="#publications">Publications</a></li>
+        <li><a class="box" href="#past">Past</a></li>
         <li><a class="box" href="#projects">Projects</a></li>
       </ul>
       <a class="box" href="assets/files/Orlando_CV.pdf" target="_blank">CV ↓</a>
@@ -78,7 +79,7 @@ Senior AI Engineer @ Principled Intelligence, Rome</span><span class="ln">
       </div>
 
       <div class="hero-grain" aria-hidden="true"></div>
-      <a class="scroll-cue mono" href="#about">↓ scroll</a>
+      <a class="scroll-cue mono" href="#about">↓ Scroll</a>
     </header>
 
     <!-- About -->
@@ -104,7 +105,7 @@ Senior AI Engineer @ Principled Intelligence, Rome</span><span class="ln">
             <li><a href="https://it.linkedin.com/in/riccardo-orlando" target="_blank">LinkedIn</a></li>
             <li><a href="assets/files/Orlando_CV.pdf" target="_blank">CV (PDF)</a></li>
           </ul>
-          <div class="photo" style="margin-top: 28px;">
+          <div class="photo">
             <img src="assets/img/me.jpg" alt="Riccardo Orlando">
           </div>
         </div>
@@ -246,6 +247,22 @@ Senior AI Engineer @ Principled Intelligence, Rome</span><span class="ln">
         </div>
       </div>
 
+      <div class="entry has-logo" id="relik">
+        <div class="date">August 2024</div>
+        <div class="logo"><img src="assets/img/acl.png" alt="ACL"></div>
+        <div>
+          <h3>ReLiK: Retrieve and LinK, Fast and Accurate Entity Linking and Relation Extraction on an Academic Budget</h3>
+          <p class="authors"><strong>Riccardo Orlando</strong>, Pere-Lluís Huguet Cabot, Edoardo Barba, and Roberto Navigli</p>
+          <div class="venue"><em>In</em> Findings of ACL, 2024</div>
+          <div class="tags">
+            <a class="tag" data-kind="paper" href="https://aclanthology.org/2024.findings-acl.839/" target="_blank">Paper</a>
+            <a class="tag" data-kind="code" href="https://github.com/SapienzaNLP/relik" target="_blank">GitHub</a>
+            <a class="tag" data-kind="models" href="https://huggingface.co/collections/sapienzanlp/relik-retrieve-read-and-link-665d9e4a5c3ecba98c1bef19" target="_blank">🤗 Hub</a>
+            <a class="tag" data-kind="live" href="https://huggingface.co/spaces/relik-ie/Information-Extraction" target="_blank">Website</a>
+          </div>
+        </div>
+      </div>
+
       <div class="entry has-logo" id="mosaico">
         <div class="date">June 2024</div>
         <div class="logo"><img src="assets/img/acl.png" alt="ACL"></div>
@@ -257,22 +274,6 @@ Senior AI Engineer @ Principled Intelligence, Rome</span><span class="ln">
           <div class="tags">
             <a class="tag" data-kind="paper" href="https://aclanthology.org/2024.naacl-long.442/" target="_blank">Paper</a>
             <a class="tag" data-kind="code" href="https://github.com/SapienzaNLP/mosaico" target="_blank">GitHub</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="entry has-logo" id="relik">
-        <div class="date">March 2024</div>
-        <div class="logo"><img src="assets/img/acl.png" alt="ACL"></div>
-        <div>
-          <h3>ReLiK: Retrieve and LinK, Fast and Accurate Entity Linking and Relation Extraction on an Academic Budget</h3>
-          <p class="authors"><strong>Riccardo Orlando</strong>, Pere-Lluís Huguet Cabot, Edoardo Barba, and Roberto Navigli</p>
-          <div class="venue"><em>In</em> Findings of ACL, 2024</div>
-          <div class="tags">
-            <a class="tag" data-kind="paper" href="https://arxiv.org/abs/2408.00103" target="_blank">Paper</a>
-            <a class="tag" data-kind="code" href="https://github.com/SapienzaNLP/relik" target="_blank">GitHub</a>
-            <a class="tag" data-kind="models" href="https://huggingface.co/collections/sapienzanlp/relik-retrieve-read-and-link-665d9e4a5c3ecba98c1bef19" target="_blank">🤗 Hub</a>
-            <a class="tag" data-kind="live" href="https://huggingface.co/spaces/relik-ie/Information-Extraction" target="_blank">Website</a>
           </div>
         </div>
       </div>
@@ -659,14 +660,20 @@ Senior AI Engineer @ Principled Intelligence, Rome</span><span class="ln">
   </script>
 
   <script>
-    // solid nav once the hero has scrolled past
+    // solid nav once the hero has scrolled out from under it (measured, so it holds for the
+    // taller two-row mobile nav); the canvas is night only while the hero is showing
     (function () {
       var nav = document.querySelector('.nav');
       var hero = document.getElementById('top');
-      if (!nav || !hero || !('IntersectionObserver' in window)) return;
-      new IntersectionObserver(function (entries) {
-        nav.classList.toggle('solid', !entries[0].isIntersecting);
-      }, { rootMargin: '-60px 0px 0px 0px' }).observe(hero);
+      if (!nav || !hero) return;
+      function update() {
+        var solid = hero.getBoundingClientRect().bottom <= nav.offsetHeight;
+        nav.classList.toggle('solid', solid);
+        document.documentElement.classList.toggle('night', !solid);
+      }
+      addEventListener('scroll', update, { passive: true });
+      addEventListener('resize', update);
+      update();
     })();
   </script>
 </body>
