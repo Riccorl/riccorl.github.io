@@ -608,7 +608,7 @@ Senior AI Engineer @ Principled Intelligence, Rome</span><span hidden>
   <script>
     // pick a random snippet flavour, like the old landing page
     (function () {
-      var snippets = document.querySelectorAll('.term .code');
+      var snippets = document.querySelectorAll('.term .code[data-title]');
       var pick = Math.floor(Math.random() * snippets.length);
       snippets.forEach(function (el, i) { el.hidden = i !== pick; });
       document.getElementById('term-title').textContent = snippets[pick].dataset.title;
