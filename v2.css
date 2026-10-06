@@ -274,6 +274,8 @@ a.box:hover { background: var(--ink); color: var(--panel); }
 .photo img {
   width: 100%;
   image-rendering: pixelated;
+  position: relative;
+  z-index: 2; /* above the page grain: fine speckle muddies the big 8-bit pixels */
 }
 
 /* ---------- section titles ---------- */
