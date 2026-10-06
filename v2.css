@@ -212,7 +212,6 @@ a.box:hover { background: var(--ink); color: var(--panel); }
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 .hero .win.term .win-bar::before { display: none; }
-.hero .win.term .hint { position: absolute; right: 14px; }
 .hero .win.term .win-body { padding: 16px 20px 20px; overflow: hidden; }
 .hero .term .cursor { background: #e9e8e3; }
 .hero .code { font-size: clamp(13px, 1.55vw, 16px); }
