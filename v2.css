@@ -196,8 +196,9 @@ a.box:hover { background: var(--ink); color: var(--panel); }
   will-change: transform;
 }
 
-/* hero window: dark glass editor */
+/* hero window: dark glass with the projects cards' hairline edges */
 .hero .win.term {
+  --rule: rgba(244, 243, 239, 0.35);
   position: relative;
   z-index: 1;
   width: min(660px, 100%);
@@ -205,24 +206,23 @@ a.box:hover { background: var(--ink); color: var(--panel); }
   -webkit-backdrop-filter: blur(24px) saturate(1.25);
   backdrop-filter: blur(24px) saturate(1.25);
   color: var(--panel);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 8px;
+  border: 1px solid var(--rule);
   overflow: hidden;
-  box-shadow: 0 30px 80px -20px rgba(18, 18, 18, 0.45);
 }
 .hero .win.term .win-bar {
   position: relative;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.05);
-  color: rgba(244, 243, 239, 0.6);
-  padding: 11px 14px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: none;
+  color: var(--v1-mint);
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--rule);
 }
+/* the hero is section 00 of the numbered section labels */
+#term-title::before { content: "00 / "; color: var(--v1-pink); }
 .hero .win.term .win-body { padding: 16px 20px 20px; overflow: hidden; }
 .hero .term .cursor { background: var(--panel); }
 .hero .code { font-size: clamp(13px, 1.55vw, 16px); }
 .hero .code .kw { color: var(--v1-mint); font-weight: 400; }
-.hero .code.out { border-top-color: rgba(255, 255, 255, 0.08); }
+.hero .code.out { border-top: 1px dotted var(--rule); }
 .hero .code.out a { color: var(--v1-pink); }
 .code .ghost { opacity: 0.5; font-style: italic; transition: opacity 0.3s; animation: fade-in 0.3s ease-out 0.2s backwards; }
 .code .ghost.accepted { opacity: 1; font-style: normal; }
@@ -502,6 +502,10 @@ a.box:hover { background: var(--ink); color: var(--panel); }
   .nav ul::-webkit-scrollbar { display: none; }
   .nav ul li { flex: none; }
   .hero { min-height: 88svh; }
+  /* the longest code line fits at 12px; the printed output wraps */
+  .hero .win.term .win-bar, .hero .win.term .win-body { padding-inline: 14px; }
+  .hero .code { font-size: 12px; }
+  .hero .code.out { white-space: pre-wrap; }
   .cols { gap: 24px; }
   .span-5, .span-4, .span-3 { grid-column: span 12; }
   .entry, .entry.has-logo { grid-template-columns: 1fr; gap: 6px; }
