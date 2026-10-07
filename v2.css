@@ -401,7 +401,7 @@ a.box:hover { background: var(--ink); color: var(--panel); }
 }
 .entry .place { font-family: var(--mono); font-size: 13px; margin-bottom: 10px; }
 .entry .text { max-width: 68ch; }
-.entry .text a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.entry .text a, .entry h3 a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .entry .authors { max-width: 68ch; font-size: 16px; opacity: 0.85; }
 .entry .venue { font-family: var(--mono); font-size: 13px; margin-top: 4px; }
 .entry .venue em { font-style: normal; opacity: 0.6; }
