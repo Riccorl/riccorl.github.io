@@ -156,9 +156,10 @@ a[title]:hover:after {
 
 .code-snippet {
     position: absolute;
+    left: 0;
+    right: 0;
     top: 50%;
     transform: translateY(-50%);
-    margin-right: 0.4rem;
     text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
     z-index: 2;
     /* backdrop-filter: blur(100px); */
@@ -181,7 +182,7 @@ a[title]:hover:after {
 /* END CODE LANDING */
 
 .open-col {
-    margin-left: 1rem;
+    margin-left: 0;
     margin-right: 1rem;
 }
 
@@ -470,7 +471,7 @@ p.project {
 .foot-cont h5 {
     text-align: center;
     font-size: 1rem;
-    color: rgb(53, 53, 53);
+    color: rgb(130, 130, 130);
 }
 
 /* buttons */
@@ -707,10 +708,20 @@ a.btn-outline-primary {
         padding-right: 0.4rem;
     }
 
+    .open-col {
+        margin-left: 1rem;
+    }
+
     .open-name,
     .open-des {
         padding-top: 0.1rem;
         font-size: 1.3rem;
+    }
+
+    /* a long signature wraps like a continuation line */
+    .open-name {
+        padding-left: 2ch;
+        text-indent: -2ch;
     }
 
     h2.open-des {
