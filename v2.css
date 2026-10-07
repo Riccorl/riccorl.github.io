@@ -15,6 +15,8 @@
   --violet: #dcc6ff;
   --rose: #ffc6e5;
   --rule: rgba(18, 18, 18, 0.35);
+  /* separators between entries; full ink only marks where something starts */
+  --rule-soft: rgba(18, 18, 18, 0.16);
   --sans: "Inter", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
   --mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
   --display: "Inter Tight", "Helvetica Neue", Arial, sans-serif;
@@ -124,7 +126,7 @@ img { max-width: 100%; display: block; }
 .nav.solid {
   color: var(--ink);
   background: var(--bg);
-  box-shadow: 0 1px 0 var(--ink);
+  box-shadow: 0 1px 0 var(--rule-soft);
 }
 /* nav links are plain text; .box chrome stays for the footer button */
 .nav .box { background: none; border-color: transparent; padding-inline: 6px; }
@@ -294,10 +296,12 @@ a.box:hover { background: var(--ink); color: var(--panel); }
   grid-template-columns: repeat(12, 1fr);
   gap: 32px;
 }
+/* a short ink tick opens each column */
 .col {
-  border-left: 1px solid var(--ink);
-  padding-left: 14px;
+  background: linear-gradient(var(--ink), var(--ink)) 0 0 / 48px 2px no-repeat;
+  padding-top: 14px;
 }
+.col .eyebrow { margin-bottom: 0.75em; }
 .col p { font-size: clamp(18px, 1.7vw, 24px); letter-spacing: -0.02em; line-height: 1.3; }
 .col p strong { font-weight: 700; }
 .span-5 { grid-column: span 5; }
@@ -339,9 +343,12 @@ a.box:hover { background: var(--ink); color: var(--panel); }
   grid-template-columns: var(--date-col) 1fr;
   gap: 24px;
   padding: 22px 0;
-  border-top: 1px solid var(--ink);
+  border-top: 1px solid var(--rule-soft);
 }
-.entry:last-child { border-bottom: 1px solid var(--ink); }
+.entry:last-child { border-bottom: 1px solid var(--rule-soft); }
+/* the section heading sits on a full ink rule that opens the list */
+.h2:has(+ .entry) { margin-bottom: 0; padding-bottom: 0.18em; }
+.h2 + .entry { border-top: 2px solid var(--ink); padding-top: 34px; }
 .entry.has-logo { grid-template-columns: var(--date-col) 64px 1fr; }
 /* date ranges need room; single dates do not */
 #now .entry, #past .entry { --date-col: 180px; }
@@ -350,7 +357,7 @@ a.box:hover { background: var(--ink); color: var(--panel); }
   width: 64px;
   height: 64px;
   background: var(--panel);
-  border: 1px solid var(--ink);
+  border: 1px solid var(--rule-soft);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -440,6 +447,7 @@ a.box:hover { background: var(--ink); color: var(--panel); }
 .section.ink .h2 small { color: var(--v1-pink); }
 .section.ink .entry,
 .section.ink .entry:last-child { border-color: var(--rule); }
+.section.ink .h2 + .entry { border-top-color: var(--panel); }
 /* chips keep their own inverted hover */
 .section.ink a:not(.tag, .card-foot a):hover { color: var(--v1-mint); }
 /* ink chips would pop an ink shadow onto the ink band: pop mint instead */
@@ -479,7 +487,7 @@ a.box:hover { background: var(--ink); color: var(--panel); }
   padding-block: 32px 48px;
   flex-wrap: wrap;
 }
-.foot-note { min-width: 260px; border-top: 1px solid var(--ink); padding-top: 10px; font-family: var(--mono); font-size: 13px; line-height: 1.5; }
+.foot-note { min-width: 260px; background: linear-gradient(var(--ink), var(--ink)) 0 0 / 48px 2px no-repeat; padding-top: 12px; font-family: var(--mono); font-size: 13px; line-height: 1.5; }
 .foot-note strong { display: block; font-size: 12px; margin-bottom: 4px; }
 .foot-note p { margin: 0; }
 .footer .box { font-size: 13px; } /* same size as the hero's scroll cue */
