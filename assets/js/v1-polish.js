@@ -114,16 +114,22 @@
   });
 
   var lastY = window.scrollY;
+  // Top bar: hidden over the hero; past it, shown. With "scroll feel" on it also hides while you
+  // read downwards and returns when you scroll back up. Hysteresis (80px down / 40px up) stops it
+  // flickering on small or smoothed scroll steps; nav clicks and the page end always show it.
+  var dir = 0, turnY = window.scrollY, holdUntil = 0;
+  function setBar(on) { bar.classList.toggle("is-visible", on); }
   function onScroll() {
     var y = window.scrollY;
     var pastHero = y > (hero ? hero.offsetHeight * 0.8 : 400);
-    bar.classList.add("is-visible");
-    if (!pastHero) bar.classList.add("is-tucked");                  // over the hero: only the CV pill
-    else if (!root.classList.contains("fx-scroll")) bar.classList.remove("is-tucked");
-    else if (y > lastY + 4) bar.classList.add("is-tucked");      // scrolling down: tuck, CV stays
-    else if (y < lastY - 4) bar.classList.remove("is-tucked");   // scrolling up: full bar back
+    var atEnd = y + window.innerHeight >= document.documentElement.scrollHeight - 4;
+    if (!pastHero) { setBar(false); dir = 0; turnY = y; lastY = y; return; }
+    if (!root.classList.contains("fx-scroll") || atEnd || performance.now() < holdUntil) { setBar(true); lastY = y; return; }
+    if (y > lastY) { if (dir !== 1) { dir = 1; turnY = lastY; } if (y - turnY > 80) setBar(false); }
+    else if (y < lastY) { if (dir !== -1) { dir = -1; turnY = lastY; } if (turnY - y > 40) setBar(true); }
     lastY = y;
   }
+  bar.addEventListener("click", function () { holdUntil = performance.now() + 1600; });
   window.addEventListener("scroll", onScroll, { passive: true });
 
   // current section: nav state always; background tint only with scroll feel

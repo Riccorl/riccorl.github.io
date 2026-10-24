@@ -73,7 +73,7 @@ html { scrollbar-color: var(--scroll) var(--bg); caret-color: var(--mint); }
 [id] { scroll-margin-top: 84px; }
 
 /* ---------- links -------------------------------------------------------- */
-a:link, a:link:visited { color: var(--text); }
+a:link, a:visited { color: var(--text); }
 a:hover { color: var(--mint); }
 .work-title a, .work-text a, .pub-title a, #description a, .card-text a {
   text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--text) 30%, transparent);
@@ -191,12 +191,7 @@ html.fx-lines.motion .scroll-cue path { stroke-dasharray: 24; stroke-dashoffset:
 }
 .topbar.is-visible { transform: none; visibility: visible; transition: transform 0.55s var(--ease-expo), visibility 0s, background-color 0.4s var(--ease-shelby), border-color 0.4s; }
 /* scrolling down with "scroll feel" on: the bar tucks away but CV stays pinned */
-.topbar.is-tucked { background: transparent; border-bottom-color: transparent; pointer-events: none; }
-.topbar .topbar-name, .topbar .topbar-nav a:not(.topbar-cv) { transition: opacity 0.35s var(--ease-shelby), color 0.3s var(--ease-shelby); }
-.topbar.is-tucked .topbar-name, .topbar.is-tucked .topbar-nav a:not(.topbar-cv) { opacity: 0; visibility: hidden; }
-.topbar.is-tucked .topbar-cv { pointer-events: auto; background: var(--surface); }
-.topbar:focus-within { background: var(--bg); pointer-events: auto; }
-.topbar:focus-within .topbar-name, .topbar:focus-within .topbar-nav a { opacity: 1 !important; visibility: visible !important; }
+.topbar:focus-within { transform: none; visibility: visible; }
 .topbar a:link, .topbar a:visited { color: var(--muted); }
 .topbar a:hover, .topbar a[aria-current="true"] { color: var(--mint); }
 .topbar-name:link, .topbar-name:visited { color: var(--text) !important; font-weight: 500; }
@@ -529,3 +524,39 @@ html[data-palette="liquid"] ::selection { background: rgba(172, 205, 248, 0.25);
 }
 .paper-buttons { display: flex; flex-wrap: wrap; gap: 0.5rem; padding-top: 0.25rem; }
 .paper-buttons a.btn.btn-outline-primary { margin: 0; }
+
+/* phones: the org / venue logo becomes a small mark to the left of the entry */
+@media (max-width: 767.98px) {
+  .work-row:has(.logo) {
+    display: grid; grid-template-columns: 44px minmax(0, 1fr); column-gap: 0.9rem; align-items: start;
+    margin-left: 0; margin-right: 0; padding: 0 1rem;
+  }
+  .work-row:has(.logo) > [class*="col-"] { grid-column: 2; width: auto; max-width: none; flex: none; padding: 0; margin: 0; }
+  .work-row:has(.logo) > #pub-pic, .work-row:has(.logo) > [class*="col-"]:has(> .logo) { grid-column: 1; grid-row: 1 / span 4; display: block !important; visibility: visible !important; padding-top: 0.15rem; }
+  .work-row:has(.logo) > [class*="col-"]:not(:has(*)) { display: none; }
+  .work-row:has(.logo) .logo.is-work, .work-row:has(.logo) .logo.is-pub { width: 44px; margin: 0; }
+  .work-row:has(.logo) .logo > img { border-width: 1px; }
+  .work-row:has(.logo) img[data-logo-pad] { padding: 0.45rem; }
+  .work-row:has(.logo) .work-body, .work-row:has(.logo) .pub-body { padding: 0; }
+  .work-row:has(.logo) .work-title, .work-row:has(.logo) .pub-title { padding-bottom: 0.5rem; }
+  .work-row:has(.logo) .work-date, .work-row:has(.logo) .pub-date { margin: 0.35rem 0 0 !important; padding: 0 !important; text-align: left !important; }
+  .work-row:has(.logo) .work-col { justify-content: flex-start; }
+  .work-row:has(.logo) .paper-buttons { padding-left: 0; }
+}
+
+/* social icons: one 44px box each; glyph sizes tuned so the marks look the same size
+   (Font Awesome and Academicons draw at different scales) */
+.fa-icon { display: flex; align-items: center; gap: 0.35rem; flex-wrap: wrap; }
+.fa-icon a.fa-icon-link { display: inline-flex !important; width: 44px; height: 44px; margin: 0 !important; align-items: center; justify-content: center; }
+.fa-icon a.fa-icon-link i { width: auto !important; line-height: 1 !important; }
+.fa-icon a.fa-icon-link i.fa-github { font-size: 26px !important; }
+.fa-icon a.fa-icon-link i.ai-google-scholar,
+.fa-icon a.fa-icon-link i.ai-researchgate { font-size: 30px !important; }
+.fa-icon a.fa-icon-link i.fa-linkedin-in { font-size: 25px !important; }
+.fa-icon a.fa-icon-link i.ai-cv { font-size: 40px !important; }
+.about-contacts .fa-icon { margin-left: -9px; }
+@media (max-width: 500px) {
+  .fa-icon { padding-left: 0 !important; }
+  #description { margin-left: 0 !important; margin-right: 0 !important; }
+  .about-contacts .contacts { padding-left: 0 !important; }
+}

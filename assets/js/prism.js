@@ -144,9 +144,16 @@
   var uRes = gl.getUniformLocation(prog, "uRes"), uTime = gl.getUniformLocation(prog, "uTime"), uMotion = gl.getUniformLocation(prog, "uMotion");
 
   var still = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var scale = PAL === "liquid" ? (window.innerWidth < 700 ? 0.45 : 0.5) : 0.6;   // render below CSS size; the image is soft anyway
+  // Resolution from a pixel budget, not a fixed fraction of CSS pixels: small screens with dense
+  // displays (phones) render sharper, large desktop canvases stay cheap. Capped at 2x device pixels.
+  var BUDGET = PAL === "liquid" ? 480000 : 700000;
+  function renderScale(cw, ch) {
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    return Math.min(dpr, Math.sqrt(BUDGET / Math.max(1, cw * ch)));
+  }
   function resize() {
-    var w = Math.max(1, Math.round(canvas.clientWidth * scale)), h = Math.max(1, Math.round(canvas.clientHeight * scale));
+    var cw = canvas.clientWidth, ch = canvas.clientHeight, f = renderScale(cw, ch);
+    var w = Math.max(1, Math.round(cw * f)), h = Math.max(1, Math.round(ch * f));
     if (canvas.width !== w || canvas.height !== h) { canvas.width = w; canvas.height = h; gl.viewport(0, 0, w, h); }
     gl.uniform2f(uRes, w, h);
     // the sweep runs from A (bottom) to B; it stays to the right of / below the hero text
